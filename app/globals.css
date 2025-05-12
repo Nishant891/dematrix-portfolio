@@ -109,7 +109,7 @@ body {
 }
 
 .prose h2 {
-  font-size: 1.25rem;
+  font-size: 1.5rem; /* Increased font size */
   font-weight: 600;
   margin-top: 1.5rem;
   margin-bottom: 0.75rem;
@@ -117,7 +117,7 @@ body {
 
 .prose p {
   margin-bottom: 1rem;
-  font-size: 0.875rem;
+  font-size: 1rem; /* Increased font size */
   line-height: 1.5;
 }
 
@@ -128,10 +128,11 @@ body {
 }
 
 .prose li {
-  font-size: 0.875rem;
+  font-size: 1rem; /* Increased font size */
   line-height: 1.5;
   margin-bottom: 0.5rem;
 }
+
 
 
 .markdown-content {

@@ -144,10 +144,10 @@ export default function ArticleContent({ articleContent }: { articleContent: str
   }
 
   return (
-    <article className="w-full p-4 md:p-8 mx-auto max-w-5xl">
+    <article className="w-full p-4 mx-auto max-w-5xl">
     <div className="overflow-y-auto h-full">
       <div
-        className="markdown-content lg:ml-12 lg:mr-12 p-4 md:p-8"
+        className="markdown-content lg:ml-12 lg:mr-12 p-4"
         dangerouslySetInnerHTML={{ __html: articleContent }}
       />
     </div>

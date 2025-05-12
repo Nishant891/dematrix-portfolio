@@ -8,8 +8,8 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Your Name - Personal Website",
-  description: "Designer, software engineer, podcaster, and writer",
+  title: "Nishant Sharma - Personal Website",
+  description: "Software Engineer and writer",
     generator: 'v0.dev'
 }
 

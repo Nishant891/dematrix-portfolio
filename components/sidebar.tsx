@@ -82,7 +82,7 @@ export default function Sidebar({
           >
             <div className="flex items-center gap-2">
               <Gamepad size={16} />
-              <span>Retro games</span>
+              <span>Retro Games</span>
             </div>
             <span className="text-gray-400 text-xs">↗</span>
           </Link>
@@ -103,12 +103,12 @@ export default function Sidebar({
 
         <nav className="space-y-1">
           <Link
-            href="https://github.com/Nishant891"
+            href="https://github.com/Nishant891/social-media-seeding-bot"
             className="flex items-center justify-between px-2 py-1.5 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
           >
             <div className="flex items-center gap-2">
             <Bean size={16} />
-              <span>Social media seeder</span>
+              <span>Social Media Seeding Bot</span>
             </div>
             <span className="text-gray-400 text-xs">↗</span>
           </Link>
@@ -119,12 +119,12 @@ export default function Sidebar({
           >
             <div className="flex items-center gap-2">
             <UserSearch size={16} />
-              <span>Freelance finder</span>
+              <span>Freelance Finder</span>
             </div>
             <span className="text-gray-400 text-xs">↗</span>
           </Link>
           <Link
-            href="https://www.loom.com/share/b275e002c2bc489a9e1b38bba34dd023?sid=20048d25-025e-4bdc-85b0-2b37514771bb"
+            href="https://github.com/Nishant891/Email-Classifier"
             className="flex items-center justify-between px-2 py-1.5 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
           >
             <div className="flex items-center gap-2">
