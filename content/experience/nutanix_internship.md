@@ -1,4 +1,4 @@
-# How I Cracked An Internship At Nutanix During My 3rd Year 
+# How I cracked an Internship at Nutanix in my 3rd year 
 
 Nutanix visited Techno India in July this year to recruit interns for the role of Software Reliability Engineer (SRE). Representing Siliguri Institute of Technology, I participated in this recruitment drive. I was fortunate to be one of the five students shortlisted for this opportunity. In this blog, I’ll share my experience to help others prepare for similar roles.
 

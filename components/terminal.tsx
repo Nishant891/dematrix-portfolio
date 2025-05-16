@@ -32,7 +32,7 @@ const statements: Statement[] = [
   {
     input: 'education',
     return:
-      '"B.Tech in compuetr science and engineering, SIT"',
+      '"B.Tech in computer science and engineering, SIT"',
   },
   {
     input: 'skills',

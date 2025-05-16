@@ -1,4 +1,4 @@
-# Stop Copy Pasting Linux Commands Without Knowing What They Do
+# Linux Commands
 
 Alright, you’ve installed Linux. You’ve opened the terminal. Maybe you’ve even run a few commands you found online. But let’s be honest — you have no clue what half of them actually do.
 

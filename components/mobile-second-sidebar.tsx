@@ -3,24 +3,39 @@
 import Link from "next/link"
 import { Calendar, ArrowLeft } from "lucide-react"
 import { useState, useEffect } from "react"
-import { BiChevronRight, BiChevronDown } from "react-icons/bi"
-import { FiFolder, FiFolderPlus, FiFile } from "react-icons/fi"
+import { FiFile } from "react-icons/fi"
 import remarkHtml from "remark-html"
 import remarkParse from "remark-parse"
 import { unified } from "unified"
 
 // Sample articles for demo purposes since the API might not be available
-const sampleArticles = {
-  "web-development": [
-    { slug: "building-design-system", type: "web-development" },
-    { slug: "react-server-components", type: "web-development" },
-    { slug: "nextjs-performance", type: "web-development" },
-  ],
-  "user-experience": [
-    { slug: "accessible-web-apps", type: "user-experience" },
-    { slug: "product-design", type: "user-experience" },
-  ],
-}
+const sampleArticles = [
+  { 
+    slug: "building-design-system", 
+    type: "web-development",
+    description: "Learn how to build a comprehensive design system from scratch for consistent UI development."
+  },
+  { 
+    slug: "react-server-components", 
+    type: "web-development",
+    description: "Explore the future of React with server components and their performance benefits."
+  },
+  { 
+    slug: "nextjs-performance", 
+    type: "web-development",
+    description: "Techniques and strategies to optimize performance in your Next.js applications."
+  },
+  { 
+    slug: "accessible-web-apps", 
+    type: "user-experience",
+    description: "Best practices for building fully accessible web applications for all users."
+  },
+  { 
+    slug: "product-design", 
+    type: "user-experience",
+    description: "An overview of effective product design principles and methodologies."
+  },
+]
 
 // Sample article content
 const sampleArticleContent = {
@@ -124,6 +139,7 @@ const stackItems = [
 interface BlogItem {
   slug: string
   type: string
+  description?: string
 }
 
 export default function MobileSecondSidebar({
@@ -145,8 +161,7 @@ export default function MobileSecondSidebar({
   isVisible: boolean
   onBack: () => void
 }) {
-  const [articles, setArticles] = useState<Record<string, BlogItem[]>>({})
-  const [expandedTypes, setExpandedTypes] = useState<Record<string, boolean>>({})
+  const [articles, setArticles] = useState<BlogItem[]>([])
   const [error, setError] = useState(false)
   const [loading, setLoading] = useState(true)
 
@@ -160,14 +175,7 @@ export default function MobileSecondSidebar({
         if (response.ok) {
           const blogs = await response.json()
           console.log("API blogs:", blogs)
-          const blogsByType = blogs.flat().reduce((acc: Record<string, BlogItem[]>, blog: BlogItem) => {
-            if (!acc[blog.type]) {
-              acc[blog.type] = []
-            }
-            acc[blog.type].push(blog)
-            return acc
-          }, {})
-          setArticles(blogsByType)
+          setArticles(blogs.flat())
         } else {
           // If API fails, use sample data
           console.log("Using sample data")
@@ -183,18 +191,6 @@ export default function MobileSecondSidebar({
     }
 
     fetchArticles()
-
-    // Set all types to expanded by default
-    if (Object.keys(articles).length > 0) {
-      const allExpanded = Object.keys(articles).reduce(
-        (acc, type) => {
-          acc[type] = true
-          return acc
-        },
-        {} as Record<string, boolean>,
-      )
-      setExpandedTypes(allExpanded)
-    }
   }, [isVisible, activePage])
 
   const handleBlogClick = async (slug: string) => {
@@ -236,23 +232,9 @@ export default function MobileSecondSidebar({
     }
   }
 
-  const toggleType = (type: string) => {
-    setExpandedTypes((prev) => ({
-      ...prev,
-      [type]: !prev[type],
-    }))
-  }
-
   const formatSlug = (slug: string) => {
     return slug
       .split(/[-_]/)
-      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(" ")
-  }
-
-  const formatType = (type: string) => {
-    return type
-      .split("-")
       .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
       .join(" ")
   }
@@ -272,52 +254,27 @@ export default function MobileSecondSidebar({
         {activePage === "writing" && (
           <>
             {loading ? (
-              <div className="p-5 text-sm text-gray-500">Loading articles...</div>
+              <div className="p-5 text-sm text-gray-500">Loading articles :)</div>
             ) : error ? (
               <div className="p-5 text-sm text-red-500">Failed to load articles</div>
             ) : (
-              <div className="space-y-2">
-                {Object.entries(articles).map(([type, typeBlogs]) => (
-                  <div key={type} className="mb-3">
-                    {/* Type folder */}
-                    <button
-                      onClick={() => toggleType(type)}
-                      className="flex items-center w-full text-sm text-gray-700 hover:bg-gray-50 rounded-md px-2 py-1.5 mb-1"
+              <div className="space-y-4">
+                {articles.map((blog: BlogItem) => (
+                  <div key={blog.slug} className="group">
+                    <Link
+                      href="#"
+                      className={`flex items-center text-sm px-2 py-2 rounded-md ${
+                        activeArticle === blog.slug ? "bg-gray-100 text-gray-900" : "text-gray-700 hover:bg-gray-50"
+                      }`}
+                      onClick={(e) => {
+                        e.preventDefault()
+                        handleBlogClick(blog.slug)
+                      }}
                     >
-                      {expandedTypes[type] ? (
-                        <FiFolderPlus className="w-4 h-4 text-gray-500 mr-2" />
-                      ) : (
-                        <FiFolder className="w-4 h-4 text-gray-500 mr-2" />
-                      )}
-                      <span className="font-medium">{formatType(type)}</span>
-                      {expandedTypes[type] ? (
-                        <BiChevronDown className="w-4 h-4 ml-auto" />
-                      ) : (
-                        <BiChevronRight className="w-4 h-4 ml-auto" />
-                      )}
-                    </button>
-
-                    {/* Blogs within type */}
-                    {expandedTypes[type] && (
-                      <div className="ml-4 space-y-1">
-                        {typeBlogs.map((blog: BlogItem) => (
-                          <Link
-                            key={blog.slug}
-                            href="#"
-                            className={`flex items-center text-sm px-2 py-2 rounded-md ${
-                              activeArticle === blog.slug ? "bg-gray-100 text-gray-900" : "text-gray-700 hover:bg-gray-50"
-                            }`}
-                            onClick={(e) => {
-                              e.preventDefault()
-                              handleBlogClick(blog.slug)
-                            }}
-                          >
-                            <FiFile className="w-3.5 h-3.5 text-gray-400 mr-2 flex-shrink-0" />
-                            <div className="font-medium">{formatSlug(blog.slug)}</div>
-                          </Link>
-                        ))}
-                      </div>
-                    )}
+                      <FiFile className="w-3.5 h-3.5 text-gray-400 mr-2 flex-shrink-0" />
+                      <div className="font-medium">{formatSlug(blog.slug)}</div>
+                    </Link>
+                    
                   </div>
                 ))}
               </div>

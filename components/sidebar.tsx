@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { Home, BookOpen, Layers, Tent, Paintbrush, Shield, Zap, Twitter, Youtube, Github, Bean, Pickaxe, Bot, Castle, SquareTerminal, Globe, UserSearch, MailSearch, Gamepad } from "lucide-react"
+import { Home, BookOpen, Layers, Tent, Paintbrush, Shield, Zap, Twitter, Youtube, Github, Bean, Pickaxe, Bot, Castle, SquareTerminal, Globe, UserSearch, MailSearch, Gamepad, Megaphone, Cog, TrendingUp } from "lucide-react"
 
 export default function Sidebar({
   activePage,
@@ -72,7 +72,7 @@ export default function Sidebar({
           >
             <div className="flex items-center gap-2">
               <Bot size={16} />
-              <span>Wingman</span>
+              <span>Upstox MCP Bot</span>
             </div>
             <span className="text-gray-400 text-xs">↗</span>
           </Link>
@@ -82,7 +82,7 @@ export default function Sidebar({
           >
             <div className="flex items-center gap-2">
               <Gamepad size={16} />
-              <span>Retro Games</span>
+              <span>Wasm Games</span>
             </div>
             <span className="text-gray-400 text-xs">↗</span>
           </Link>
@@ -93,7 +93,18 @@ export default function Sidebar({
           >
             <div className="flex items-center gap-2">
               <SquareTerminal size={16} />
-              <span>Collaborator</span>
+              <span>Code Editor</span>
+            </div>
+            <span className="text-gray-400 text-xs">↗</span>
+          </Link>
+
+          <Link
+            href="#"
+            className="flex items-center justify-between px-2 py-1.5 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
+          >
+            <div className="flex items-center gap-2">
+              <Cog size={16} />
+              <span>Order Matching Engine</span>
             </div>
             <span className="text-gray-400 text-xs">↗</span>
           </Link>
@@ -107,8 +118,8 @@ export default function Sidebar({
             className="flex items-center justify-between px-2 py-1.5 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
           >
             <div className="flex items-center gap-2">
-            <Bean size={16} />
-              <span>Social Media Seeding Bot</span>
+            <TrendingUp size={20} />
+              <span>Social Media Marketing Bot</span>
             </div>
             <span className="text-gray-400 text-xs">↗</span>
           </Link>

@@ -11,6 +11,7 @@ import StackSidebar from "@/components/stack-sidebar"
 import ArticleContent from "@/components/article-content"
 import MobileSecondSidebar from "@/components/mobile-second-sidebar"
 import Terminal from "@/components/terminal"
+import { MailIcon } from "lucide-react"
 
 export default function Home() {
   const [activePage, setActivePage] = useState("home")
@@ -166,46 +167,59 @@ export default function Home() {
                 <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
                   <h3 className="text-sm font-semibold mb-2">Internship Experience:</h3>
                   <p className="text-sm text-gray-600">
-                    Interned at Nutanix, gaining hands-on experience with cloud infrastructure, virtualization, and networking. Managed VMs and clusters on Nutanix and ESXi, migrated legacy JavaScript pages to React, enhanced API communication, and wrote Docker scripts for containerized deployments.
+                    Interned at Nutanix, gaining hands-on experience with cloud infrastructure, virtualization, and networking. Managed VMs and clusters on <span className="font-semibold">ESXi</span> and Nutanix, migrated legacy <span className="font-semibold">JavaScript</span> pages to <span className="font-semibold">React</span>, enhanced API communication, and wrote <span className="font-semibold">Docker</span> scripts for containerized deployments.
                   </p>
+
                   <h3 className="text-sm font-semibold mt-3 mb-2">Key Contributions:</h3>
                   <ul className="list-disc list-inside text-sm text-gray-600 space-y-1">
-                    <li>Designed scalable VM infrastructures and executed seamless migrations.</li>
-                    <li>Enhanced backend APIs and containerized apps with Docker.</li>
-                    <li>Automated deployment pipelines with the SRE team.</li>
-                    <li>Resolved incidents with a focus on high availability and fault tolerance.</li>
-                    <li>Optimized network configurations for better resilience.</li>
+                    <li>Built a Linux system from scratch (<span className="font-semibold">LFS</span>), deepening understanding of OS internals and kernel configurations.</li>
+                    <li>Successfully migrated legacy JavaScript code to React, enhancing application performance and maintainability.</li>
+                    <li>Achieved <span className="font-semibold">CCNA</span> certification, demonstrating expertise in networking concepts and routing protocols.</li>
+                    <li>Gained hands-on experience with Nutanix <span className="font-semibold">AHV</span> and <span className="font-semibold">AOS</span>, mastering hyper-converged infrastructure and virtual machine management.</li>
+                    <li>Explored virtualization technologies such as VMware <span className="font-semibold">ESXI</span>, deploying and managing virtual machines efficiently.</li>
+                    <li>Practiced real-world scenarios with virtualization platforms, including VM provisioning, network configuration, and resource optimization</li>
                   </ul>
                 </div>
               </div>
             </section>
 
-
             <section className="space-y-4">
               <div className="text-gray-500 text-sm">Online</div>
 
               <div className="grid gap-2">
+
+                <div className="flex items-center justify-between py-2">
+                  <Link href="mailto:nishant19072003@gmail.com" className="flex items-center gap-2 hover:text-blue-600">
+                    <MailIcon size={22} />
+                    <span>Mail</span>
+                  </Link>
+                  <Link href="mailto:nishant19072003@gmail.com" className="text-gray-500 text-sm hover:text-blue-600">
+                    Send Email
+                  </Link>
+                </div>
+
+                <div className="flex items-center justify-between py-2">
+                  <Link href="https://www.linkedin.com/in/nishant-sharma-771653245/" className="flex items-center gap-2 hover:text-blue-600">
+                    <img src="/linkedin.png" alt="LinkedIn" className="w-6 h-6" />
+                    <span>LinkedIn</span>
+                  </Link>
+                  <Link href="https://www.linkedin.com/in/nishant-sharma-771653245/" className="text-gray-500 text-sm hover:text-blue-600">
+                    Connect
+                  </Link>
+                </div>
+
                 <div className="flex items-center justify-between py-2">
                   <Link href="https://x.com/Nishant48945102" className="flex items-center gap-2 hover:text-blue-600">
-                    <img src="/x.png" alt="Leetcode" className="w-6 h-6" />
+                    <img src="/x.png" alt="X.com" className="w-6 h-6" />
                     <span>X.com</span>
                   </Link>
                   <Link href="https://x.com/Nishant48945102" className="text-gray-500 text-sm hover:text-blue-600">
                     Follow
                   </Link>
                 </div>
-
-                <div className="flex items-center justify-between py-2">
-                  <Link href="https://www.linkedin.com/in/nishant-sharma-771653245/" className="flex items-center gap-2 hover:text-blue-600">
-                    <img src="/linkedin.png" alt="Leetcode" className="w-6 h-6" />
-                    <span>LinkedIn</span>
-                  </Link>
-                  <Link href="https://www.linkedin.com/in/nishant-sharma-771653245/" className="text-gray-500 text-sm hover:text-blue-600">
-                    Follow
-                  </Link>
-                </div>
               </div>
             </section>
+            
           </div>
         )}
 
