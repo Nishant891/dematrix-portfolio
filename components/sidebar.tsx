@@ -18,9 +18,8 @@ export default function Sidebar({
         <nav className="space-y-1">
           <Link
             href="#"
-            className={`flex items-center gap-2 px-2 py-1.5 rounded-md text-sm ${
-              activePage === "home" ? "bg-gray-900 text-white" : "text-gray-700 hover:bg-gray-100"
-            }`}
+            className={`flex items-center gap-2 px-2 py-1.5 rounded-md text-sm ${activePage === "home" ? "bg-gray-900 text-white" : "text-gray-700 hover:bg-gray-100"
+              }`}
             onClick={(e) => {
               e.preventDefault()
               setActivePage("home")
@@ -32,9 +31,8 @@ export default function Sidebar({
 
           <Link
             href="#"
-            className={`flex items-center gap-2 px-2 py-1.5 rounded-md text-sm ${
-              activePage === "writing" ? "bg-gray-900 text-white" : "text-gray-700 hover:bg-gray-100"
-            }`}
+            className={`flex items-center gap-2 px-2 py-1.5 rounded-md text-sm ${activePage === "writing" ? "bg-gray-900 text-white" : "text-gray-700 hover:bg-gray-100"
+              }`}
             onClick={(e) => {
               e.preventDefault()
               setActivePage("writing")
@@ -50,9 +48,8 @@ export default function Sidebar({
         <nav className="space-y-1">
           <Link
             href="#"
-            className={`flex items-center gap-2 px-2 py-1.5 rounded-md text-sm ${
-              activePage === "stack" ? "bg-gray-900 text-white" : "text-gray-700 hover:bg-gray-100"
-            }`}
+            className={`flex items-center gap-2 px-2 py-1.5 rounded-md text-sm ${activePage === "stack" ? "bg-gray-900 text-white" : "text-gray-700 hover:bg-gray-100"
+              }`}
             onClick={(e) => {
               e.preventDefault()
               setActivePage("stack")
@@ -66,7 +63,7 @@ export default function Sidebar({
         <div className="mt-6 mb-3 text-xs uppercase text-gray-500 font-medium">Projects</div>
 
         <nav className="space-y-1">
-        <Link
+          {/* <Link
             href="#"
             className="flex items-center justify-between px-2 py-1.5 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
           >
@@ -75,9 +72,9 @@ export default function Sidebar({
               <span>Upstox MCP Bot</span>
             </div>
             <span className="text-gray-400 text-xs">↗</span>
-          </Link>
+          </Link> */}
           <Link
-            href="https://retrogames-three.vercel.app/"
+            href="https://mekka-00.vercel.app/"
             className="flex items-center justify-between px-2 py-1.5 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
           >
             <div className="flex items-center gap-2">
@@ -88,7 +85,7 @@ export default function Sidebar({
           </Link>
 
           <Link
-            href="#"
+            href="https://gitlab.com/nishant19072003-group/livescript"
             className="flex items-center justify-between px-2 py-1.5 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
           >
             <div className="flex items-center gap-2">
@@ -99,7 +96,7 @@ export default function Sidebar({
           </Link>
 
           <Link
-            href="#"
+            href="https://gitlab.com/nishant19072003-group/order-matching-engine"
             className="flex items-center justify-between px-2 py-1.5 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
           >
             <div className="flex items-center gap-2">
@@ -118,8 +115,19 @@ export default function Sidebar({
             className="flex items-center justify-between px-2 py-1.5 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
           >
             <div className="flex items-center gap-2">
-            <TrendingUp size={20} />
+              <TrendingUp size={20} />
               <span>Social Media Marketing Bot</span>
+            </div>
+            <span className="text-gray-400 text-xs">↗</span>
+          </Link>
+
+          <Link
+            href="https://github.com/Nishant891/Email-Classifier"
+            className="flex items-center justify-between px-2 py-1.5 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
+          >
+            <div className="flex items-center gap-2">
+              <MailSearch size={16} />
+              <span>Email Classifier</span>
             </div>
             <span className="text-gray-400 text-xs">↗</span>
           </Link>
@@ -129,18 +137,8 @@ export default function Sidebar({
             className="flex items-center justify-between px-2 py-1.5 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
           >
             <div className="flex items-center gap-2">
-            <UserSearch size={16} />
+              <UserSearch size={16} />
               <span>Freelance Finder</span>
-            </div>
-            <span className="text-gray-400 text-xs">↗</span>
-          </Link>
-          <Link
-            href="https://github.com/Nishant891/Email-Classifier"
-            className="flex items-center justify-between px-2 py-1.5 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
-          >
-            <div className="flex items-center gap-2">
-            <MailSearch size={16} />
-              <span>Email Classifier</span>
             </div>
             <span className="text-gray-400 text-xs">↗</span>
           </Link>
@@ -154,7 +152,7 @@ export default function Sidebar({
             className="flex items-center justify-between px-2 py-1.5 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
           >
             <div className="flex items-center gap-2">
-            <img src="/leetcode.png" alt="Leetcode" className="w-6 h-6" />
+              <img src="/leetcode.png" alt="Leetcode" className="w-6 h-6" />
               <span>Leetcode</span>
             </div>
             <span className="text-gray-400 text-xs">↗</span>
@@ -165,7 +163,7 @@ export default function Sidebar({
             className="flex items-center justify-between px-2 py-1.5 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
           >
             <div className="flex items-center gap-2">
-            <img src="/github.png" alt="Github" className="w-6 h-6" />
+              <img src="/github.png" alt="Github" className="w-6 h-6" />
               <span>GitHub</span>
             </div>
             <span className="text-gray-400 text-xs">↗</span>
@@ -176,7 +174,7 @@ export default function Sidebar({
             className="flex items-center justify-between px-2 py-1.5 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
           >
             <div className="flex items-center gap-2">
-            <img src="/ccna.png" alt="Leetcode" className="w-6 h-6" />
+              <img src="/ccna.png" alt="Leetcode" className="w-6 h-6" />
               <span>CCNA</span>
             </div>
             <span className="text-gray-400 text-xs">↗</span>
