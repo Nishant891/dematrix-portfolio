@@ -34,7 +34,7 @@ export default function StackSidebar({
       {stackItems.map((item) => (
         <div
           key={item.id}
-          className="flex items-center gap-3 p-2 rounded-md hover:bg-gray-100 transition-colors"
+          className="flex items-center gap-3 p-1 rounded-md hover:bg-gray-100 transition-colors"
         >
           <img src={item.src} alt={item.title} className="w-8 h-8" />
           <span className="flex-1 text-sm font-medium">{item.title}</span>
