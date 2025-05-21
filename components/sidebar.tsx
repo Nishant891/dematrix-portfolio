@@ -163,7 +163,7 @@ export default function Sidebar({
             className="flex items-center justify-between px-2 py-1.5 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
           >
             <div className="flex items-center gap-2">
-              <img src="https://skillicons.dev/icons?i=git" alt="Github" className="w-6 h-6" />
+              <img src="https://skillicons.dev/icons?i=gitlab" alt="Github" className="w-6 h-6" />
               <span>Gitlab</span>
             </div>
             <span className="text-gray-400 text-xs">↗</span>
