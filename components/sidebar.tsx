@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { Home, BookOpen, Layers, Tent, Paintbrush, Shield, Zap, Twitter, Youtube, Github, Bean, Pickaxe, Bot, Castle, SquareTerminal, Globe, UserSearch, MailSearch, Gamepad, Megaphone, Cog, TrendingUp } from "lucide-react"
+import { Home, BookOpen, Layers, Tent, Paintbrush, Shield, Zap, Twitter, Youtube, Github, Bean, Pickaxe, Bot, Castle, SquareTerminal, Globe, UserSearch, MailSearch, Gamepad, Megaphone, Cog, TrendingUp, NotebookPen } from "lucide-react"
 
 export default function Sidebar({
   activePage,
@@ -111,7 +111,7 @@ export default function Sidebar({
 
         <nav className="space-y-1">
           <Link
-            href="https://github.com/Nishant891/social-media-seeding-bot"
+            href="https://gitlab.com/nishant19072003-group/socialmediamarketingbot"
             className="flex items-center justify-between px-2 py-1.5 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
           >
             <div className="flex items-center gap-2">
@@ -122,7 +122,7 @@ export default function Sidebar({
           </Link>
 
           <Link
-            href="https://github.com/Nishant891/Email-Classifier"
+            href="https://gitlab.com/nishant19072003-group/emailclassifier"
             className="flex items-center justify-between px-2 py-1.5 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
           >
             <div className="flex items-center gap-2">
@@ -144,7 +144,7 @@ export default function Sidebar({
           </Link>
         </nav>
 
-        <div className="mt-6 mb-3 text-xs uppercase text-gray-500 font-medium">Accomplishments</div>
+        <div className="mt-6 mb-3 text-xs uppercase text-gray-500 font-medium">Tech Presence</div>
 
         <nav className="space-y-1">
           <Link
@@ -159,12 +159,12 @@ export default function Sidebar({
           </Link>
 
           <Link
-            href="https://github.com/Nishant891"
+            href="https://gitlab.com/nishant19072003-group"
             className="flex items-center justify-between px-2 py-1.5 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
           >
             <div className="flex items-center gap-2">
-              <img src="/github.png" alt="Github" className="w-6 h-6" />
-              <span>GitHub</span>
+              <img src="https://skillicons.dev/icons?i=git" alt="Github" className="w-6 h-6" />
+              <span>Gitlab</span>
             </div>
             <span className="text-gray-400 text-xs">↗</span>
           </Link>
@@ -176,6 +176,17 @@ export default function Sidebar({
             <div className="flex items-center gap-2">
               <img src="/ccna.png" alt="Leetcode" className="w-6 h-6" />
               <span>CCNA</span>
+            </div>
+            <span className="text-gray-400 text-xs">↗</span>
+          </Link>
+
+          <Link
+            href="https://medium.com/@nishant19072003"
+            className="flex items-center justify-between px-2 py-1.5 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
+          >
+            <div className="flex items-center gap-2">
+              <NotebookPen size={16} />
+              <span>Medium</span>
             </div>
             <span className="text-gray-400 text-xs">↗</span>
           </Link>

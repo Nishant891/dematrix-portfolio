@@ -2,67 +2,25 @@
 
 // Sample stack data
 const stackItems = [
-    {
-      id: 1,
-      title: "React",
-      src: "https://skillicons.dev/icons?i=react",
-    },
-    {
-      id: 2,
-      title: "Next.js",
-      src: "https://skillicons.dev/icons?i=nextjs",
-    },
-    {
-      id: 3,
-      title: "Python",
-      src: "https://skillicons.dev/icons?i=python",
-    },
-    {
-      id: 4,
-      title: "C++",
-      src: "https://skillicons.dev/icons?i=cpp",
-    },
-    {
-      id: 5,
-      title: "Express",
-      src: "https://skillicons.dev/icons?i=express",
-    },
-    {
-      id: 6,
-      title: "Arch Linux",
-      src: "https://skillicons.dev/icons?i=arch",
-    },
-    {
-      id: 7,
-      title: "Docker",
-      src: "https://skillicons.dev/icons?i=docker",
-    },
-    {
-      id: 8,
-      title: "Git",
-      src: "https://skillicons.dev/icons?i=git",
-    },
-    {
-      id: 9,
-      title: "SQL",
-      src: "https://skillicons.dev/icons?i=mysql",
-    },
-    {
-      id: 10,
-      title: "Tailwind CSS",
-      src: "https://skillicons.dev/icons?i=tailwind",
-    },
-    {
-      id: 11,
-      title: "Vercel",
-      src: "https://skillicons.dev/icons?i=vercel",
-    },
-    {
-      id: 12,
-      title: "Bash",
-      src: "https://skillicons.dev/icons?i=bash",
-    },
-  ];
+  { id: 1, title: "C++", src: "https://skillicons.dev/icons?i=cpp" },
+  { id: 2, title: "Arch Linux", src: "https://skillicons.dev/icons?i=arch" },
+  { id: 3, title: "WebAssembly", src: "https://skillicons.dev/icons?i=wasm" },
+  { id: 4, title: "Bash", src: "https://skillicons.dev/icons?i=bash" },
+  { id: 5, title: "GCP", src: "https://skillicons.dev/icons?i=gcp" },
+  { id: 6, title: "Docker", src: "https://skillicons.dev/icons?i=docker" },
+  { id: 7, title: "TypeScript", src: "https://skillicons.dev/icons?i=typescript" },
+  { id: 8, title: "Next.js", src: "https://skillicons.dev/icons?i=nextjs" },
+  { id: 9, title: "Tailwind CSS", src: "https://skillicons.dev/icons?i=tailwind" },
+  { id: 10, title: "Express", src: "https://skillicons.dev/icons?i=express" },
+  { id: 11, title: "Appwrite", src: "https://skillicons.dev/icons?i=appwrite" },
+  { id: 12, title: "MongoDB", src: "https://skillicons.dev/icons?i=mongodb" },
+  { id: 13, title: "MySQL", src: "https://skillicons.dev/icons?i=mysql" },
+  { id: 14, title: "PostgreSQL", src: "https://skillicons.dev/icons?i=postgres" },
+  { id: 15, title: "Git", src: "https://skillicons.dev/icons?i=git" },
+  { id: 16, title: "Postman", src: "https://skillicons.dev/icons?i=postman" },
+  { id: 17, title: "Python", src: "https://skillicons.dev/icons?i=python" },
+  { id: 18, title: "Discord Bots", src: "https://skillicons.dev/icons?i=bots" },
+];
   
 
 export default function StackSidebar({

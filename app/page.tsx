@@ -273,10 +273,12 @@ export default function Home() {
                 During my internship at <span className="font-semibold">Nutanix</span>, I gained hands-on experience with <span className="font-semibold">Cloud Infrastructure</span> and <span className="font-semibold">Virtualization Technologies</span>. I managed <span className="font-semibold">VMs and clusters</span> on <span className="font-semibold">Nutanix and ESXi Datacenters</span>, ensuring <span className="font-semibold">high availability, load balancing</span>, and <span className="font-semibold">fault tolerance</span>. My contributions included:
               </p>
               <ul className="list-disc list-inside text-sm text-gray-600 space-y-1">
-                <li>Utilized <span className="font-semibold">Docker</span> for application containerization, streamlining deployments and enhancing scalability.</li>
-                <li>Executed <span className="font-semibold">VM migrations</span> across datacenters with zero downtime, optimizing resource management.</li>
-                <li>Enhanced monitoring scripts to improve <span className="font-semibold">fault detection</span> and incident resolution.</li>
-                <li>Collaborated with the SRE team for <span className="font-semibold">CI/CD automation</span>, ensuring smooth deployment pipelines.</li>
+                    <li>Built a Linux system from scratch (<span className="font-semibold">LFS</span>), deepening understanding of OS internals and kernel configurations.</li>
+                    <li>Successfully migrated legacy JavaScript code to React, enhancing application performance and maintainability.</li>
+                    <li>Achieved <span className="font-semibold">CCNA</span> certification, demonstrating expertise in networking concepts and routing protocols.</li>
+                    <li>Gained hands-on experience with Nutanix <span className="font-semibold">AHV</span> and <span className="font-semibold">AOS</span>, mastering hyper-converged infrastructure and virtual machine management.</li>
+                    <li>Explored virtualization technologies such as VMware <span className="font-semibold">ESXI</span>, deploying and managing virtual machines efficiently.</li>
+                    <li>Practiced real-world scenarios with virtualization platforms, including VM provisioning, network configuration, and resource optimization</li>
               </ul>
 
               <h2 className="text-sm font-semibold mt-4">🐧 Linux Enthusiast:</h2>
