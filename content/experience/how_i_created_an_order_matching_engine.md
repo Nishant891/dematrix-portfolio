@@ -18,7 +18,7 @@ The data structure we use is a **Red-Black Tree** because it is a self-balancing
 
 ### Visual Representation
 
-![image](/uploads/34cdfe4902d436b6f6ecff6cb4e70d84/image.png)
+![image](https://i.pinimg.com/736x/22/9c/60/229c60fe1fc5bf459bcd664acb1dd261.jpg)
 
 ### Order Class
 
@@ -114,7 +114,7 @@ private:
 
 ### Visual Representation
 
-![image](/uploads/5e275b8db08143406e0fb3b9e86d842a/image.png)
+![image](https://i.pinimg.com/736x/45/14/cc/4514ccfc4d4c6ba9fd13993980a31628.jpg)
 
 ### Loop Logic:
 
