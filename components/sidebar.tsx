@@ -85,23 +85,23 @@ export default function Sidebar({
           </Link>
 
           <Link
+            href="https://medium.com/@nishant19072003/how-i-created-an-order-matching-engine-33e0669be77a"
+            className="flex items-center justify-between px-2 py-1.5 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
+          >
+            <div className="flex items-center gap-2">
+              <Cog size={16} />
+              <span>Order Matching Engine</span>
+            </div>
+            <span className="text-gray-400 text-xs">↗</span>
+          </Link>
+
+          <Link
             href="https://gitlab.com/nishant19072003-group/livescript"
             className="flex items-center justify-between px-2 py-1.5 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
           >
             <div className="flex items-center gap-2">
               <SquareTerminal size={16} />
               <span>Code Editor</span>
-            </div>
-            <span className="text-gray-400 text-xs">↗</span>
-          </Link>
-
-          <Link
-            href="https://gitlab.com/nishant19072003-group/order-matching-engine"
-            className="flex items-center justify-between px-2 py-1.5 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
-          >
-            <div className="flex items-center gap-2">
-              <Cog size={16} />
-              <span>Order Matching Engine</span>
             </div>
             <span className="text-gray-400 text-xs">↗</span>
           </Link>

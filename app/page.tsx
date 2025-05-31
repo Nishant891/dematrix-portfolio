@@ -172,12 +172,11 @@ export default function Home() {
 
                   <h3 className="text-sm font-semibold mt-3 mb-2">Key Contributions:</h3>
                   <ul className="list-disc list-inside text-sm text-gray-600 space-y-1">
-                    <li>Built a Linux system from scratch (<span className="font-semibold">LFS</span>), deepening understanding of OS internals and kernel configurations.</li>
-                    <li>Successfully migrated legacy JavaScript code to React, enhancing application performance and maintainability.</li>
-                    <li>Achieved <span className="font-semibold">CCNA</span> certification, demonstrating expertise in networking concepts and routing protocols.</li>
-                    <li>Gained hands-on experience with Nutanix <span className="font-semibold">AHV</span> and <span className="font-semibold">AOS</span>, mastering hyper-converged infrastructure and virtual machine management.</li>
-                    <li>Explored virtualization technologies such as VMware <span className="font-semibold">ESXI</span>, deploying and managing virtual machines efficiently.</li>
-                    <li>Practiced real-world scenarios with virtualization platforms, including VM provisioning, network configuration, and resource optimization</li>
+                    <li>Engineered a Linux From Scratch (<span className="font-semibold">LFS</span>) system with custom kernel modules, bootloaders, and system initialization, gaining deep expertise in OS internals and low-level system configurations.</li>
+                    <li>Achieved <span className="font-semibold">CCNA</span> certification with hands-on implementation of network topologies, VLAN segmentation, OSPF routing protocols, and SDN architectures.</li>
+                    <li>Architected and deployed 50+ KVM-based virtual machines across Nutanix AHV clusters, implementing high-availability configurations with 99.9% uptime and automated failover logic</li>
+                    <li>Refactored 15+ legacy JavaScript components into modern React architecture, reducing technical debt by 30% and implementing component-based design patterns</li>
+                    <li>Explored virtualization technologies such as VMware <span className="font-semibold">ESXi</span>, deploying and managing virtual machines efficiently.</li>
                   </ul>
                 </div>
               </div>
