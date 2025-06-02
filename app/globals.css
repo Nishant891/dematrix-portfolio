@@ -226,7 +226,7 @@ margin-bottom: 1rem;
 }
 
 .markdown-content code {
-  background-color: #f4f4f4;
+  color: #facc15;            /* yellow text (Tailwind's yellow-400) */
   padding: 3px 5px;
   border-radius: 3px;
   font-size: 0.95rem;
