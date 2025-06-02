@@ -170,7 +170,7 @@ export default function Sidebar({
           </Link>
 
           <Link
-            href="https://www.linkedin.com/posts/nishant-sharma-771653245_ccna-was-issued-by-cisco-to-nishant-sharma-activity-7296562986209394688-eU_O?utm_source=share&utm_medium=member_desktop&rcm=ACoAADzJRYUBSjOtk00cJH1rfFOc_T83M736tuI"
+            href="https://www.credly.com/badges/031f7a62-ffb7-4844-89d4-81474aa85a46/linked_in?t=srqfv7"
             className="flex items-center justify-between px-2 py-1.5 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
           >
             <div className="flex items-center gap-2">

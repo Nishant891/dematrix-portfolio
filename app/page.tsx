@@ -263,7 +263,7 @@ export default function Home() {
               <ul className="list-disc list-inside text-sm text-gray-600 space-y-1">
                 <li>Participated in numerous hackathons, winning several for innovative solutions and optimized code.</li>
                 <li>Solved <span className="font-semibold">300+ problems</span> on LeetCode, mastering <span className="font-semibold">Data Structures and Algorithms</span>.</li>
-                <li>Acquired deep algorithmic thinking through C++, with expertise in <span className="font-semibold">Dynamic Programming</span> and <span className="font-semibold">Graph Theory</span>.</li>
+                <li>Acquired deep algorithmic thinking through C++, with expertise in <span className="font-semibold">Trees</span>, <span className="font-semibold">Backtracking</span> and <span className="font-semibold">Graph Theory</span>.</li>
                 <li>Developed the <span className="font-semibold">Game of Life</span> in C++, optimized it with <span className="font-semibold">WebAssembly</span>, and hosted it online for interactive play.</li>
               </ul>
 
@@ -272,12 +272,11 @@ export default function Home() {
                 During my internship at <span className="font-semibold">Nutanix</span>, I gained hands-on experience with <span className="font-semibold">Cloud Infrastructure</span> and <span className="font-semibold">Virtualization Technologies</span>. I managed <span className="font-semibold">VMs and clusters</span> on <span className="font-semibold">Nutanix and ESXi Datacenters</span>, ensuring <span className="font-semibold">high availability, load balancing</span>, and <span className="font-semibold">fault tolerance</span>. My contributions included:
               </p>
               <ul className="list-disc list-inside text-sm text-gray-600 space-y-1">
-                    <li>Built a Linux system from scratch (<span className="font-semibold">LFS</span>), deepening understanding of OS internals and kernel configurations.</li>
-                    <li>Successfully migrated legacy JavaScript code to React, enhancing application performance and maintainability.</li>
-                    <li>Achieved <span className="font-semibold">CCNA</span> certification, demonstrating expertise in networking concepts and routing protocols.</li>
-                    <li>Gained hands-on experience with Nutanix <span className="font-semibold">AHV</span> and <span className="font-semibold">AOS</span>, mastering hyper-converged infrastructure and virtual machine management.</li>
-                    <li>Explored virtualization technologies such as VMware <span className="font-semibold">ESXI</span>, deploying and managing virtual machines efficiently.</li>
-                    <li>Practiced real-world scenarios with virtualization platforms, including VM provisioning, network configuration, and resource optimization</li>
+                <li>Engineered a Linux From Scratch (<span className="font-semibold">LFS</span>) system with custom kernel modules, bootloaders, and system initialization, gaining deep expertise in OS internals and low-level system configurations.</li>
+                <li>Achieved <span className="font-semibold">CCNA</span> certification with hands-on implementation of network topologies, VLAN segmentation, OSPF routing protocols, and SDN architectures.</li>
+                <li>Architected and deployed 50+ KVM-based virtual machines across Nutanix AHV clusters, implementing high-availability configurations with 99.9% uptime and automated failover logic</li>
+                <li>Refactored 15+ legacy JavaScript components into modern React architecture, reducing technical debt by 30% and implementing component-based design patterns</li>
+                <li>Explored virtualization technologies such as VMware <span className="font-semibold">ESXi</span>, deploying and managing virtual machines efficiently.</li>
               </ul>
 
               <h2 className="text-sm font-semibold mt-4">🐧 Linux Enthusiast:</h2>
@@ -287,11 +286,11 @@ export default function Home() {
 
               <h2 className="text-sm font-semibold mt-4">🛠️ Technical Proficiencies:</h2>
               <ul className="list-disc list-inside text-sm text-gray-600 space-y-1">
-                <li><span className="font-semibold">Languages:</span> JavaScript, Python, C++, SQL, Bash</li>
+                <li><span className="font-semibold">Languages:</span> TypeScript, Python, C++, SQL</li>
                 <li><span className="font-semibold">Frontend:</span> React, Next.js, TailwindCSS</li>
                 <li><span className="font-semibold">Backend:</span> Node.js, Express, REST APIs</li>
-                <li><span className="font-semibold">DevOps & Cloud:</span> Docker, Git, Nutanix, VMware ESXi, Linux (Arch)</li>
-                <li><span className="font-semibold">Tools & Platforms:</span> WebAssembly, LeetCode, GitHub, VSCode</li>
+                <li><span className="font-semibold">DevOps & Cloud:</span> Docker, Git, Nutanix AHV and AOS, VMware ESXi, Linux (Arch)</li>
+                <li><span className="font-semibold">Tools & Platforms:</span> WebAssembly, LeetCode, GitHub, VSCode, Postman</li>
               </ul>
             </section>
           </div>
