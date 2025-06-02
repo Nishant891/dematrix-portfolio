@@ -27,7 +27,7 @@ const statements: Statement[] = [
   {
     input: 'resume',
     return:
-      '"<a rel="noopener" href="../public/nishant_resume.pdf" target="_blank">nishant.pdf</a>"',
+      '"<a rel="noopener" href="/nishant_resume.pdf" target="_blank">nishant.pdf</a>"',
   },
   {
     input: 'education',
