@@ -214,24 +214,39 @@ list-style-type: disc;
 
 /* Code blocks */
 .markdown-content pre {
-background-color: #1e1e1e; /* dark black background */
-color: #facc15;            /* yellow text (Tailwind's yellow-400) */
-padding: 15px;
-border-radius: 5px;
-overflow-x: auto;
-word-wrap: break-word;
-font-size: 0.95rem;
-font-family: "Roboto", sans-serif;
-margin-bottom: 1rem;
+  background-color: #0d1117;            /* deep black for contrast */
+  color: #facc15;                       /* yellow text */
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-size: 0.95rem;
+  font-family: 'Fira Code', 'Roboto Mono', monospace;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  border: 1px solid #333;
 }
 
+/* Inline code */
 .markdown-content code {
-  color: #facc15;            /* yellow text (Tailwind's yellow-400) */
-  padding: 3px 5px;
-  border-radius: 3px;
+  background-color: #1e1e1e;           /* consistent with block background */
+  color: #facc15;                      /* yellow */
+  padding: 2px 6px;
+  border-radius: 4px;
   font-size: 0.95rem;
-  font-family: "Roboto", sans-serif;
-  }
+  font-family: 'Fira Code', 'Roboto Mono', monospace;
+  white-space: pre-wrap;
+}
+
+/* Optional: Add a scrollbar style for consistency */
+.markdown-content pre::-webkit-scrollbar {
+  height: 6px;
+}
+.markdown-content pre::-webkit-scrollbar-thumb {
+  background-color: #444;
+  border-radius: 4px;
+}
+
 
 
 /* Tables */
