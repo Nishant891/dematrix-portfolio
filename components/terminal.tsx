@@ -27,7 +27,7 @@ const statements: Statement[] = [
   {
     input: 'resume',
     return:
-      '"<a rel="noopener" href="/nishant_resume.pdf" target="_blank">nishant.pdf</a>"',
+      '"<a rel="noopener" href="/Resume(Nishant Sharma).pdf" target="_blank">Resume(Nishant Sharma).pdf</a>"',
   },
   {
     input: 'education',
@@ -37,7 +37,7 @@ const statements: Statement[] = [
   {
     input: 'skills',
     return:
-      '["Cpp", "TypeScript", "Python", "Next.js", "Express", "Git", "Networking", "Linux", "Docker", "Cloud"]',
+      '["Cpp", "TypeScript", "Python", "Next.js", "Express.js", "Raylib", "WebAssembly", "Linux", "Docker", "Tmux", "Hyperconverged Infrastructure (HCI)" "Git", "CCNA", "Nutanix Cloud Platform", "VMware", "PostgreSQL", "Redis"]',
   },
 ];
 

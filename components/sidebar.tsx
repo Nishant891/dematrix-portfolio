@@ -63,16 +63,6 @@ export default function Sidebar({
         <div className="mt-6 mb-3 text-xs uppercase text-gray-500 font-medium">Projects</div>
 
         <nav className="space-y-1">
-          {/* <Link
-            href="#"
-            className="flex items-center justify-between px-2 py-1.5 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
-          >
-            <div className="flex items-center gap-2">
-              <Bot size={16} />
-              <span>Upstox MCP Bot</span>
-            </div>
-            <span className="text-gray-400 text-xs">↗</span>
-          </Link> */}
           <Link
             href="https://mekka-00.vercel.app/"
             className="flex items-center justify-between px-2 py-1.5 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
@@ -89,7 +79,7 @@ export default function Sidebar({
             className="flex items-center justify-between px-2 py-1.5 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
           >
             <div className="flex items-center gap-2">
-              <Cog size={16} />
+              <Cog size={20} />
               <span>Order Matching Engine</span>
             </div>
             <span className="text-gray-400 text-xs">↗</span>
@@ -101,44 +91,7 @@ export default function Sidebar({
           >
             <div className="flex items-center gap-2">
               <SquareTerminal size={16} />
-              <span>Code Editor</span>
-            </div>
-            <span className="text-gray-400 text-xs">↗</span>
-          </Link>
-        </nav>
-
-        <div className="mt-6 mb-3 text-xs uppercase text-gray-500 font-medium">Mini Projects</div>
-
-        <nav className="space-y-1">
-          <Link
-            href="https://gitlab.com/nishant19072003-group/socialmediamarketingbot"
-            className="flex items-center justify-between px-2 py-1.5 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
-          >
-            <div className="flex items-center gap-2">
-              <TrendingUp size={20} />
-              <span>Social Media Marketing Bot</span>
-            </div>
-            <span className="text-gray-400 text-xs">↗</span>
-          </Link>
-
-          <Link
-            href="https://gitlab.com/nishant19072003-group/emailclassifier"
-            className="flex items-center justify-between px-2 py-1.5 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
-          >
-            <div className="flex items-center gap-2">
-              <MailSearch size={16} />
-              <span>Email Classifier</span>
-            </div>
-            <span className="text-gray-400 text-xs">↗</span>
-          </Link>
-
-          <Link
-            href="https://freelancefinder.vercel.app/"
-            className="flex items-center justify-between px-2 py-1.5 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
-          >
-            <div className="flex items-center gap-2">
-              <UserSearch size={16} />
-              <span>Freelance Finder</span>
+              <span>LiveScript</span>
             </div>
             <span className="text-gray-400 text-xs">↗</span>
           </Link>
@@ -170,6 +123,17 @@ export default function Sidebar({
           </Link>
 
           <Link
+            href="https://medium.com/@nishant19072003"
+            className="flex items-center justify-between px-2 py-1.5 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
+          >
+            <div className="flex items-center gap-2">
+              <NotebookPen size={16} />
+              <span>Medium</span>
+            </div>
+            <span className="text-gray-400 text-xs">↗</span>
+          </Link>
+
+          <Link
             href="https://www.credly.com/badges/031f7a62-ffb7-4844-89d4-81474aa85a46/linked_in?t=srqfv7"
             className="flex items-center justify-between px-2 py-1.5 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
           >
@@ -180,13 +144,50 @@ export default function Sidebar({
             <span className="text-gray-400 text-xs">↗</span>
           </Link>
 
+        </nav>
+
+        <div className="mt-6 mb-3 text-xs uppercase text-gray-500 font-medium">Mini Projects</div>
+
+        <nav className="space-y-1">
           <Link
-            href="https://medium.com/@nishant19072003"
+              href="https://t.me/coAlphaQuant_bot"
+              className="flex items-center justify-between px-2 py-1.5 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
+            >
+            <div className="flex items-center gap-2">
+              <Bot size={16} />
+              <span>Alpha Bot</span>
+            </div>
+            <span className="text-gray-400 text-xs">↗</span>
+          </Link>
+          <Link
+            href="https://gitlab.com/nishant19072003-group/socialmediamarketingbot"
             className="flex items-center justify-between px-2 py-1.5 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
           >
             <div className="flex items-center gap-2">
-              <NotebookPen size={16} />
-              <span>Medium</span>
+              <TrendingUp size={20} />
+              <span>Social Media Marketing Bot</span>
+            </div>
+            <span className="text-gray-400 text-xs">↗</span>
+          </Link>
+
+          <Link
+            href="https://gitlab.com/nishant19072003-group/emailclassifier"
+            className="flex items-center justify-between px-2 py-1.5 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
+          >
+            <div className="flex items-center gap-2">
+              <MailSearch size={16} />
+              <span>Email Classifier</span>
+            </div>
+            <span className="text-gray-400 text-xs">↗</span>
+          </Link>
+
+          <Link
+            href="https://freelancefinder.vercel.app/"
+            className="flex items-center justify-between px-2 py-1.5 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
+          >
+            <div className="flex items-center gap-2">
+              <UserSearch size={16} />
+              <span>Freelance Finder</span>
             </div>
             <span className="text-gray-400 text-xs">↗</span>
           </Link>

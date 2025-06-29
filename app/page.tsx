@@ -118,18 +118,18 @@ export default function Home() {
               <h1 className="text-2xl font-semibold">
                 Hey, I'm Nishant. I'm a {" "}
                 <Link href="#" className="text-blue-600 hover:underline">
-                  software engineer
+                  Software Engineer
                 </Link>
                 {" "}
                 and a{" "}
                 <Link href="#" className="text-blue-600 hover:underline">
-                  writer
+                  Writer
                 </Link>
                 .
               </h1>
 
               <p className="text-gray-700">
-                I am an engineer. I build {<Link href="#" className="text-red-600 hover:underline">
+                I am an Engineer. I build {<Link href="#" className="text-red-600 hover:underline">
                   products
                 </Link>}, solve {<Link href="#" className="text-green-600 hover:underline">
                   problems
@@ -148,17 +148,17 @@ export default function Home() {
               <div className="grid gap-2">
                 <div className="flex flex-wrap items-center justify-between py-2 gap-2">
                   <Link
-                    href="https://www.linkedin.com/company/nutanix/posts/?feedView=all"
-                    className="flex items-center gap-2 hover:text-blue-600"
-                  >
-                    <img src="/nutanix.png" alt="Nutanix" className="w-6 h-6" />
-                    <span>Nutanix</span>
-                  </Link>
-                  <Link
                     href="https://www.linkedin.com/posts/nishant-sharma-771653245_cryptoformars-activity-7277700315490000896-aHYD?utm_source=share&utm_medium=member_desktop&rcm=ACoAADzJRYUBSjOtk00cJH1rfFOc_T83M736tuI"
-                    className="text-gray-500 text-sm hover:text-blue-600 flex flex-wrap items-center gap-1"
+                    className="text-gray-500 text-md hover:text-blue-600 flex flex-wrap items-center gap-1"
                   >
                     <span>System Reliability Engineer, Intern</span>
+                  </Link>
+                  <Link
+                    href="https://www.linkedin.com/company/nutanix/posts/?feedView=all"
+                    className="flex items-center gap-2"
+                  >
+                    <img src="/nutanix.png" alt="Nutanix" className="w-6 h-6" />
+                    <span className="text-gray-400 hover:text-blue-600">Nutanix</span>
                     <span className="text-gray-400">(Jan 2025 - June 2025)</span>
                   </Link>
                 </div>
@@ -167,17 +167,25 @@ export default function Home() {
                 <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
                   <h3 className="text-sm font-semibold mb-2">Internship Experience:</h3>
                   <p className="text-sm text-gray-600">
-                    Interned at Nutanix, gaining hands-on experience with cloud infrastructure, virtualization, and networking. Managed VMs and clusters on <span className="font-semibold">ESXi</span> and Nutanix, migrated legacy <span className="font-semibold">JavaScript</span> pages to <span className="font-semibold">React</span>, enhanced API communication, and wrote <span className="font-semibold">Docker</span> scripts for containerized deployments.
+                  Executed infrastructure and full-stack development tasks across Linux systems, networking, containerization, and virtualization.
+                  Built and deployed real environments, wrote production-ready scripts, and actively contributed to backend integration, system
+                  provisioning, and internal platform improvements.
                   </p>
 
                   <h3 className="text-sm font-semibold mt-3 mb-2">Key Contributions:</h3>
-                  <ul className="list-disc list-inside text-sm text-gray-600 space-y-1">
-                    <li>Engineered a Linux From Scratch (<span className="font-semibold">LFS</span>) system with custom kernel modules, bootloaders, and system initialization, gaining deep expertise in OS internals and low-level system configurations.</li>
-                    <li>Achieved <span className="font-semibold">CCNA</span> certification with hands-on implementation of network topologies, VLAN segmentation, OSPF routing protocols, and SDN architectures.</li>
-                    <li>Architected and deployed 50+ KVM-based virtual machines across Nutanix AHV clusters, implementing high-availability configurations with 99.9% uptime and automated failover logic</li>
-                    <li>Refactored 15+ legacy JavaScript components into modern React architecture, reducing technical debt by 30% and implementing component-based design patterns</li>
-                    <li>Explored virtualization technologies such as VMware <span className="font-semibold">ESXi</span>, deploying and managing virtual machines efficiently.</li>
-                  </ul>
+                  <ul class="list-disc list-inside text-sm text-gray-600 space-y-3">
+                    <li>Built and managed <span class="font-semibold text-blue-600">Linux-based environments</span>, including installing and configuring distros, managing users and permissions, and handling system-level tasks like mounting storage, setting up <span class="font-semibold">SSH</span>, and configuring services.</li>
+                    
+                    <li>Provisioned and managed virtual machines using <span class="font-semibold text-orange-600">VMware vSphere</span>, <span class="font-semibold text-orange-600">ESXi</span>, and <span class="font-semibold text-green-600">Nutanix AHV</span>, uploaded ISOs, created custom VMs, and handled resource allocation and performance tuning.</li>
+                    
+                    <li>Configured enterprise networks based on <span class="font-semibold text-purple-600">CCNA standards</span>, including <span class="font-semibold">VLANs</span>, routing, IP addressing, and switch configuration and resolved connectivity issues across virtual and physical interfaces.</li>
+                    
+                    <li>Developed automated container workflows by creating user-specific <span class="font-semibold text-blue-500">Docker containers</span>, writing <span class="font-semibold">Bash scripts</span> for setup and deployment, and using <span class="font-semibold">docker-compose</span> to manage multi-container environments.</li>
+                    
+                    <li>Migrated frontend apps from <span class="font-semibold text-yellow-600">JavaScript</span> to <span class="font-semibold text-cyan-600">React</span> and designed and developed <span class="font-semibold text-green-500">Django REST APIs</span> to support dashboards built with <span class="font-semibold text-gray-800">Next.js</span>, enabling smoother data flow and real-time updates.</li>
+                    
+                    <li>Managed and monitored <span class="font-semibold text-green-600">HCI clusters</span> with <span class="font-semibold text-green-600">Nutanix AOS</span> and <span class="font-semibold text-green-600">Prism Central</span>, added nodes, configured high availability settings, and ensured cluster health and resource balance.</li>
+                </ul>
                 </div>
               </div>
             </section>
@@ -262,35 +270,45 @@ export default function Home() {
               <h2 className="text-sm font-semibold mt-4">🏆 Competitive Programming & Hackathons:</h2>
               <ul className="list-disc list-inside text-sm text-gray-600 space-y-1">
                 <li>Participated in numerous hackathons, winning several for innovative solutions and optimized code.</li>
-                <li>Solved <span className="font-semibold">300+ problems</span> on LeetCode, mastering <span className="font-semibold">Data Structures and Algorithms</span>.</li>
+                <li>Solved <span className="font-semibold">360+ problems</span> on LeetCode, mastering <span className="font-semibold">Data Structures and Algorithms</span>.</li>
                 <li>Acquired deep algorithmic thinking through C++, with expertise in <span className="font-semibold">Trees</span>, <span className="font-semibold">Backtracking</span> and <span className="font-semibold">Graph Theory</span>.</li>
                 <li>Developed the <span className="font-semibold">Game of Life</span> in C++, optimized it with <span className="font-semibold">WebAssembly</span>, and hosted it online for interactive play.</li>
               </ul>
 
               <h2 className="text-sm font-semibold mt-4">☁️ Cloud Computing & DevOps Exposure:</h2>
-              <p className="text-gray-700 text-sm">
-                During my internship at <span className="font-semibold">Nutanix</span>, I gained hands-on experience with <span className="font-semibold">Cloud Infrastructure</span> and <span className="font-semibold">Virtualization Technologies</span>. I managed <span className="font-semibold">VMs and clusters</span> on <span className="font-semibold">Nutanix and ESXi Datacenters</span>, ensuring <span className="font-semibold">high availability, load balancing</span>, and <span className="font-semibold">fault tolerance</span>. My contributions included:
+              <p class="text-gray-700 text-sm mb-4">
+                  During my internship at <span class="font-semibold">Nutanix</span>, I executed <span class="font-semibold">infrastructure and full-stack development tasks</span> across <span class="font-semibold">Linux systems</span>, <span class="font-semibold">networking</span>, <span class="font-semibold">containerization</span>, and <span class="font-semibold">virtualization</span>. Built and deployed real environments, wrote production-ready scripts, and actively contributed to <span class="font-semibold">backend integration</span>, <span class="font-semibold">system provisioning</span>, and <span class="font-semibold">internal platform improvements</span>.
               </p>
-              <ul className="list-disc list-inside text-sm text-gray-600 space-y-1">
-                <li>Engineered a Linux From Scratch (<span className="font-semibold">LFS</span>) system with custom kernel modules, bootloaders, and system initialization, gaining deep expertise in OS internals and low-level system configurations.</li>
-                <li>Achieved <span className="font-semibold">CCNA</span> certification with hands-on implementation of network topologies, VLAN segmentation, OSPF routing protocols, and SDN architectures.</li>
-                <li>Architected and deployed 50+ KVM-based virtual machines across Nutanix AHV clusters, implementing high-availability configurations with 99.9% uptime and automated failover logic</li>
-                <li>Refactored 15+ legacy JavaScript components into modern React architecture, reducing technical debt by 30% and implementing component-based design patterns</li>
-                <li>Explored virtualization technologies such as VMware <span className="font-semibold">ESXi</span>, deploying and managing virtual machines efficiently.</li>
+        
+              <h3 class="font-semibold text-gray-800 text-sm mb-2">Key Contributions:</h3>
+              
+              <ul class="list-disc list-inside text-sm text-gray-600 space-y-2">
+                  <li>Built and managed <span class="font-semibold text-blue-600">Linux-based environments</span>, including installing and configuring distros, managing users and permissions, and handling system-level tasks like mounting storage, setting up <span class="font-semibold">SSH</span>, and configuring services.</li>
+                  
+                  <li>Provisioned and managed virtual machines using <span class="font-semibold text-orange-600">VMware vSphere</span>, <span class="font-semibold text-orange-600">ESXi</span>, and <span class="font-semibold text-green-600">Nutanix AHV</span>, uploaded ISOs, created custom VMs, and handled resource allocation and performance tuning.</li>
+                  
+                  <li>Configured enterprise networks based on <span class="font-semibold text-purple-600">CCNA standards</span>, including <span class="font-semibold">VLANs</span>, routing, IP addressing, and switch configuration and resolved connectivity issues across virtual and physical interfaces.</li>
+                  
+                  <li>Developed automated container workflows by creating user-specific <span class="font-semibold text-blue-500">Docker containers</span>, writing <span class="font-semibold">Bash scripts</span> for setup and deployment, and using <span class="font-semibold">docker-compose</span> to manage multi-container environments.</li>
+                  
+                  <li>Migrated frontend apps from <span class="font-semibold text-yellow-600">JavaScript</span> to <span class="font-semibold text-cyan-600">React</span> and designed and developed <span class="font-semibold text-green-500">Django REST APIs</span> to support dashboards built with <span class="font-semibold text-gray-800">Next.js</span>, enabling smoother data flow and real-time updates.</li>
+                  
+                  <li>Managed and monitored <span class="font-semibold text-green-600">HCI clusters</span> with <span class="font-semibold text-green-600">Nutanix AOS</span> and <span class="font-semibold text-green-600">Prism Central</span>, added nodes, configured high availability settings, and ensured cluster health and resource balance.</li>
               </ul>
 
               <h2 className="text-sm font-semibold mt-4">🐧 Linux Enthusiast:</h2>
               <p className="text-gray-700 text-sm">
-                My love for Linux is unmatched. I am an <span className="font-semibold">Arch Linux</span> user, embracing its simplicity, control, and customizability. From configuring system-level operations to writing shell scripts for automation, Linux remains my go-to environment for development and experimentation. Oh, and yes... <span className="italic">I am an Arch user, by the way.</span> 😎
+                My love for Linux is unmatched. I am a <span className="font-semibold">Linux</span> user, embracing its simplicity, control, and customizability. From configuring system-level operations to writing shell scripts for automation, Linux remains my go-to environment for development and experimentation. Oh, and yes... <span className="italic">I am an Arch user, by the way.</span> 😎
               </p>
 
               <h2 className="text-sm font-semibold mt-4">🛠️ Technical Proficiencies:</h2>
-              <ul className="list-disc list-inside text-sm text-gray-600 space-y-1">
-                <li><span className="font-semibold">Languages:</span> TypeScript, Python, C++, SQL</li>
-                <li><span className="font-semibold">Frontend:</span> React, Next.js, TailwindCSS</li>
-                <li><span className="font-semibold">Backend:</span> Node.js, Express, REST APIs</li>
-                <li><span className="font-semibold">DevOps & Cloud:</span> Docker, Git, Nutanix AHV and AOS, VMware ESXi, Linux (Arch)</li>
-                <li><span className="font-semibold">Tools & Platforms:</span> WebAssembly, LeetCode, GitHub, VSCode, Postman</li>
+              <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+                  <li><span class="font-semibold">Programming Languages:</span> C++, TypeScript, Python</li>
+                  <li><span class="font-semibold">Frameworks & Runtime Systems:</span> Next.js, Express.js, NumPy, Pandas, Raylib, WebAssembly</li>
+                  <li><span class="font-semibold">Systems & Infrastructure:</span> Arch Linux, Docker, Tmux, Hyperconverged Infrastructure (HCI)</li>
+                  <li><span class="font-semibold">Networking & Cloud:</span> CCNA, Nutanix Cloud Platform, VMware, Vultr</li>
+                  <li><span class="font-semibold">Development Tools:</span> Git, Postman, Socket.io</li>
+                  <li><span class="font-semibold">Databases:</span> MongoDB, PostgreSQL, Redis</li>
               </ul>
             </section>
           </div>
