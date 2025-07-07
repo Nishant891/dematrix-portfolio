@@ -37,7 +37,7 @@ const statements: Statement[] = [
   {
     input: 'skills',
     return:
-      '["Cpp", "TypeScript", "Python", "Next.js", "Express.js", "Raylib", "WebAssembly", "Linux", "Docker", "Tmux", "Hyperconverged Infrastructure (HCI)" "Git", "CCNA", "Nutanix Cloud Platform", "VMware", "PostgreSQL", "Redis"]',
+      '["Cpp", "TypeScript", "Python", "Next.js", "Express.js", "Raylib", "WebAssembly", "Linux", "Docker", "Tmux", "Git", "CCNA", "Nutanix Cloud Platform", "VMware", "PostgreSQL", "Redis"]',
   },
 ];
 

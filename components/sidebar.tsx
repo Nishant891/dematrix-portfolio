@@ -112,6 +112,17 @@ export default function Sidebar({
           </Link>
 
           <Link
+            href="https://github.com/Nishant891"
+            className="flex items-center justify-between px-2 py-1.5 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
+          >
+            <div className="flex items-center gap-2">
+              <img src="https://skillicons.dev/icons?i=github&theme=light" alt="Github" className="w-6 h-6" />
+              <span>Github</span>
+            </div>
+            <span className="text-gray-400 text-xs">↗</span>
+          </Link>
+
+          <Link
             href="https://gitlab.com/nishant19072003-group"
             className="flex items-center justify-between px-2 py-1.5 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
           >
