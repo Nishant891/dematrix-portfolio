@@ -63,7 +63,7 @@ export default function Sidebar({
         <div className="mt-6 mb-3 text-xs uppercase text-gray-500 font-medium">Projects</div>
 
         <nav className="space-y-1">
-          {/* <Link
+          <Link
             href="/GameOfLife/game-of-life.html"
             className="flex items-center justify-between px-2 py-1.5 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
             target="_blank"
@@ -74,9 +74,9 @@ export default function Sidebar({
               <span>Game of Life</span>
             </div>
             <span className="text-gray-400 text-xs">↗</span>
-          </Link> */}
+          </Link>
 
-          <Link
+          {/* <Link
             href="https://mekka-00.vercel.app/"
             className="flex items-center justify-between px-2 py-1.5 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
           >
@@ -85,7 +85,7 @@ export default function Sidebar({
               <span>Game of Life</span>
             </div>
             <span className="text-gray-400 text-xs">↗</span>
-          </Link>
+          </Link> */}
 
           <Link
             href="https://medium.com/@nishant19072003/how-i-created-an-order-matching-engine-33e0669be77a"
