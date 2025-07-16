@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game of Life | Wasm Games</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #cc38ff;
+      --primary-dark: #cc38ff;
+      --secondary: #05d9e8;
+      --dark: #000000;
+      --dark-gray: #121212;
+      --light: #ffffff;
+      --accent: #00a3ff;
+      --bg-dark: #000000;
+      --text-light: #ffffff;
+      --text-gray: #8a939b;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Header */
+    #header {
+      width: 100%;
+      height: 70px;
+      background-color: rgba(0, 0, 0, 0.9);
+      backdrop-filter: blur(5px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      box-sizing: border-box;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+
+    .header-title {
+      color: white;
+      font-size: 24px;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .emscripten {
+      padding-right: 0;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+    }
+
+    div.emscripten {
+      text-align: center;
+    }
+
+    div.emscripten_border {
+      border: none;
+      max-width: 800px;
+      margin: 90px auto 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    canvas.emscripten {
+      border: 0 none;
+      background: #000;
+      width: 100%;
+      display: block;
+    }
+
+    .spinner {
+      height: 30px;
+      width: 30px;
+      margin: 0;
+      margin-right: 7px;
+      margin-left: 7px;
+      display: inline-block;
+      vertical-align: middle;
+      -webkit-animation: rotation .8s linear infinite;
+      -moz-animation: rotation .8s linear infinite;
+      -o-animation: rotation .8s linear infinite;
+      animation: rotation .8s linear infinite;
+      border-left: 3px solid rgba(255, 255, 255, 0.4);
+      border-right: 3px solid rgba(255, 255, 255, 0.4);
+      border-bottom: 3px solid rgba(255, 255, 255, 0.4);
+      border-top: 3px solid white;
+      border-radius: 100%;
+      background-color: transparent;
+    }
+
+    @-webkit-keyframes rotation {
+      from { -webkit-transform: rotate(0); }
+      to { -webkit-transform: rotate(360deg); }
+    }
+
+    @-moz-keyframes rotation {
+      from { -moz-transform: rotate(0); }
+      to { -moz-transform: rotate(360deg); }
+    }
+
+    @-o-keyframes rotation {
+      from { -o-transform: rotate(0); }
+      to { -o-transform: rotate(360deg); }
+    }
+
+    @keyframes rotation {
+      from { transform: rotate(0); }
+      to { transform: rotate(360deg); }
+    }
+
+    #status {
+      display: inline-block;
+      vertical-align: middle;
+      color: white;
+      font-weight: 500;
+      font-size: 16px;
+      margin-left: 10px;
+    }
+
+    #progress {
+      height: 0;
+      width: 0;
+    }
+
+    #controls {
+      display: flex;
+      align-items: center;
+    }
+
+    #output {
+      border: none;
+      padding: 10px;
+      width: 100%;
+      max-width: 800px;
+      height: 100px;
+      margin: 0 auto 20px;
+      display: block;
+      background-color: #f5f5f5;
+      color: #333;
+      font-family: 'Roboto Mono', monospace;
+      border-radius: 8px;
+      outline: 0;
+      box-sizing: border-box;
+      border: 1px solid #ddd;
+    }
+
+    .btn {
+      background-color: var(--primary);
+      border: none;
+      color: white;
+      text-decoration: none;
+      cursor: pointer;
+      padding: 8px 16px;
+      margin-left: 10px;
+      border-radius: 10px;
+      font-weight: 500;
+      font-size: 14px;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-icon {
+      margin-right: 6px;
+      font-size: 16px;
+    }
+
+    #controls-modal {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      color: #333;
+      padding: 25px;
+      border-radius: 10px;
+      z-index: 1000;
+      max-width: 400px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    #controls-modal h3 {
+      text-align: center;
+      margin-top: 0;
+      color: var(--primary);
+      font-size: 20px;
+    }
+
+    #controls-modal ul {
+      list-style-type: none;
+      padding-left: 10px;
+      line-height: 1.6;
+    }
+
+    #controls-modal li {
+      margin-bottom: 8px;
+    }
+
+    #controls-modal strong {
+      color: var(--primary);
+      background-color: rgba(32, 129, 226, 0.1);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+
+    #controls-modal button {
+      padding: 8px 20px;
+      cursor: pointer;
+      background-color: var(--primary);
+      border: none;
+      color: white;
+      border-radius: 10px;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    #controls-modal button:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .modal-footer {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .status-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: var(--primary);
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+
+    .back-button:hover {
+      color: var(--primary-dark);
+      transform: translateX(-5px);
+    }
+
+    @media (max-width: 600px) {
+      #header {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+      }
+
+      .header-title {
+        margin-bottom: 10px;
+      }
+
+      #controls {
+        margin-top: 10px;
+      }
+
+      .btn {
+        padding: 6px 12px;
+        font-size: 12px;
+      }
+
+      div.emscripten_border {
+        margin-top: 120px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="header">
+    <h1 class="header-title">Game of Life</h1>
+    <div class="status-container">
+      <div class="spinner" id="spinner"></div>
+      <div id="status">Downloading :)</div>
+    </div>
+    <span id="controls">
+      <button class="btn" id="btn-show-controls" onclick="toggleControlsModal()">
+        <span class="btn-icon">ℹ️</span> Controls
+      </button>
+      <button class="btn" onclick='location.href="https://github.com/Nishant891/GameOfLife"'>
+        <span class="btn-icon">📜</span> Source
+      </button>
+      <button class="btn" onclick="Module.requestFullscreen(!1,!1)">
+        <span class="btn-icon">🖵</span> Fullscreen
+      </button>
+    </span>
+    <div class="emscripten"><progress hidden id="progress" max="100" value="0"></progress></div>
+  </div>
+
+  <div class="container">
+    <a href="/" class="back-button">← Back to Wasm Games</a>
+    <div class="emscripten_border">
+      <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" tabindex="-1"></canvas>
+    </div>
+    <textarea id="output" rows="8"></textarea>
+  </div>
+
+  <!-- Controls Modal -->
+  <div id="controls-modal">
+    <h3>Game Controls</h3>
+    <ul>
+      <li>• Press <strong>1-6</strong>: Load preconfigured patterns</li>
+      <li>• Press <strong>R</strong>: Generate random pattern</li>
+      <li>• Press <strong>C</strong>: Clear the grid</li>
+      <li>• Press <strong>Enter</strong>: Start simulation</li>
+      <li>• Press <strong>Space</strong>: Pause simulation</li>
+    </ul>
+    <div class="modal-footer">
+      <button onclick="toggleControlsModal()">Close</button>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/gh/eligrey/FileSaver.js/dist/FileSaver.min.js"></script>
+  <script>
+    function saveFileFromMEMFSToDisk(e, a) { var i, o = FS.readFile(e); i = new Blob([o.buffer], { type: "application/octet-binary" }), saveAs(i, a) }
+    
+    function toggleControlsModal() {
+      var modal = document.getElementById('controls-modal');
+      if (modal.style.display === 'none' || modal.style.display === '') {
+        modal.style.display = 'block';
+      } else {
+        modal.style.display = 'none';
+      }
+    }
+  </script>
+  <script>var statusElement = document.querySelector("#status"), progressElement = document.querySelector("#progress"), spinnerElement = document.querySelector("#spinner"), Module = { preRun: [], postRun: [], print: function () { var e = document.querySelector("#output"); return e && (e.value = ""), function (t) { arguments.length > 1 && (t = Array.prototype.slice.call(arguments).join(" ")), console.log(t), e && (e.value += t + "\n", e.scrollTop = e.scrollHeight) } }(), printErr: function (e) { arguments.length > 1 && (e = Array.prototype.slice.call(arguments).join(" ")), console.error(e) }, canvas: function () { var e = document.querySelector("#canvas"); return e.addEventListener("webglcontextlost", (function (e) { alert("WebGL context lost. You will need to reload the page."), e.preventDefault() }), !1), e }(), setStatus: function (e) { if (Module.setStatus.last || (Module.setStatus.last = { time: Date.now(), text: "" }), e !== Module.setStatus.last.text) { var t = e.match(/([^(]+)$$(\d+(\.\d+)?)\/(\d+)$$/), n = Date.now(); t && n - Module.setStatus.last.time < 30 || (Module.setStatus.last.time = n, Module.setStatus.last.text = e, t ? (e = t[1], progressElement.value = 100 * parseInt(t[2]), progressElement.max = 100 * parseInt(t[4]), progressElement.hidden = !0, spinnerElement.hidden = !1) : (progressElement.value = null, progressElement.max = null, progressElement.hidden = !0, e || (spinnerElement.style.display = "none")), statusElement.innerHTML = e) } }, totalDependencies: 0, monitorRunDependencies: function (e) { this.totalDependencies = Math.max(this.totalDependencies, e), Module.setStatus(e ? "Preparing... (" + (this.totalDependencies - e) + "/" + this.totalDependencies + ")" : "All downloads complete.") } }; Module.setStatus("Downloading..."), window.onerror = function () { Module.setStatus("Exception thrown, see JavaScript console"), spinnerElement.style.display = "none", Module.setStatus = function (e) { e && Module.printErr("[post-exception status] " + e) } }</script>
+  <script src="index.js" async></script>
+</body>
+</html>

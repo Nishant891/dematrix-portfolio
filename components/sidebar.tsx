@@ -64,15 +64,28 @@ export default function Sidebar({
 
         <nav className="space-y-1">
           <Link
+            href="/GameOfLife/game-of-life.html"
+            className="flex items-center justify-between px-2 py-1.5 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div className="flex items-center gap-2">
+              <Gamepad size={16} />
+              <span>Game of Life</span>
+            </div>
+            <span className="text-gray-400 text-xs">↗</span>
+          </Link>
+
+          {/* <Link
             href="https://mekka-00.vercel.app/"
             className="flex items-center justify-between px-2 py-1.5 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
           >
             <div className="flex items-center gap-2">
               <Gamepad size={16} />
-              <span>Wasm Games</span>
+              <span>Game of Life</span>
             </div>
             <span className="text-gray-400 text-xs">↗</span>
-          </Link>
+          </Link> */}
 
           <Link
             href="https://medium.com/@nishant19072003/how-i-created-an-order-matching-engine-33e0669be77a"
@@ -112,23 +125,23 @@ export default function Sidebar({
           </Link>
 
           <Link
-            href="https://github.com/Nishant891"
-            className="flex items-center justify-between px-2 py-1.5 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
-          >
-            <div className="flex items-center gap-2">
-              <img src="https://skillicons.dev/icons?i=github&theme=light" alt="Github" className="w-6 h-6" />
-              <span>Github</span>
-            </div>
-            <span className="text-gray-400 text-xs">↗</span>
-          </Link>
-
-          <Link
             href="https://gitlab.com/nishant19072003-group"
             className="flex items-center justify-between px-2 py-1.5 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
           >
             <div className="flex items-center gap-2">
               <img src="https://skillicons.dev/icons?i=gitlab&theme=light" alt="Github" className="w-6 h-6" />
               <span>Gitlab</span>
+            </div>
+            <span className="text-gray-400 text-xs">↗</span>
+          </Link>
+
+          <Link
+            href="https://github.com/Nishant891"
+            className="flex items-center justify-between px-2 py-1.5 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
+          >
+            <div className="flex items-center gap-2">
+              <img src="https://skillicons.dev/icons?i=github&theme=light" alt="Github" className="w-6 h-6" />
+              <span>Github</span>
             </div>
             <span className="text-gray-400 text-xs">↗</span>
           </Link>
@@ -161,12 +174,12 @@ export default function Sidebar({
 
         <nav className="space-y-1">
           <Link
-              href="https://t.me/coAlphaQuant_bot"
+              href="https://github.com/Nishant891/SNAP"
               className="flex items-center justify-between px-2 py-1.5 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
             >
             <div className="flex items-center gap-2">
               <Bot size={16} />
-              <span>Alpha Bot</span>
+              <span>Chatbot</span>
             </div>
             <span className="text-gray-400 text-xs">↗</span>
           </Link>
