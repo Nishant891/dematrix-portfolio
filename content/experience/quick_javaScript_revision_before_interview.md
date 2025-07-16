@@ -1,7 +1,5 @@
 # Quick JavaScript Revision Before Interview
 
-![image](https://miro.medium.com/v2/resize:fit:1100/format:webp/1*6CD7PR_sKA1NLiXe-t-Fbw.png)
-
 ## Core Concepts
 
 ### 1. Hoisting

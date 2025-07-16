@@ -1,7 +1,5 @@
 # 🧨 Firecracker MicroVM installation and boot up
 
-![image](https://miro.medium.com/v2/resize:fit:1100/format:webp/1*0VA8RCGqNNF1Fpb-Q_BkUg.jpeg)
-
 This guide walks you through installing Firecracker, setting up the network, and running a virtual machine using a simple bash script.
 
 ---

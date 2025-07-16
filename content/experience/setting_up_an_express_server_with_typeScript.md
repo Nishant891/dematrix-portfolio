@@ -1,7 +1,5 @@
 # Setting Up an Express Server with TypeScript
 
-![image](https://miro.medium.com/v2/resize:fit:1100/format:webp/1*Kr4nmDsnz64DHdw6X-8miw.webp)
-
 You can initialize the project with TypeScript following my previous article.
 
 This article talks about creating an Express server.
