@@ -71,21 +71,10 @@ export default function Sidebar({
           >
             <div className="flex items-center gap-2">
               <Gamepad size={16} />
-              <span>Game of Life</span>
+              <span>Game Of Life</span>
             </div>
             <span className="text-gray-400 text-xs">↗</span>
           </Link>
-
-          {/* <Link
-            href="https://mekka-00.vercel.app/"
-            className="flex items-center justify-between px-2 py-1.5 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
-          >
-            <div className="flex items-center gap-2">
-              <Gamepad size={16} />
-              <span>Game of Life</span>
-            </div>
-            <span className="text-gray-400 text-xs">↗</span>
-          </Link> */}
 
           <Link
             href="https://medium.com/@nishant19072003/how-i-created-an-order-matching-engine-33e0669be77a"
@@ -125,7 +114,7 @@ export default function Sidebar({
           </Link>
 
           <Link
-            href="https://gitlab.com/nishant19072003-group"
+            href="https://gitlab.com/nishant19072003"
             className="flex items-center justify-between px-2 py-1.5 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
           >
             <div className="flex items-center gap-2">
