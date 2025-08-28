@@ -157,7 +157,7 @@ export default function Home() {
                     href="https://www.linkedin.com/company/buglerock-capital/"
                     className="flex items-center gap-2"
                   >
-                    <img src="/buglerock.png" alt="BugleRock Capital" className="w-6 h-6" />
+                    <img src="/buglerock.webp" alt="BugleRock Capital" className="w-6 h-6" />
                     <span className="text-gray-400 hover:text-blue-600">BugleRock Capital</span>
                     <span className="text-gray-400">(Aug 2025)</span>
                   </Link>
@@ -203,7 +203,7 @@ export default function Home() {
                     href="https://www.linkedin.com/posts/nishant-sharma-771653245_cryptoformars-activity-7277700315490000896-aHYD?utm_source=share&utm_medium=member_desktop&rcm=ACoAADzJRYUBSjOtk00cJH1rfFOc_T83M736tuI"
                     className="text-gray-500 text-md hover:text-blue-600 flex flex-wrap items-center gap-1"
                   >
-                    <span>System Reliability Engineer, Intern</span>
+                    <span>System Reliability Engineer | Intern</span>
                   </Link>
                   <Link
                     href="https://www.linkedin.com/company/nutanix/posts/?feedView=all"
