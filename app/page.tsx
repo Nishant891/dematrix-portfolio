@@ -143,7 +143,7 @@ export default function Home() {
             </section>
 
             <section className="space-y-4">
-              <div className="text-gray-500 text-sm">Work</div>
+              <div className="text-gray-500 text-md">Work</div>
 
               <div className="grid gap-2">
                 <div className="flex flex-wrap items-center justify-between py-2 gap-2">
@@ -243,7 +243,7 @@ export default function Home() {
             </section>
 
             <section className="space-y-4">
-              <div className="text-gray-500 text-sm">Online</div>
+              <div className="text-gray-500 text-md">Online</div>
 
               <div className="grid gap-2">
 
