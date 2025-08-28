@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { Home, BookOpen, Layers, Tent, Paintbrush, Shield, Zap, Twitter, Youtube, Github, Bean, Pickaxe, Bot, Castle, SquareTerminal, Globe, UserSearch, MailSearch, Gamepad, Megaphone, Cog, TrendingUp, NotebookPen } from "lucide-react"
+import { Home, BookOpen, Layers, Landmark, Tent, Paintbrush, Shield, Zap, Twitter, Youtube, Github, Bean, Pickaxe, Bot, Castle, SquareTerminal, Globe, UserSearch, MailSearch, Gamepad, Megaphone, Cog, TrendingUp, NotebookPen, ArrowLeftRight, Sigma } from "lucide-react"
 
 export default function Sidebar({
   activePage,
@@ -63,6 +63,19 @@ export default function Sidebar({
         <div className="mt-6 mb-3 text-xs uppercase text-gray-500 font-medium">Projects</div>
 
         <nav className="space-y-1">
+          <Link
+            href="https://secintel.tech"
+            className="flex items-center justify-between px-2 py-1.5 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div className="flex items-center gap-2">
+              <Landmark size={16} />
+              <span>SEC Filing Analyzer</span>
+            </div>
+            <span className="text-gray-400 text-xs">↗</span>
+          </Link>
+
           <Link
             href="/GameOfLife/game-of-life.html"
             className="flex items-center justify-between px-2 py-1.5 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
@@ -163,6 +176,26 @@ export default function Sidebar({
 
         <nav className="space-y-1">
           <Link
+              href="https://github.com/Nishant891/benford-analysis"
+              className="flex items-center justify-between px-2 py-1.5 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
+            >
+            <div className="flex items-center gap-2">
+              <Sigma size={16} />
+              <span>Benford's Analysis</span>
+            </div>
+            <span className="text-gray-400 text-xs">↗</span>
+          </Link>
+          <Link
+              href="https://github.com/Nishant891/arbitrage"
+              className="flex items-center justify-between px-2 py-1.5 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
+            >
+            <div className="flex items-center gap-2">
+              <ArrowLeftRight size={16} />
+              <span>Arbitrage</span>
+            </div>
+            <span className="text-gray-400 text-xs">↗</span>
+          </Link>
+          <Link
               href="https://github.com/Nishant891/SNAP"
               className="flex items-center justify-between px-2 py-1.5 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
             >
@@ -178,7 +211,7 @@ export default function Sidebar({
           >
             <div className="flex items-center gap-2">
               <TrendingUp size={20} />
-              <span>Social Media Marketing Bot</span>
+              <span>Auto Comment</span>
             </div>
             <span className="text-gray-400 text-xs">↗</span>
           </Link>
@@ -195,12 +228,12 @@ export default function Sidebar({
           </Link>
 
           <Link
-            href="https://freelancefinder.vercel.app/"
+            href="https://brunel0.vercel.app/"
             className="flex items-center justify-between px-2 py-1.5 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
           >
             <div className="flex items-center gap-2">
               <UserSearch size={16} />
-              <span>Freelance Finder</span>
+              <span>Brunel</span>
             </div>
             <span className="text-gray-400 text-xs">↗</span>
           </Link>

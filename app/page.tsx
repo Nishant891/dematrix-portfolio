@@ -148,6 +148,58 @@ export default function Home() {
               <div className="grid gap-2">
                 <div className="flex flex-wrap items-center justify-between py-2 gap-2">
                   <Link
+                    href="https://www.buglerockcapital.com"
+                    className="text-gray-500 text-md hover:text-blue-600 flex flex-wrap items-center gap-1"
+                  >
+                    <span>Technical Consultant | Freelance</span>
+                  </Link>
+                  <Link
+                    href="https://www.linkedin.com/company/buglerock-capital/"
+                    className="flex items-center gap-2"
+                  >
+                    <img src="/buglerock.png" alt="BugleRock Capital" className="w-6 h-6" />
+                    <span className="text-gray-400 hover:text-blue-600">BugleRock Capital</span>
+                    <span className="text-gray-400">(Aug 2025)</span>
+                  </Link>
+                </div>
+
+                <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                  <h3 className="text-sm font-semibold mb-2">Consulting Experience:</h3>
+                  <p className="text-sm text-gray-600">
+                    Contributed to <span className="font-semibold text-blue-600">deckit.ai</span> by enhancing
+                    frontend architecture, optimizing API usage, and ensuring cost efficiency in production systems.
+                  </p>
+
+                  <h3 className="text-sm font-semibold mt-3 mb-2">Key Contributions:</h3>
+                  <ul className="list-disc list-inside text-sm text-gray-600 space-y-3">
+                    <li>
+                      Built <span className="font-semibold text-cyan-600">streaming functionality</span> with{" "}
+                      <span className="font-semibold text-gray-800">Next.js</span>, enabling smooth real-time updates.
+                    </li>
+
+                    <li>
+                      Integrated third-party <span className="font-semibold text-purple-600">APIs</span> and implemented{" "}
+                      <span className="font-semibold text-pink-600">dynamic CSS injection</span> for improved UI flexibility.
+                    </li>
+
+                    <li>
+                      Refactored and modularized the existing codebase, improving{" "}
+                      <span className="font-semibold text-green-600">efficiency</span>, maintainability, and performance.
+                    </li>
+
+                    <li>
+                      Optimized API usage by restructuring backend calls, reducing{" "}
+                      <span className="font-semibold text-orange-600">Claude API</span> requests by{" "}
+                      <span className="font-semibold text-blue-600">40%</span>, significantly cutting operational costs.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+
+              <div className="grid gap-2">
+                <div className="flex flex-wrap items-center justify-between py-2 gap-2">
+                  <Link
                     href="https://www.linkedin.com/posts/nishant-sharma-771653245_cryptoformars-activity-7277700315490000896-aHYD?utm_source=share&utm_medium=member_desktop&rcm=ACoAADzJRYUBSjOtk00cJH1rfFOc_T83M736tuI"
                     className="text-gray-500 text-md hover:text-blue-600 flex flex-wrap items-center gap-1"
                   >
@@ -167,25 +219,25 @@ export default function Home() {
                 <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
                   <h3 className="text-sm font-semibold mb-2">Internship Experience:</h3>
                   <p className="text-sm text-gray-600">
-                  Executed infrastructure and full-stack development tasks across Linux systems, networking, containerization, and virtualization.
-                  Built and deployed real environments, wrote production-ready scripts, and actively contributed to backend integration, system
-                  provisioning, and internal platform improvements.
+                    Executed infrastructure and full-stack development tasks across Linux systems, networking, containerization, and virtualization.
+                    Built and deployed real environments, wrote production-ready scripts, and actively contributed to backend integration, system
+                    provisioning, and internal platform improvements.
                   </p>
 
                   <h3 className="text-sm font-semibold mt-3 mb-2">Key Contributions:</h3>
-                  <ul class="list-disc list-inside text-sm text-gray-600 space-y-3">
-                    <li>Built and managed <span class="font-semibold text-blue-600">Linux-based environments</span>, including installing and configuring distros, managing users and permissions, and handling system-level tasks like mounting storage, setting up <span class="font-semibold">SSH</span>, and configuring services.</li>
-                    
-                    <li>Provisioned and managed virtual machines using <span class="font-semibold text-orange-600">VMware vSphere</span>, <span class="font-semibold text-orange-600">ESXi</span>, and <span class="font-semibold text-green-600">Nutanix AHV</span>, uploaded ISOs, created custom VMs, and handled resource allocation and performance tuning.</li>
-                    
-                    <li>Configured enterprise networks based on <span class="font-semibold text-purple-600">CCNA standards</span>, including <span class="font-semibold">VLANs</span>, routing, IP addressing, and switch configuration and resolved connectivity issues across virtual and physical interfaces.</li>
-                    
-                    <li>Developed automated container workflows by creating user-specific <span class="font-semibold text-blue-500">Docker containers</span>, writing <span class="font-semibold">Bash scripts</span> for setup and deployment, and using <span class="font-semibold">docker-compose</span> to manage multi-container environments.</li>
-                    
-                    <li>Migrated frontend apps from <span class="font-semibold text-yellow-600">JavaScript</span> to <span class="font-semibold text-cyan-600">React</span> and designed and developed <span class="font-semibold text-green-500">Django REST APIs</span> to support dashboards built with <span class="font-semibold text-gray-800">Next.js</span>, enabling smoother data flow and real-time updates.</li>
-                    
-                    <li>Managed and monitored <span class="font-semibold text-green-600">HCI clusters</span> with <span class="font-semibold text-green-600">Nutanix AOS</span> and <span class="font-semibold text-green-600">Prism Central</span>, added nodes, configured high availability settings, and ensured cluster health and resource balance.</li>
-                </ul>
+                  <ul className="list-disc list-inside text-sm text-gray-600 space-y-3">
+                    <li>Built and managed <span className="font-semibold text-blue-600">Linux-based environments</span>, including installing and configuring distros, managing users and permissions, and handling system-level tasks like mounting storage, setting up <span className="font-semibold">SSH</span>, and configuring services.</li>
+
+                    <li>Provisioned and managed virtual machines using <span className="font-semibold text-orange-600">VMware vSphere</span>, <span className="font-semibold text-orange-600">ESXi</span>, and <span className="font-semibold text-green-600">Nutanix AHV</span>, uploaded ISOs, created custom VMs, and handled resource allocation and performance tuning.</li>
+
+                    <li>Configured enterprise networks based on <span className="font-semibold text-purple-600">CCNA standards</span>, including <span className="font-semibold">VLANs</span>, routing, IP addressing, and switch configuration and resolved connectivity issues across virtual and physical interfaces.</li>
+
+                    <li>Developed automated container workflows by creating user-specific <span className="font-semibold text-blue-500">Docker containers</span>, writing <span className="font-semibold">Bash scripts</span> for setup and deployment, and using <span className="font-semibold">docker-compose</span> to manage multi-container environments.</li>
+
+                    <li>Migrated frontend apps from <span className="font-semibold text-yellow-600">JavaScript</span> to <span className="font-semibold text-cyan-600">React</span> and designed and developed <span className="font-semibold text-green-500">Django REST APIs</span> to support dashboards built with <span className="font-semibold text-gray-800">Next.js</span>, enabling smoother data flow and real-time updates.</li>
+
+                    <li>Managed and monitored <span className="font-semibold text-green-600">HCI clusters</span> with <span className="font-semibold text-green-600">Nutanix AOS</span> and <span className="font-semibold text-green-600">Prism Central</span>, added nodes, configured high availability settings, and ensured cluster health and resource balance.</li>
+                  </ul>
                 </div>
               </div>
             </section>
@@ -226,7 +278,7 @@ export default function Home() {
                 </div>
               </div>
             </section>
-            
+
           </div>
         )}
 
@@ -276,24 +328,24 @@ export default function Home() {
               </ul>
 
               <h2 className="text-sm font-semibold mt-4">☁️ Cloud Computing & DevOps Exposure:</h2>
-              <p class="text-gray-700 text-sm mb-4">
-                  During my internship at <span class="font-semibold">Nutanix</span>, I executed <span class="font-semibold">infrastructure and full-stack development tasks</span> across <span class="font-semibold">Linux systems</span>, <span class="font-semibold">networking</span>, <span class="font-semibold">containerization</span>, and <span class="font-semibold">virtualization</span>. Built and deployed real environments, wrote production-ready scripts, and actively contributed to <span class="font-semibold">backend integration</span>, <span class="font-semibold">system provisioning</span>, and <span class="font-semibold">internal platform improvements</span>.
+              <p className="text-gray-700 text-sm mb-4">
+                During my internship at <span className="font-semibold">Nutanix</span>, I executed <span className="font-semibold">infrastructure and full-stack development tasks</span> across <span className="font-semibold">Linux systems</span>, <span className="font-semibold">networking</span>, <span className="font-semibold">containerization</span>, and <span className="font-semibold">virtualization</span>. Built and deployed real environments, wrote production-ready scripts, and actively contributed to <span className="font-semibold">backend integration</span>, <span className="font-semibold">system provisioning</span>, and <span className="font-semibold">internal platform improvements</span>.
               </p>
-        
-              <h3 class="font-semibold text-gray-800 text-sm mb-2">Key Contributions:</h3>
-              
-              <ul class="list-disc list-inside text-sm text-gray-600 space-y-2">
-                  <li>Built and managed <span class="font-semibold text-blue-600">Linux-based environments</span>, including installing and configuring distros, managing users and permissions, and handling system-level tasks like mounting storage, setting up <span class="font-semibold">SSH</span>, and configuring services.</li>
-                  
-                  <li>Provisioned and managed virtual machines using <span class="font-semibold text-orange-600">VMware vSphere</span>, <span class="font-semibold text-orange-600">ESXi</span>, and <span class="font-semibold text-green-600">Nutanix AHV</span>, uploaded ISOs, created custom VMs, and handled resource allocation and performance tuning.</li>
-                  
-                  <li>Configured enterprise networks based on <span class="font-semibold text-purple-600">CCNA standards</span>, including <span class="font-semibold">VLANs</span>, routing, IP addressing, and switch configuration and resolved connectivity issues across virtual and physical interfaces.</li>
-                  
-                  <li>Developed automated container workflows by creating user-specific <span class="font-semibold text-blue-500">Docker containers</span>, writing <span class="font-semibold">Bash scripts</span> for setup and deployment, and using <span class="font-semibold">docker-compose</span> to manage multi-container environments.</li>
-                  
-                  <li>Migrated frontend apps from <span class="font-semibold text-yellow-600">JavaScript</span> to <span class="font-semibold text-cyan-600">React</span> and designed and developed <span class="font-semibold text-green-500">Django REST APIs</span> to support dashboards built with <span class="font-semibold text-gray-800">Next.js</span>, enabling smoother data flow and real-time updates.</li>
-                  
-                  <li>Managed and monitored <span class="font-semibold text-green-600">HCI clusters</span> with <span class="font-semibold text-green-600">Nutanix AOS</span> and <span class="font-semibold text-green-600">Prism Central</span>, added nodes, configured high availability settings, and ensured cluster health and resource balance.</li>
+
+              <h3 className="font-semibold text-gray-800 text-sm mb-2">Key Contributions:</h3>
+
+              <ul className="list-disc list-inside text-sm text-gray-600 space-y-2">
+                <li>Built and managed <span className="font-semibold text-blue-600">Linux-based environments</span>, including installing and configuring distros, managing users and permissions, and handling system-level tasks like mounting storage, setting up <span className="font-semibold">SSH</span>, and configuring services.</li>
+
+                <li>Provisioned and managed virtual machines using <span className="font-semibold text-orange-600">VMware vSphere</span>, <span className="font-semibold text-orange-600">ESXi</span>, and <span className="font-semibold text-green-600">Nutanix AHV</span>, uploaded ISOs, created custom VMs, and handled resource allocation and performance tuning.</li>
+
+                <li>Configured enterprise networks based on <span className="font-semibold text-purple-600">CCNA standards</span>, including <span className="font-semibold">VLANs</span>, routing, IP addressing, and switch configuration and resolved connectivity issues across virtual and physical interfaces.</li>
+
+                <li>Developed automated container workflows by creating user-specific <span className="font-semibold text-blue-500">Docker containers</span>, writing <span className="font-semibold">Bash scripts</span> for setup and deployment, and using <span className="font-semibold">docker-compose</span> to manage multi-container environments.</li>
+
+                <li>Migrated frontend apps from <span className="font-semibold text-yellow-600">JavaScript</span> to <span className="font-semibold text-cyan-600">React</span> and designed and developed <span className="font-semibold text-green-500">Django REST APIs</span> to support dashboards built with <span className="font-semibold text-gray-800">Next.js</span>, enabling smoother data flow and real-time updates.</li>
+
+                <li>Managed and monitored <span className="font-semibold text-green-600">HCI clusters</span> with <span className="font-semibold text-green-600">Nutanix AOS</span> and <span className="font-semibold text-green-600">Prism Central</span>, added nodes, configured high availability settings, and ensured cluster health and resource balance.</li>
               </ul>
 
               <h2 className="text-sm font-semibold mt-4">🐧 Linux Enthusiast:</h2>
@@ -302,13 +354,13 @@ export default function Home() {
               </p>
 
               <h2 className="text-sm font-semibold mt-4">🛠️ Technical Proficiencies:</h2>
-              <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
-                  <li><span class="font-semibold">Programming Languages:</span> C++, TypeScript, Python</li>
-                  <li><span class="font-semibold">Frameworks & Runtime Systems:</span> Next.js, Express.js, NumPy, Pandas, Raylib, WebAssembly</li>
-                  <li><span class="font-semibold">Systems & Infrastructure:</span> Arch Linux, Docker, Tmux, Hyperconverged Infrastructure (HCI)</li>
-                  <li><span class="font-semibold">Networking & Cloud:</span> CCNA, Nutanix Cloud Platform, VMware, Vultr</li>
-                  <li><span class="font-semibold">Development Tools:</span> Git, Postman, Socket.io</li>
-                  <li><span class="font-semibold">Databases:</span> MongoDB, PostgreSQL, Redis</li>
+              <ul className="list-disc list-inside text-sm text-gray-600 space-y-1">
+                <li><span className="font-semibold">Programming Languages:</span> C++, TypeScript, Python</li>
+                <li><span className="font-semibold">Frameworks & Runtime Systems:</span> Next.js, Express.js, NumPy, Pandas, Raylib, WebAssembly</li>
+                <li><span className="font-semibold">Systems & Infrastructure:</span> Arch Linux, Docker, Tmux, Hyperconverged Infrastructure (HCI)</li>
+                <li><span className="font-semibold">Networking & Cloud:</span> CCNA, Nutanix Cloud Platform, VMware, Vultr</li>
+                <li><span className="font-semibold">Development Tools:</span> Git, Postman, Socket.io</li>
+                <li><span className="font-semibold">Databases:</span> MongoDB, PostgreSQL, Redis</li>
               </ul>
             </section>
           </div>
