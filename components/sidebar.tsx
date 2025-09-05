@@ -77,6 +77,19 @@ export default function Sidebar({
           </Link>
 
           <Link
+            href="https://www.npmjs.com/package/jwt-authx"
+            className="flex items-center justify-between px-2 py-1.5 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div className="flex items-center gap-2">
+              <Gamepad size={16} />
+              <span>jwt-authx</span>
+            </div>
+            <span className="text-gray-400 text-xs">↗</span>
+          </Link>
+
+          <Link
             href="/GameOfLife/game-of-life.html"
             className="flex items-center justify-between px-2 py-1.5 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
             target="_blank"
