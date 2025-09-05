@@ -27,7 +27,7 @@ const statements: Statement[] = [
   {
     input: 'resume',
     return:
-      '"<a rel="noopener" className="text-green-700" href="/Resume(Nishant Sharma).pdf" target="_blank">Resume(Nishant Sharma).pdf</a>"',
+      '<a rel="noopener" style="color: #2563eb;" href="/Resume(Nishant Sharma).pdf" target="_blank">Resume(Nishant Sharma).pdf</a>',
   },
   {
     input: 'education',
@@ -43,7 +43,7 @@ const statements: Statement[] = [
 
 const Statement: React.FC<StatementProps> = ({ statement, isVisible }) => {
   if (!isVisible) return null;
-  
+    
   return (
     <div className="flex flex-col mb-3">
       <div className="flex items-center">
@@ -60,14 +60,14 @@ const Statement: React.FC<StatementProps> = ({ statement, isVisible }) => {
 
 const Cursor: React.FC = () => {
   const [visible, setVisible] = useState<boolean>(true);
-  
+    
   useEffect(() => {
     const interval = setInterval(() => {
       setVisible(prev => !prev);
     }, 600);
     return () => clearInterval(interval);
   }, []);
-  
+    
   return (
     <div className="flex items-center mt-1">
       <span className="text-green-400 mr-1">$</span>
@@ -79,10 +79,10 @@ const Cursor: React.FC = () => {
 const Terminal: React.FC = () => {
   const [visibleStatements, setVisibleStatements] = useState<number[]>([]);
   const [isTyping, setIsTyping] = useState<boolean>(true);
-  
+    
   useEffect(() => {
     let currentIndex = 0;
-    
+        
     const typingInterval = setInterval(() => {
       if (currentIndex < statements.length) {
         setVisibleStatements(prev => [...prev, currentIndex]);
@@ -92,10 +92,10 @@ const Terminal: React.FC = () => {
         clearInterval(typingInterval);
       }
     }, 700);
-    
+        
     return () => clearInterval(typingInterval);
   }, []);
-  
+    
   return (
     <div className="flex items-center justify-center w-full h-[400px] object-cover">
       <div className="w-full max-w-2xl rounded-lg overflow-hidden shadow-xl">
@@ -113,11 +113,11 @@ const Terminal: React.FC = () => {
             <span className="text-white">whoami</span>
           </div>
           <div className="text-yellow-300 pl-4 mb-6">Nishant Sharma - Software Engineer</div>
-          
+                    
           {statements.map((statement, index) => (
             <Statement key={index} statement={statement} isVisible={visibleStatements.includes(index)} />
           ))}
-          
+                    
           {isTyping ? null : <Cursor />}
         </div>
       </div>

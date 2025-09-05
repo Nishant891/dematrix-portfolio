@@ -257,12 +257,34 @@ export default function Home() {
                     Consulting Experience:
                   </h3>
                   <p className="text-sm text-gray-600">
-                    Improved deckit.ai (AI-powered presentation tool) by
-                    engineering real-time streaming functionality with Next.js,
-                    integrating external APIs, dynamically injecting CSS, and
-                    refactoring the codebase for efficiency. Implemented
-                    intelligent caching for near-zero latency data transfers and
-                    optimized API usage, reducing Claude API calls by 40% and
+                    Improved{" "}
+                    <span className="font-semibold text-blue-600">
+                      deckit.ai
+                    </span>{" "}
+                    (AI-powered presentation tool) by engineering{" "}
+                    <span className="font-semibold text-cyan-600">
+                      real-time streaming functionality
+                    </span>{" "}
+                    with{" "}
+                    <span className="font-semibold text-gray-800">Next.js</span>
+                    , integrating{" "}
+                    <span className="font-semibold text-purple-600">
+                      external APIs
+                    </span>
+                    , dynamically injecting{" "}
+                    <span className="font-semibold text-pink-600">CSS</span>,
+                    and refactoring the codebase for efficiency. Implemented
+                    <span className="font-semibold text-green-600">
+                      {" "}
+                      intelligent caching
+                    </span>{" "}
+                    for near-zero latency data transfers and optimized API
+                    usage, reducing{" "}
+                    <span className="font-semibold text-orange-600">
+                      Claude API
+                    </span>{" "}
+                    calls by{" "}
+                    <span className="font-semibold text-blue-600">40%</span> and
                     cutting operational costs.
                   </p>
 
@@ -331,12 +353,44 @@ export default function Home() {
                     Internship Experience:
                   </h3>
                   <p className="text-sm text-gray-600">
-                    Executed infrastructure and full-stack development tasks
-                    across Linux systems, networking, containerization, and
-                    virtualization, driving platform reliability and
-                    scalability. Delivered production-ready environments,
-                    automated provisioning, and backend integrations that
-                    improved system efficiency by 30%.
+                    Executed{" "}
+                    <span className="font-semibold text-blue-600">
+                      infrastructure
+                    </span>{" "}
+                    and{" "}
+                    <span className="font-semibold text-purple-600">
+                      full-stack development
+                    </span>{" "}
+                    tasks across{" "}
+                    <span className="font-semibold text-blue-600">
+                      Linux systems
+                    </span>
+                    ,{" "}
+                    <span className="font-semibold text-green-600">
+                      networking
+                    </span>
+                    ,{" "}
+                    <span className="font-semibold text-cyan-600">
+                      containerization
+                    </span>
+                    , and{" "}
+                    <span className="font-semibold text-orange-600">
+                      virtualization
+                    </span>
+                    , driving platform reliability and scalability. Delivered{" "}
+                    <span className="font-semibold text-green-500">
+                      production-ready environments
+                    </span>
+                    ,{" "}
+                    <span className="font-semibold text-purple-500">
+                      automated provisioning
+                    </span>
+                    , and{" "}
+                    <span className="font-semibold text-pink-600">
+                      backend integrations
+                    </span>{" "}
+                    that improved system efficiency by{" "}
+                    <span className="font-semibold text-blue-600">30%</span>.
                   </p>
 
                   <h3 className="text-sm font-semibold mt-3 mb-2">
