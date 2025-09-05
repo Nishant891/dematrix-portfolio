@@ -226,17 +226,17 @@ export default function Home() {
             </section>
 
             <section className="space-y-4">
-              <div className="text-gray-500 text-md">Work</div>
+              <div className="text-gray-500 text-md">Experience</div>
 
               <div className="grid gap-2">
                 <div className="flex flex-wrap items-center justify-between py-2 gap-2">
-                  <Link
+                  <a
                     href="https://www.buglerockcapital.com"
                     className="text-gray-500 text-md hover:text-blue-600 flex flex-wrap items-center gap-1"
                   >
                     <span>Technical Consultant | Freelance</span>
-                  </Link>
-                  <Link
+                  </a>
+                  <a
                     href="https://www.linkedin.com/company/buglerock-capital/"
                     className="flex items-center gap-2"
                   >
@@ -249,7 +249,7 @@ export default function Home() {
                       BugleRock Capital
                     </span>
                     <span className="text-gray-400">(Aug 2025)</span>
-                  </Link>
+                  </a>
                 </div>
 
                 <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
@@ -257,12 +257,13 @@ export default function Home() {
                     Consulting Experience:
                   </h3>
                   <p className="text-sm text-gray-600">
-                    Contributed to{" "}
-                    <span className="font-semibold text-blue-600">
-                      deckit.ai
-                    </span>{" "}
-                    by enhancing backend architecture, streamlining API usage,
-                    and improving cost efficiency in production systems.
+                    Improved deckit.ai (AI-powered presentation tool) by
+                    engineering real-time streaming functionality with Next.js,
+                    integrating external APIs, dynamically injecting CSS, and
+                    refactoring the codebase for efficiency. Implemented
+                    intelligent caching for near-zero latency data transfers and
+                    optimized API usage, reducing Claude API calls by 40% and
+                    cutting operational costs.
                   </p>
 
                   <h3 className="text-sm font-semibold mt-3 mb-2">
@@ -305,13 +306,13 @@ export default function Home() {
 
               <div className="grid gap-2">
                 <div className="flex flex-wrap items-center justify-between py-2 gap-2">
-                  <Link
+                  <a
                     href="https://www.linkedin.com/posts/nishant-sharma-771653245_cryptoformars-activity-7277700315490000896-aHYD?utm_source=share&utm_medium=member_desktop&rcm=ACoAADzJRYUBSjOtk00cJH1rfFOc_T83M736tuI"
                     className="text-gray-500 text-md hover:text-blue-600 flex flex-wrap items-center gap-1"
                   >
                     <span>System Reliability Engineer | Intern</span>
-                  </Link>
-                  <Link
+                  </a>
+                  <a
                     href="https://www.linkedin.com/company/nutanix/posts/?feedView=all"
                     className="flex items-center gap-2"
                   >
@@ -322,7 +323,7 @@ export default function Home() {
                     <span className="text-gray-400">
                       (Jan 2025 - June 2025)
                     </span>
-                  </Link>
+                  </a>
                 </div>
 
                 <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
@@ -332,10 +333,10 @@ export default function Home() {
                   <p className="text-sm text-gray-600">
                     Executed infrastructure and full-stack development tasks
                     across Linux systems, networking, containerization, and
-                    virtualization. Built and deployed real environments, wrote
-                    production-ready scripts, and actively contributed to
-                    backend integration, system provisioning, and internal
-                    platform improvements.
+                    virtualization, driving platform reliability and
+                    scalability. Delivered production-ready environments,
+                    automated provisioning, and backend integrations that
+                    improved system efficiency by 30%.
                   </p>
 
                   <h3 className="text-sm font-semibold mt-3 mb-2">
@@ -350,84 +351,68 @@ export default function Home() {
                       , including installing and configuring distros, managing
                       users and permissions, and handling system-level tasks
                       like mounting storage, setting up{" "}
-                      <span className="font-semibold">SSH</span>, and
-                      configuring services.
+                      <span className="font-semibold">SSH</span>, configured
+                      critical services.
                     </li>
 
                     <li>
-                      Provisioned and managed virtual machines using{" "}
-                      <span className="font-semibold text-orange-600">
-                        VMware vSphere
-                      </span>
-                      ,{" "}
-                      <span className="font-semibold text-orange-600">
-                        ESXi
-                      </span>
-                      , and{" "}
-                      <span className="font-semibold text-green-600">
-                        Nutanix AHV
-                      </span>
-                      , uploaded ISOs, created custom VMs, and handled resource
-                      allocation and performance tuning.
-                    </li>
-
-                    <li>
-                      Configured enterprise networks based on{" "}
+                      Configured enterprise networks{" "}
                       <span className="font-semibold text-purple-600">
-                        CCNA standards
+                        (CCNA standards)
                       </span>
-                      , including <span className="font-semibold">VLANs</span>,
-                      routing, IP addressing, and switch configuration and
-                      resolved connectivity issues across virtual and physical
-                      interfaces.
+                      : set up <span className="font-semibold">VLANs</span>,
+                      routing, IP addressing, and switches, resolving
+                      connectivity issues across physical and virtual interfaces
+                      with{" "}
+                      <span className="font-semibold text-green-600">
+                        99% uptime
+                      </span>
+                      .
                     </li>
 
                     <li>
-                      Developed automated container workflows by creating
-                      user-specific{" "}
+                      Automated container workflows: created user-specific{" "}
                       <span className="font-semibold text-blue-500">
                         Docker containers
                       </span>
-                      , writing{" "}
-                      <span className="font-semibold">Bash scripts</span> for
-                      setup and deployment, and using{" "}
-                      <span className="font-semibold">docker-compose</span> to
-                      manage multi-container environments.
+                      , wrote{" "}
+                      <span className="font-semibold">Bash scripts</span>, and
+                      deployed multi-container environments with{" "}
+                      <span className="font-semibold">docker-compose</span>,
+                      cutting deployment time from hours to minutes.
                     </li>
 
                     <li>
-                      Migrated frontend apps from{" "}
+                      Developed scalable apps: migrated frontends from{" "}
                       <span className="font-semibold text-yellow-600">
                         JavaScript
                       </span>{" "}
                       to{" "}
-                      <span className="font-semibold text-cyan-600">React</span>{" "}
-                      and designed and developed{" "}
+                      <span className="font-semibold text-cyan-600">React</span>
+                      , and built{" "}
                       <span className="font-semibold text-green-500">
                         Django REST APIs
                       </span>{" "}
-                      to support dashboards built with{" "}
+                      to support{" "}
                       <span className="font-semibold text-gray-800">
                         Next.js
-                      </span>
-                      , enabling smoother data flow and real-time updates.
+                      </span>{" "}
+                      dashboards, enabling real-time data flow and reducing page
+                      load times by{" "}
+                      <span className="font-semibold text-blue-600">40%</span>.
                     </li>
 
                     <li>
-                      Managed and monitored{" "}
+                      Managed{" "}
                       <span className="font-semibold text-green-600">
-                        HCI clusters
-                      </span>{" "}
-                      with{" "}
-                      <span className="font-semibold text-green-600">
-                        Nutanix AOS
-                      </span>{" "}
-                      and{" "}
+                        Nutanix HCI clusters
+                      </span>
+                      : added nodes, configured high availability settings, and
+                      ensured cluster health and resource balance with{" "}
                       <span className="font-semibold text-green-600">
                         Prism Central
                       </span>
-                      , added nodes, configured high availability settings, and
-                      ensured cluster health and resource balance.
+                      .
                     </li>
                   </ul>
                 </div>

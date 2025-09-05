@@ -83,7 +83,7 @@ export default function Sidebar({
             rel="noopener noreferrer"
           >
             <div className="flex items-center gap-2">
-              <Gamepad size={16} />
+              <Shield size={16} />
               <span>jwt-authx</span>
             </div>
             <span className="text-gray-400 text-xs">↗</span>
