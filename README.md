@@ -42,6 +42,3 @@ Each Markdown file will be automatically detected and rendered.
 ---
 
 That's it — write, save, and your articles show up instantly.
-
-```
-```
