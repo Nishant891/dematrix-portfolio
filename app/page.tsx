@@ -231,30 +231,126 @@ export default function Home() {
               <div className="grid gap-2">
                 <div className="flex flex-wrap items-center justify-between py-2 gap-2">
                   <a
-                    href="https://www.buglerockcapital.com"
+                    href="https://www.cohesity.com"
                     className="text-gray-500 text-md hover:text-blue-600 flex flex-wrap items-center gap-1"
                   >
-                    <span>Technical Consultant | Freelance</span>
+                    <span>SRE I | Full-time</span>
                   </a>
                   <a
-                    href="https://www.linkedin.com/company/buglerock-capital/"
+                    href="https://www.linkedin.com/company/cohesity/"
                     className="flex items-center gap-2"
                   >
                     <img
-                      src="/buglerock.webp"
-                      alt="BugleRock Capital"
+                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNq8Fruh4eJVVae1srl3cLjGvT3bsHFIOr0Q&s"
+                      alt="Cohesity"
                       className="w-6 h-6"
                     />
                     <span className="text-gray-400 hover:text-blue-600">
-                      BugleRock Capital
+                      Cohesity
                     </span>
-                    <span className="text-gray-400">(Aug 2025)</span>
+                    <span className="text-gray-400">(Jan 2026 – Present)</span>
                   </a>
                 </div>
 
                 <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
                   <h3 className="text-sm font-semibold mb-2">
-                    Consulting Experience:
+                    Professional Experience:
+                  </h3>
+                  <p className="text-sm text-gray-600">
+                    Working as a{" "}
+                    <span className="font-semibold text-blue-600">
+                      Technical Support Engineer
+                    </span>{" "}
+                    at Cohesity, providing timely and effective customer support
+                    by troubleshooting complex issues across{" "}
+                    <span className="font-semibold text-cyan-600">
+                      storage, networking, and virtualization
+                    </span>{" "}
+                    environments. Leveraging{" "}
+                    <span className="font-semibold text-gray-800">
+                      Linux system administration
+                    </span>{" "}
+                    and debugging tools to analyze problems, document
+                    investigations and resolutions, and collaborate closely with{" "}
+                    <span className="font-semibold text-purple-600">
+                      engineering and account management teams
+                    </span>
+                    . Focused on delivering an excellent customer experience
+                    while managing multiple cases efficiently and contributing
+                    to internal and customer-facing knowledge bases.
+                  </p>
+
+                  <h3 className="text-sm font-semibold mt-3 mb-2">
+                    Key Contributions:
+                  </h3>
+                  <ul className="list-disc list-inside text-sm text-gray-600 space-y-3">
+                    <li>
+                      Diagnosed and resolved customer issues across{" "}
+                      <span className="font-semibold text-cyan-600">
+                        storage systems, networking stacks, and virtualized
+                        environments
+                      </span>
+                      , ensuring minimal downtime and high customer
+                      satisfaction.
+                    </li>
+
+                    <li>
+                      Utilized{" "}
+                      <span className="font-semibold text-gray-800">
+                        Linux debugging and system administration tools
+                      </span>{" "}
+                      to perform deep root-cause analysis, document findings,
+                      and deliver accurate, actionable resolutions.
+                    </li>
+
+                    <li>
+                      Collaborated with{" "}
+                      <span className="font-semibold text-purple-600">
+                        engineering, SRE, and account teams
+                      </span>{" "}
+                      to escalate product issues, provide feedback, and improve
+                      product stability and support workflows.
+                    </li>
+
+                    <li>
+                      Managed multiple support cases simultaneously while
+                      contributing to{" "}
+                      <span className="font-semibold text-green-600">
+                        knowledge base articles
+                      </span>{" "}
+                      to improve support efficiency and long-term customer
+                      self-service.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="grid gap-2">
+                <div className="flex flex-wrap items-center justify-between py-2 gap-2">
+                  <a
+                    href="#"
+                    className="text-gray-500 text-md hover:text-blue-600 flex flex-wrap items-center gap-1"
+                  >
+                    <span>
+                      Fullstack Web Developer & Platform Engineer | Internship
+                    </span>
+                  </a>
+                  <a href="#" className="flex items-center gap-2">
+                    <img
+                      src="https://media.licdn.com/dms/image/v2/D560BAQHPao0B8uCJMA/company-logo_200_200/company-logo_200_200/0/1693216489946?e=2147483647&v=beta&t=IUjtLqa-v_sMxRobka-kLi7GZRtzjIakQ3velItsy4g"
+                      alt="Stealth Startup"
+                      className="w-6 h-6"
+                    />
+                    <span className="text-gray-400 hover:text-blue-600">
+                      Stealth Startup
+                    </span>
+                    <span className="text-gray-400">(Jul 2025 – Dec 2025)</span>
+                  </a>
+                </div>
+
+                <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                  <h3 className="text-sm font-semibold mb-2">
+                    Internship Experience:
                   </h3>
                   <p className="text-sm text-gray-600">
                     Improved{" "}
@@ -273,9 +369,14 @@ export default function Home() {
                     </span>
                     , dynamically injecting{" "}
                     <span className="font-semibold text-pink-600">CSS</span>,
-                    and refactoring the codebase for efficiency. Implemented
+                    and refactoring the codebase for efficiency. Built a{" "}
                     <span className="font-semibold text-green-600">
-                      {" "}
+                      WYSIWYG editor
+                    </span>{" "}
+                    allowing users to visually edit components with an
+                    interactive toolbar, supporting rich text formatting and
+                    live customization. Implemented{" "}
+                    <span className="font-semibold text-green-600">
                       intelligent caching
                     </span>{" "}
                     for near-zero latency data transfers and optimized API
@@ -295,32 +396,39 @@ export default function Home() {
                     <li>
                       Engineered{" "}
                       <span className="font-semibold text-cyan-600">
-                        real-time streaming functionality
+                        real-time streaming
                       </span>{" "}
-                      with{" "}
+                      infrastructure using{" "}
                       <span className="font-semibold text-gray-800">
                         Next.js
                       </span>
-                      , integrated{" "}
-                      <span className="font-semibold text-purple-600">
-                        third-party APIs
-                      </span>
-                      , and implemented{" "}
-                      <span className="font-semibold text-pink-600">
-                        dynamic CSS injection
-                      </span>{" "}
-                      to enhance flexibility and performance.
+                      , enabling low-latency AI-driven content generation and
+                      updates.
                     </li>
 
                     <li>
-                      Refactored and modularized the codebase, optimizing
-                      backend calls and reducing{" "}
+                      Developed a{" "}
+                      <span className="font-semibold text-green-600">
+                        WYSIWYG editor
+                      </span>{" "}
+                      with an interactive toolbar supporting rich text
+                      formatting, live component customization, and dynamic CSS
+                      injection.
+                    </li>
+
+                    <li>
+                      Designed and implemented{" "}
+                      <span className="font-semibold text-purple-600">
+                        intelligent caching
+                      </span>{" "}
+                      and optimized backend/API interactions, reducing{" "}
                       <span className="font-semibold text-orange-600">
                         Claude API
                       </span>{" "}
-                      requests by{" "}
+                      usage by{" "}
                       <span className="font-semibold text-blue-600">40%</span>,
-                      which improved maintainability and cut operational costs.
+                      significantly lowering infrastructure and operational
+                      costs.
                     </li>
                   </ul>
                 </div>
@@ -467,88 +575,6 @@ export default function Home() {
                         Prism Central
                       </span>
                       .
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-              <div className="grid gap-2">
-                <div className="flex flex-wrap items-center justify-between py-2 gap-2">
-                  <Link
-                    href="https://gdsc.community.dev/siliguri-institute-of-technology/"
-                    className="text-gray-500 text-md hover:text-blue-600 flex flex-wrap items-center gap-1"
-                  >
-                    <span>Backend Developer | Core Team</span>
-                  </Link>
-                  <Link
-                    href="https://gdsc.community.dev/siliguri-institute-of-technology/"
-                    className="flex items-center gap-2"
-                  >
-                    <img
-                      src="/gdsc.webp"
-                      alt="GDSC Siliguri"
-                      className="w-6 h-6 rounded-full"
-                    />
-                    <span className="text-gray-400 hover:text-blue-600">
-                      GDSC Siliguri
-                    </span>
-                    <span className="text-gray-400">(Jun 2022 – Jun 2024)</span>
-                  </Link>
-                </div>
-
-                <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
-                  <h3 className="text-sm font-semibold mb-2">
-                    Backend Contributions:
-                  </h3>
-                  <p className="text-sm text-gray-600">
-                    Developed and maintained the club website backend using{" "}
-                    <span className="font-semibold text-blue-600">
-                      Express.js
-                    </span>
-                    , designing and integrating{" "}
-                    <span className="font-semibold text-purple-600">
-                      REST APIs
-                    </span>
-                    , implementing{" "}
-                    <span className="font-semibold text-pink-600">
-                      rate limiting
-                    </span>
-                    , and deploying on{" "}
-                    <span className="font-semibold text-green-600">
-                      Google Cloud Platform (GCP)
-                    </span>{" "}
-                    with{" "}
-                    <span className="font-semibold text-gray-800">Nginx</span>{" "}
-                    as a reverse proxy. Optimized reliability and security,
-                    enabling smooth scaling for{" "}
-                    <span className="font-semibold text-blue-600">
-                      100+ active users
-                    </span>
-                    .
-                  </p>
-
-                  <h3 className="text-sm font-semibold mt-3 mb-2">
-                    Leadership & Community:
-                  </h3>
-                  <ul className="list-disc list-inside text-sm text-gray-600 space-y-3">
-                    <li>
-                      Led technical initiatives by conducting{" "}
-                      <span className="font-semibold text-cyan-600">
-                        webinars
-                      </span>{" "}
-                      and organizing{" "}
-                      <span className="font-semibold text-orange-600">
-                        AI & emerging tech workshops
-                      </span>
-                      .
-                    </li>
-                    <li>
-                      Mentored{" "}
-                      <span className="font-semibold text-blue-600">
-                        50+ peers
-                      </span>
-                      , strengthening the club’s developer community and
-                      fostering collaborative learning.
                     </li>
                   </ul>
                 </div>
