@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { Menu, X, Home, BookOpen, Layers } from "lucide-react"
+import { Menu, X, Home, BookOpen } from "lucide-react"
 
 export default function MobileSidebar({
   activePage,
@@ -23,7 +23,7 @@ export default function MobileSidebar({
         <div className="fixed inset-0 z-50 bg-white">
           <div className="p-5">
             <div className="flex justify-between items-center mb-6">
-              <h2 className="text-lg font-bold">Your Name</h2>
+              <h2 className="text-lg font-bold">Nishant Sharma</h2>
               <button onClick={() => setIsOpen(false)}>
                 <X size={24} />
               </button>
@@ -58,21 +58,6 @@ export default function MobileSidebar({
               >
                 <BookOpen size={16} />
                 <span>Writing</span>
-              </Link>
-
-              <Link
-                href="#"
-                className={`flex items-center gap-2 px-2 py-1.5 rounded-md text-sm ${
-                  activePage === "stack" ? "bg-gray-900 text-white" : "text-gray-700 hover:bg-gray-100"
-                }`}
-                onClick={(e) => {
-                  e.preventDefault()
-                  setActivePage("stack")
-                  setIsOpen(false)
-                }}
-              >
-                <Layers size={16} />
-                <span>Stack</span>
               </Link>
             </nav>
           </div>

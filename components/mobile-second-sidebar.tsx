@@ -72,70 +72,6 @@ const sampleArticleContent = {
   // Add other article contents here
 }
 
-// Sample stack data
-const stackItems = [
-  {
-    id: 1,
-    title: "React",
-    src: "https://skillicons.dev/icons?i=react",
-  },
-  {
-    id: 2,
-    title: "Next.js",
-    src: "https://skillicons.dev/icons?i=nextjs",
-  },
-  {
-    id: 3,
-    title: "Python",
-    src: "https://skillicons.dev/icons?i=python",
-  },
-  {
-    id: 4,
-    title: "C++",
-    src: "https://skillicons.dev/icons?i=cpp",
-  },
-  {
-    id: 5,
-    title: "Express",
-    src: "https://skillicons.dev/icons?i=express",
-  },
-  {
-    id: 6,
-    title: "Arch Linux",
-    src: "https://skillicons.dev/icons?i=arch",
-  },
-  {
-    id: 7,
-    title: "Docker",
-    src: "https://skillicons.dev/icons?i=docker",
-  },
-  {
-    id: 8,
-    title: "Git",
-    src: "https://skillicons.dev/icons?i=git",
-  },
-  {
-    id: 9,
-    title: "SQL",
-    src: "https://skillicons.dev/icons?i=mysql",
-  },
-  {
-    id: 10,
-    title: "Tailwind CSS",
-    src: "https://skillicons.dev/icons?i=tailwind",
-  },
-  {
-    id: 11,
-    title: "Vercel",
-    src: "https://skillicons.dev/icons?i=vercel",
-  },
-  {
-    id: 12,
-    title: "Bash",
-    src: "https://skillicons.dev/icons?i=bash",
-  },
-];
-
 interface BlogItem {
   slug: string
   type: string
@@ -145,18 +81,14 @@ interface BlogItem {
 export default function MobileSecondSidebar({
   activePage,
   activeArticle,
-  activeStack,
   setActiveArticle,
-  setActiveStack,
   setArticleContent,
   isVisible,
   onBack,
 }: {
   activePage: string
   activeArticle: string | null
-  activeStack: string | null
   setActiveArticle: (slug: string) => void
-  setActiveStack: (slug: string) => void
   setArticleContent?: (article: string) => void
   isVisible: boolean
   onBack: () => void
@@ -248,7 +180,7 @@ export default function MobileSecondSidebar({
           <button onClick={onBack} className="mr-3">
             <ArrowLeft size={20} />
           </button>
-          <h2 className="text-lg font-bold">{activePage === "writing" ? "Articles" : "Tech Stack"}</h2>
+          <h2 className="text-lg font-bold">Articles</h2>
         </div>
 
         {activePage === "writing" && (
@@ -282,19 +214,6 @@ export default function MobileSecondSidebar({
           </>
         )}
 
-        {activePage === "stack" && (
-          <div className="space-y-1">
-            {stackItems.map((item) => (
-              <div
-                key={item.id}
-                className="flex items-center gap-3 p-2 rounded-md hover:bg-gray-100 transition-colors"
-              >
-                <img src={item.src} alt={item.title} className="w-8 h-8" />
-                <span className="flex-1 text-sm font-medium">{item.title}</span>
-              </div>
-            ))}
-          </div>
-        )}
       </div>
     </div>
   )
