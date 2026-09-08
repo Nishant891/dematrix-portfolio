@@ -167,14 +167,14 @@ export default function WritingSidebar({
   return (
     <aside className="w-64 border-r border-gray-200 h-screen sticky top-0 overflow-y-auto bg-white">
       <div className="p-5">
-        <h2 className="text-sm font-medium mb-4">All Articles</h2>
+        <h2 className="text-base font-medium mb-4">All Articles</h2>
 
         <div className="space-y-3">
           {articles.map((blog: BlogItem) => (
             <div key={blog.slug} className="group">
               <Link
                 href="#"
-                className={`flex items-center text-sm px-2 py-1.5 rounded-md ${
+                className={`flex items-center text-base px-2 py-1.5 rounded-md ${
                   activeArticle === blog.slug 
                     ? "bg-gray-100 text-gray-900" 
                     : "text-gray-700 hover:bg-gray-50"

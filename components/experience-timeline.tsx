@@ -53,11 +53,11 @@ export default function ExperienceTimeline() {
             <h3 className="text-base font-semibold text-gray-900">
               {job.company}
             </h3>
-            <p className="text-sm text-gray-600">
+            <p className="text-base text-gray-600">
               {job.role} · {job.period}
             </p>
 
-            <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-5 text-gray-600 marker:text-gray-400">
+            <ul className="mt-3 list-disc space-y-2 pl-5 text-base leading-6 text-gray-600 marker:text-gray-400">
               {job.points.map((point) => (
                 <li key={point}>{point}</li>
               ))}

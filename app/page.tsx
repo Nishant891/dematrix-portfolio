@@ -108,9 +108,9 @@ export default function Home() {
           (activePage === "home" && mobileView === "main")) && (
           <div className="max-w-2xl mx-auto space-y-8">
             <section className="space-y-4">
-              <h1 className="text-2xl font-semibold">hi there i am nishant</h1>
+              <h1 className="text-3xl font-semibold">hi there i am nishant</h1>
 
-              <ul className="list-disc space-y-2 pl-5 text-gray-700 marker:text-gray-400">
+              <ul className="list-disc space-y-2 pl-5 text-lg text-gray-700 marker:text-gray-400">
                 <li>
                   i build and maintain large-scale systems and the tools that
                   keep them healthy.
@@ -159,7 +159,7 @@ export default function Home() {
             </section>
 
             <section className="space-y-5">
-              <h2 className="text-gray-500 text-md">work</h2>
+              <h2 className="text-base text-gray-500">work</h2>
               <ExperienceTimeline />
             </section>
 
@@ -171,7 +171,7 @@ export default function Home() {
               largest box.
             */}
             <section className="space-y-5">
-              <h2 className="text-gray-500 text-md">socials</h2>
+              <h2 className="text-base text-gray-500">socials</h2>
               <div className="flex items-center justify-start gap-4">
                 <Link
                   href="mailto:nishant19072003@gmail.com"

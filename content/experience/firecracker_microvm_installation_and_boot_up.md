@@ -1,4 +1,4 @@
-# 🧨 Firecracker MicroVM installation and boot up
+# Firecracker MicroVM installation and boot up
 
 This guide walks you through installing Firecracker, setting up the network, and running a virtual machine using a simple bash script.
 

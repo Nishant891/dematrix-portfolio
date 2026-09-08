@@ -195,7 +195,7 @@ export default function MobileSecondSidebar({
                   <div key={blog.slug} className="group">
                     <Link
                       href="#"
-                      className={`flex items-center text-sm px-2 py-2 rounded-md ${
+                      className={`flex items-center text-base px-2 py-2 rounded-md ${
                         activeArticle === blog.slug ? "bg-gray-100 text-gray-900" : "text-gray-700 hover:bg-gray-50"
                       }`}
                       onClick={(e) => {

@@ -143,21 +143,21 @@ color: #333;
 
 /* Headings */
 .markdown-content h1 {
-font-size: 2.5rem;
+font-size: 1.75rem;
 font-weight: bold;
 margin-bottom: 1rem;
 color: #292442;
 }
 
 .markdown-content h2 {
-font-size: 2rem;
+font-size: 1.375rem;
 font-weight: bold;
 margin-bottom: 0.75rem;
 color: #330e3a;
 }
 
 .markdown-content h3 {
-font-size: 1.75rem;
+font-size: 1.125rem;
 font-weight: bold;
 margin-bottom: 0.5rem;
 color: #1d1b27;
@@ -166,7 +166,7 @@ color: #1d1b27;
 .markdown-content h4,
 .markdown-content h5,
 .markdown-content h6 {
-font-size: 1.25rem;
+font-size: 1.0625rem;
 font-weight: normal;
 margin-bottom: 0.5rem;
 color: #555;
@@ -174,7 +174,7 @@ color: #555;
 
 /* Paragraphs */
 .markdown-content p {
-font-size: 1rem;
+font-size: 1.0625rem;
 margin-bottom: 1rem;
 }
 
@@ -200,6 +200,7 @@ margin-bottom: 1rem;
 .markdown-content ul li,
 .markdown-content ol li {
 margin-bottom: 0.5rem;
+font-size: 1.0625rem;
 }
 
 /* Ordered List */

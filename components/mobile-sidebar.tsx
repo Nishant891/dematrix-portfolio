@@ -32,7 +32,7 @@ export default function MobileSidebar({
             <nav className="space-y-1">
               <Link
                 href="#"
-                className={`flex items-center gap-2 px-2 py-1.5 rounded-md text-sm ${
+                className={`flex items-center gap-2 px-2 py-1.5 rounded-md text-base ${
                   activePage === "home" ? "bg-gray-900 text-white" : "text-gray-700 hover:bg-gray-100"
                 }`}
                 onClick={(e) => {
@@ -47,7 +47,7 @@ export default function MobileSidebar({
 
               <Link
                 href="#"
-                className={`flex items-center gap-2 px-2 py-1.5 rounded-md text-sm ${
+                className={`flex items-center gap-2 px-2 py-1.5 rounded-md text-base ${
                   activePage === "writing" ? "bg-gray-900 text-white" : "text-gray-700 hover:bg-gray-100"
                 }`}
                 onClick={(e) => {
