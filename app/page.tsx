@@ -9,7 +9,6 @@ import MobileSidebar from "@/components/mobile-sidebar";
 import WritingSidebar from "@/components/writing-sidebar";
 import ArticleContent from "@/components/article-content";
 import MobileSecondSidebar from "@/components/mobile-second-sidebar";
-import Terminal from "@/components/terminal";
 import ExperienceTimeline from "@/components/experience-timeline";
 import { MailIcon } from "lucide-react";
 
@@ -109,17 +108,59 @@ export default function Home() {
           (activePage === "home" && mobileView === "main")) && (
           <div className="max-w-2xl mx-auto space-y-8">
             <section className="space-y-4">
-              <h1 className="text-2xl font-semibold">hi there 👋 i am nishant</h1>
+              <h1 className="text-2xl font-semibold">hi there i am nishant</h1>
 
-              <ul className="list-disc pl-5 text-gray-700 marker:text-gray-400">
+              <ul className="list-disc space-y-2 pl-5 text-gray-700 marker:text-gray-400">
                 <li>
                   i build and maintain large-scale systems and the tools that
                   keep them healthy.
                 </li>
+                <li>
+                  find my work on{" "}
+                  <Link
+                    href="https://github.com/Nishant891"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:underline"
+                  >
+                    github
+                  </Link>{" "}
+                  and{" "}
+                  <Link
+                    href="https://www.producthunt.com/@dematrix"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:underline"
+                  >
+                    producthunt
+                  </Link>
+                </li>
+                <li>
+                  i learn and write at{" "}
+                  <Link
+                    href="https://leetcode.com/Nishant892/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:underline"
+                  >
+                    leetcode
+                  </Link>{" "}
+                  and{" "}
+                  <Link
+                    href="https://medium.com/@nishant19072003"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:underline"
+                  >
+                    medium
+                  </Link>
+                </li>
               </ul>
             </section>
-            <section className="text-sm space-y-4">
-              <Terminal />
+
+            <section className="space-y-5">
+              <h2 className="text-gray-500 text-md">work</h2>
+              <ExperienceTimeline />
             </section>
 
             {/*
@@ -129,8 +170,9 @@ export default function Home() {
               Equal boxes make linkedin look the smallest, so it gets the
               largest box.
             */}
-            <section className="-mt-6 -mb-3">
-              <div className="flex items-center justify-center gap-7">
+            <section className="space-y-5">
+              <h2 className="text-gray-500 text-md">socials</h2>
+              <div className="flex items-center justify-start gap-4">
                 <Link
                   href="mailto:nishant19072003@gmail.com"
                   aria-label="mail"
@@ -166,11 +208,6 @@ export default function Home() {
                   <img src="/x.png" alt="x.com" className="w-6 h-6" />
                 </Link>
               </div>
-            </section>
-
-            <section className="space-y-5 pt-2">
-              <h2 className="text-gray-500 text-md">Experience</h2>
-              <ExperienceTimeline />
             </section>
           </div>
         )}
