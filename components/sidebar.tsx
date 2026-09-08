@@ -13,8 +13,6 @@ export default function Sidebar({
   return (
     <aside className="w-64 shrink-0 border-r border-gray-200 h-screen sticky top-0 hidden md:block overflow-y-auto">
       <div className="p-5">
-        <h2 className="text-xl font-bold mb-6">Nishant Sharma</h2>
-
         <nav className="space-y-1">
           <Link
             href="#"
@@ -99,7 +97,7 @@ export default function Sidebar({
           </Link>
 
           <Link
-            href="https://github.com/Nishant891/sec-intel"
+            href="https://www.youtube.com/watch?v=DN_3XsL6ay0"
             className="flex items-center justify-between px-2 py-1.5 text-gray-700 hover:bg-gray-100 rounded-md text-base"
             target="_blank"
             rel="noopener noreferrer"

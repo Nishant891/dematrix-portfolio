@@ -21,7 +21,7 @@ const work: Role[] = [
     logo: "https://media.licdn.com/dms/image/v2/D4D0BAQGUKsfjHB8RNQ/company-logo_200_200/company-logo_200_200/0/1735368022724/stealth_startup_51_logo?e=1790208000&v=beta&t=ekdYg74zQG9DU7z_P2c0DOuJ-rouYZBkdhRMdVekBuU",
     points: [
       "Set up and maintained the AWS infrastructure.",
-      "Worked across the stack on deckit.ai — a tool for building anything in HTML.",
+      "Worked across the stack on deckit.ai, a tool for building anything in HTML.",
     ],
   },
   {
@@ -50,7 +50,7 @@ export default function ExperienceTimeline() {
           />
 
           <div className="min-w-0">
-            <h3 className="text-base font-semibold text-gray-900">
+            <h3 className="text-lg font-semibold text-gray-900">
               {job.company}
             </h3>
             <p className="text-base text-gray-600">

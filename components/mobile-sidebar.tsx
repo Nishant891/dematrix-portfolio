@@ -22,8 +22,7 @@ export default function MobileSidebar({
       {isOpen && (
         <div className="fixed inset-0 z-50 bg-white">
           <div className="p-5">
-            <div className="flex justify-between items-center mb-6">
-              <h2 className="text-lg font-bold">Nishant Sharma</h2>
+            <div className="flex justify-end items-center mb-6">
               <button onClick={() => setIsOpen(false)}>
                 <X size={24} />
               </button>
