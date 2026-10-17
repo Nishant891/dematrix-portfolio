@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Check, Copy } from "lucide-react";
 import Sidebar from "@/components/sidebar";
 import MobileSidebar from "@/components/mobile-sidebar";
 import WritingSidebar from "@/components/writing-sidebar";
@@ -10,10 +10,10 @@ import ArticleContent from "@/components/article-content";
 import MobileSecondSidebar from "@/components/mobile-second-sidebar";
 import ExperienceTimeline from "@/components/experience-timeline";
 import GithubContributions from "@/components/github-contributions";
-import { MailIcon } from "lucide-react";
 
 export default function Home() {
   const [activePage, setActivePage] = useState("home");
+  const [emailCopied, setEmailCopied] = useState(false);
   const [activeArticle, setActiveArticle] = useState<string | null>(null);
   const [mobileView, setMobileView] = useState<
     "main" | "secondary" | "content"
@@ -50,6 +50,16 @@ export default function Home() {
       // Don't reset the active article here so we can return to it if needed
     } else if (mobileView === "secondary") {
       setMobileView("main");
+    }
+  };
+
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText("nishantsharma.hello@gmail.com");
+      setEmailCopied(true);
+      window.setTimeout(() => setEmailCopied(false), 2000);
+    } catch {
+      setEmailCopied(false);
     }
   };
 
@@ -120,7 +130,7 @@ export default function Home() {
                   <h1 className="text-2xl font-semibold sm:text-3xl">hi there, i am nishant</h1>
                 </div>
                 <span className="availability-badge ml-auto inline-flex shrink-0 items-center gap-2 rounded-full border border-gray-200 bg-white/60 px-3 py-1.5 text-sm font-medium text-gray-700 backdrop-blur-md">
-                  <span className="availability-dot h-2 w-2 rounded-full bg-emerald-500" aria-hidden="true" />
+                  <span className="availability-dot h-2 w-2 rounded-full bg-black" aria-hidden="true" />
                   open to work
                 </span>
               </div>
@@ -171,37 +181,47 @@ export default function Home() {
                   </Link>
                 </li>
               </ul>
-              <nav className="!mt-4 ml-8 flex items-center gap-1 pl-3" aria-label="social links">
-                <Link
-                  href="mailto:nishantsharma.hello@gmail.com"
-                  aria-label="mail"
-                  title="mail"
-                  className="inline-flex h-10 w-10 items-center justify-center rounded-md text-gray-700 hover:text-blue-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600"
-                >
-                  <MailIcon size={23} aria-hidden="true" />
-                </Link>
-
-                <Link
-                  href="https://www.linkedin.com/in/nishant-sharma-771653245/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="linkedin"
-                  title="linkedin"
-                  className="inline-flex h-10 w-10 items-center justify-center rounded-md hover:opacity-70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600"
-                >
-                  <img src="/linkedin.png" alt="" className="h-[25px] w-[25px]" />
-                </Link>
-
-                <Link
-                  href="https://x.com/Nishant48945102"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="x.com"
-                  title="x.com"
-                  className="inline-flex h-10 w-10 items-center justify-center rounded-md hover:opacity-70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600"
-                >
-                  <img src="/x.png" alt="" className="h-6 w-6" />
-                </Link>
+              <nav className="!mt-4 ml-8 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-gray-500" aria-label="contact links">
+                <span className="inline-flex items-center gap-1">
+                  <Link
+                    href="mailto:nishantsharma.hello@gmail.com"
+                    className="hover:text-gray-900 focus-visible:rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-gray-900"
+                  >
+                    nishantsharma.hello@gmail.com
+                  </Link>
+                  <button
+                    type="button"
+                    onClick={copyEmail}
+                    aria-label={emailCopied ? "email copied" : "copy email address"}
+                    title={emailCopied ? "copied" : "copy email address"}
+                    className="inline-flex h-8 w-8 items-center justify-center rounded-md hover:bg-gray-200 hover:text-gray-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-gray-900"
+                  >
+                    {emailCopied ? <Check size={14} aria-hidden="true" /> : <Copy size={14} aria-hidden="true" />}
+                  </button>
+                  <span className="sr-only" role="status">{emailCopied ? "email copied to clipboard" : ""}</span>
+                </span>
+                <span className="inline-flex items-center gap-2">
+                  <span aria-hidden="true" className="text-gray-400">·</span>
+                  <Link
+                    href="https://www.linkedin.com/in/nishant-sharma-771653245/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-gray-900 focus-visible:rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-gray-900"
+                  >
+                    linkedin
+                  </Link>
+                </span>
+                <span className="inline-flex items-center gap-2">
+                  <span aria-hidden="true" className="text-gray-400">·</span>
+                  <Link
+                    href="https://x.com/Nishant48945102"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-gray-900 focus-visible:rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-gray-900"
+                  >
+                    x
+                  </Link>
+                </span>
               </nav>
             </section>
 

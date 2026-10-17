@@ -97,7 +97,7 @@ export default function GithubContributions() {
     <section className="space-y-4" aria-labelledby="contributions-heading">
       <div className="flex items-baseline justify-between gap-4">
         <h2 id="contributions-heading" className="text-base text-gray-500">contributions</h2>
-        <span className="shrink-0 text-base text-gray-500 tabular-nums" aria-live="polite">
+        <span className="shrink-0 text-xs text-gray-500 tabular-nums" aria-live="polite">
           {calendar ? `${calendar.total} in ${year}` : year}
         </span>
       </div>
@@ -111,7 +111,7 @@ export default function GithubContributions() {
                     href={project.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 rounded-sm text-sm text-blue-600 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600"
+                    className="flex items-center gap-2 rounded-sm text-sm text-black hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-gray-900"
                   >
                     {project.logo ? (
                       <img src={project.logo} alt="" className="h-5 w-5 shrink-0 rounded-sm object-contain" />
@@ -132,7 +132,7 @@ export default function GithubContributions() {
           {calendar ? (
             <div ref={graphScrollRef} className="overflow-x-auto pb-2" aria-label={`${year} contribution graph`}>
               <div className="w-max">
-                <div className="relative h-6 text-sm text-gray-600" aria-hidden="true">
+                <div className="relative h-6 text-xs text-gray-600" aria-hidden="true">
                   {monthLabels.map((month) => (
                     <span key={`${month.name}-${month.left}`} className="absolute" style={{ left: month.left }}>
                       {month.name}
@@ -178,7 +178,7 @@ export default function GithubContributions() {
               type="button"
               onClick={() => setYear(item)}
               aria-pressed={year === item}
-              className={`rounded-md px-1.5 py-0.5 text-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 ${year === item ? "bg-blue-600 text-white" : "text-gray-600 hover:bg-gray-100"}`}
+              className={`rounded-md px-1.5 py-0.5 text-xs transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-gray-900 ${year === item ? "bg-black text-white" : "text-gray-600 hover:bg-gray-100"}`}
             >
               {item}
             </button>
