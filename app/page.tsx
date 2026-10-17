@@ -1,15 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
-import { Twitter, Github, Youtube, ArrowLeft, Linkedin } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import Sidebar from "@/components/sidebar";
 import MobileSidebar from "@/components/mobile-sidebar";
 import WritingSidebar from "@/components/writing-sidebar";
 import ArticleContent from "@/components/article-content";
 import MobileSecondSidebar from "@/components/mobile-second-sidebar";
 import ExperienceTimeline from "@/components/experience-timeline";
+import GithubContributions from "@/components/github-contributions";
 import { MailIcon } from "lucide-react";
 
 export default function Home() {
@@ -54,7 +54,7 @@ export default function Home() {
   };
 
   return (
-    <div className="flex min-h-screen bg-white lowercase">
+    <div className="flex min-h-dvh min-w-0 overflow-x-clip bg-gray-50 lowercase">
       {/* Desktop Sidebar */}
       <Sidebar activePage={activePage} setActivePage={handleSetActivePage} />
 
@@ -87,7 +87,7 @@ export default function Home() {
 
       {/* Main Content */}
       <main
-        className={`flex-1 p-6 pt-20 md:p-8 md:pt-8 ${
+        className={`min-w-0 flex-1 p-6 pt-20 md:p-8 md:pt-8 ${
           // For desktop: position content correctly based on active sidebars
           activePage === "writing" ? "md:ml-[36px]" : ""
         }`}
@@ -106,9 +106,24 @@ export default function Home() {
         {/* Home content */}
         {(activePage === "home" ||
           (activePage === "home" && mobileView === "main")) && (
-          <div className="max-w-2xl mx-auto space-y-8">
+          <div className="mx-auto max-w-4xl space-y-8">
             <section className="space-y-4">
-              <h1 className="text-3xl font-semibold">hi there i am nishant</h1>
+              <div className="flex flex-wrap items-center justify-between gap-3">
+                <div className="flex min-w-0 items-center gap-3">
+                  <img
+                    src="/nishant-profile.jpg"
+                    alt="nishant sharma"
+                    width={40}
+                    height={40}
+                    className="h-10 w-10 shrink-0 rounded-full object-cover"
+                  />
+                  <h1 className="text-2xl font-semibold sm:text-3xl">hi there, i am nishant</h1>
+                </div>
+                <span className="ml-auto inline-flex shrink-0 items-center gap-2 rounded-full border border-gray-200 bg-white/60 px-3 py-1.5 text-sm font-medium text-gray-700 shadow-[0_2px_12px_rgba(15,23,42,0.04)] backdrop-blur-md">
+                  <span className="h-2 w-2 rounded-full bg-emerald-500 shadow-[0_0_7px_rgba(16,185,129,0.45)]" aria-hidden="true" />
+                  open to work
+                </span>
+              </div>
 
               <ul className="list-disc space-y-2 pl-5 text-lg text-gray-700 marker:text-gray-400">
                 <li>
@@ -138,7 +153,7 @@ export default function Home() {
                 <li>
                   i learn and write at{" "}
                   <Link
-                    href="https://leetcode.com/Nishant892/"
+                    href="https://leetcode.com/u/nishant892/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-blue-600 hover:underline"
@@ -174,7 +189,7 @@ export default function Home() {
               <h2 className="text-base text-gray-500">socials</h2>
               <div className="flex items-center justify-start gap-4">
                 <Link
-                  href="mailto:nishant19072003@gmail.com"
+                  href="mailto:nishantsharma.hello@gmail.com"
                   aria-label="mail"
                   title="mail"
                   className="text-gray-700 hover:text-blue-600"
@@ -209,6 +224,8 @@ export default function Home() {
                 </Link>
               </div>
             </section>
+
+            <GithubContributions />
           </div>
         )}
 

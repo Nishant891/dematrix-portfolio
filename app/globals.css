@@ -5,7 +5,7 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-rgb: 255, 255, 255;
+  --background-rgb: 249, 250, 251;
 }
 
 body {
@@ -18,6 +18,13 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+html,
+body {
+  max-width: 100%;
+  overflow-x: clip;
+  overscroll-behavior-y: none;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
@@ -26,7 +33,7 @@ body {
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 210 20% 98%;
     --foreground: 0 0% 3.9%;
     --card: 0 0% 100%;
     --card-foreground: 0 0% 3.9%;
@@ -146,21 +153,21 @@ color: #333;
 font-size: 1.75rem;
 font-weight: bold;
 margin-bottom: 1rem;
-color: #292442;
+color: #111827;
 }
 
 .markdown-content h2 {
 font-size: 1.375rem;
 font-weight: bold;
 margin-bottom: 0.75rem;
-color: #330e3a;
+color: #111827;
 }
 
 .markdown-content h3 {
 font-size: 1.125rem;
 font-weight: bold;
 margin-bottom: 0.5rem;
-color: #1d1b27;
+color: #111827;
 }
 
 .markdown-content h4,
@@ -180,13 +187,13 @@ margin-bottom: 1rem;
 
 /* Links */
 .markdown-content a {
-color: #007bff;
+color: #2563eb;
 text-decoration: none;
 transition: color 0.3s ease;
 }
 
 .markdown-content a:hover {
-color: #0056b3;
+color: #1d4ed8;
 text-decoration: underline;
 }
 
@@ -215,28 +222,36 @@ list-style-type: disc;
 
 /* Code blocks */
 .markdown-content pre {
-  background-color: #0d1117;            /* deep black for contrast */
-  color: #facc15;                       /* yellow text */
-  padding: 1rem 1.25rem;
-  border-radius: 8px;
+  background-color: #f3f4f6;
+  color: #1e40af;
+  padding: 0.875rem 1rem;
+  border-radius: 0.375rem;
   overflow-x: auto;
-  font-size: 0.95rem;
+  max-width: 100%;
+  font-size: 0.875rem;
   font-family: 'Fira Code', 'Roboto Mono', monospace;
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-  border: 1px solid #333;
+  margin: 1rem 0 1.5rem;
+  line-height: 1.65;
+  border: 2px solid #e5e7eb;
 }
 
 /* Inline code */
 .markdown-content code {
-  background-color: #0d1117;            /* consistent with block background */
-  color: #facc15;                      /* yellow */
-  padding: 2px 6px;
-  border-radius: 4px;
-  font-size: 0.95rem;
+  background-color: #f3f4f6;
+  color: #1d4ed8;
+  padding: 0.125rem 0.3rem;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
   font-family: 'Fira Code', 'Roboto Mono', monospace;
   white-space: pre-wrap;
+}
+
+.markdown-content pre code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+  white-space: pre;
+  font-size: inherit;
 }
 
 /* Optional: Add a scrollbar style for consistency */
@@ -244,7 +259,7 @@ list-style-type: disc;
   height: 6px;
 }
 .markdown-content pre::-webkit-scrollbar-thumb {
-  background-color: #444;
+  background-color: #9ca3af;
   border-radius: 4px;
 }
 

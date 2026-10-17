@@ -3,6 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import { Menu, X, Home, BookOpen } from "lucide-react"
+import ProjectLinks from "@/components/project-links"
 
 export default function MobileSidebar({
   activePage,
@@ -20,7 +21,7 @@ export default function MobileSidebar({
       </button>
 
       {isOpen && (
-        <div className="fixed inset-0 z-50 bg-white">
+        <div className="fixed inset-0 z-50 overflow-y-auto bg-white">
           <div className="p-5">
             <div className="flex justify-end items-center mb-6">
               <button onClick={() => setIsOpen(false)}>
@@ -59,6 +60,7 @@ export default function MobileSidebar({
                 <span>Writing</span>
               </Link>
             </nav>
+            <ProjectLinks onNavigate={() => setIsOpen(false)} />
           </div>
         </div>
       )}

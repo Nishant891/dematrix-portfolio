@@ -2,7 +2,7 @@ type Role = {
   company: string;
   role: string;
   period: string;
-  logo: string;
+  logo?: string;
   points: string[];
 };
 
@@ -11,24 +11,24 @@ const work: Role[] = [
     company: "Cohesity",
     role: "System Reliability Engineer",
     period: "Jan 2026 - Present",
-    logo: "https://media.licdn.com/dms/image/v2/D560BAQFXZ2Hda_puGA/company-logo_200_200/B56ZXZqwVUHEAQ-/0/1743113619242/cohesity_logo?e=1790208000&v=beta&t=oyTdg0EY5OI5u2tJtVDe3xKlgrk2wD9s6-UgZm0mxqY",
+    logo: "/cohesity.png",
     points: ["Working on distributed data-protection infrastructure."],
   },
   {
-    company: "Stealth Startup",
+    company: "deckit.ai",
     role: "Fullstack & Platform Engineer",
     period: "Jul 2025 - Dec 2025",
-    logo: "https://media.licdn.com/dms/image/v2/D4D0BAQGUKsfjHB8RNQ/company-logo_200_200/company-logo_200_200/0/1735368022724/stealth_startup_51_logo?e=1790208000&v=beta&t=ekdYg74zQG9DU7z_P2c0DOuJ-rouYZBkdhRMdVekBuU",
+    logo: "/deckit-ai.jpg",
     points: [
       "Set up and maintained the AWS infrastructure.",
-      "Worked across the stack on deckit.ai, a tool for building anything in HTML.",
+      "Worked across the stack on a tool for building anything in HTML.",
     ],
   },
   {
     company: "Nutanix",
     role: "System Reliability Engineer",
     period: "Jan 2025 - Jun 2025",
-    logo: "https://media.licdn.com/dms/image/v2/D560BAQGxu4702VlEFQ/company-logo_200_200/company-logo_200_200/0/1680526828152/nutanix_logo?e=1790208000&v=beta&t=oJkrXIYzQnx-bwKWXXvAwJcFQEqKhDdntEIl1Mqkne4",
+    logo: "/nutanix-mark.svg",
     points: [
       "Built internal tools and worked on hyperconverged infrastructure.",
     ],
@@ -42,12 +42,11 @@ export default function ExperienceTimeline() {
         // The logo sits in its own column, so the company name, the role line
         // and the bullets all share one left edge.
         <article key={job.company} className="flex items-start gap-3 sm:gap-4">
-          <img
-            src={job.logo}
-            alt={job.company}
-            loading="lazy"
-            className="h-10 w-10 sm:h-11 sm:w-11 shrink-0 object-contain"
-          />
+          <div className="flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-full bg-gray-100">
+            {job.logo ? (
+              <img src={job.logo} alt="" loading="lazy" className="h-full w-full object-contain" />
+            ) : null}
+          </div>
 
           <div className="min-w-0">
             <h3 className="text-lg font-semibold text-gray-900">
