@@ -107,7 +107,7 @@ export default function Home() {
         {(activePage === "home" ||
           (activePage === "home" && mobileView === "main")) && (
           <div className="mx-auto max-w-4xl space-y-8">
-            <section className="space-y-4">
+            <section className="space-y-6">
               <div className="flex flex-wrap items-center justify-between gap-3">
                 <div className="flex min-w-0 items-center gap-3">
                   <img
@@ -119,13 +119,13 @@ export default function Home() {
                   />
                   <h1 className="text-2xl font-semibold sm:text-3xl">hi there, i am nishant</h1>
                 </div>
-                <span className="ml-auto inline-flex shrink-0 items-center gap-2 rounded-full border border-gray-200 bg-white/60 px-3 py-1.5 text-sm font-medium text-gray-700 shadow-[0_2px_12px_rgba(15,23,42,0.04)] backdrop-blur-md">
-                  <span className="h-2 w-2 rounded-full bg-emerald-500 shadow-[0_0_7px_rgba(16,185,129,0.45)]" aria-hidden="true" />
+                <span className="availability-badge ml-auto inline-flex shrink-0 items-center gap-2 rounded-full border border-gray-200 bg-white/60 px-3 py-1.5 text-sm font-medium text-gray-700 backdrop-blur-md">
+                  <span className="availability-dot h-2 w-2 rounded-full bg-emerald-500" aria-hidden="true" />
                   open to work
                 </span>
               </div>
 
-              <ul className="list-disc space-y-2 pl-5 text-lg text-gray-700 marker:text-gray-400">
+              <ul className="ml-8 list-disc space-y-2 pl-5 text-lg text-gray-700 marker:text-gray-400">
                 <li>
                   i build and maintain large-scale systems and the tools that
                   keep them healthy.
@@ -171,30 +171,14 @@ export default function Home() {
                   </Link>
                 </li>
               </ul>
-            </section>
-
-            <section className="space-y-5">
-              <h2 className="text-base text-gray-500">work</h2>
-              <ExperienceTimeline />
-            </section>
-
-            {/*
-              Box sizes differ on purpose so the three glyphs read the same
-              size: the artwork fills a different share of each source — 83%
-              for lucide's envelope, 78% of x.png, only 75% of linkedin.png.
-              Equal boxes make linkedin look the smallest, so it gets the
-              largest box.
-            */}
-            <section className="space-y-5">
-              <h2 className="text-base text-gray-500">socials</h2>
-              <div className="flex items-center justify-start gap-4">
+              <nav className="!mt-4 ml-8 flex items-center gap-1 pl-3" aria-label="social links">
                 <Link
                   href="mailto:nishantsharma.hello@gmail.com"
                   aria-label="mail"
                   title="mail"
-                  className="text-gray-700 hover:text-blue-600"
+                  className="inline-flex h-10 w-10 items-center justify-center rounded-md text-gray-700 hover:text-blue-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600"
                 >
-                  <MailIcon size={23} />
+                  <MailIcon size={23} aria-hidden="true" />
                 </Link>
 
                 <Link
@@ -203,13 +187,9 @@ export default function Home() {
                   rel="noopener noreferrer"
                   aria-label="linkedin"
                   title="linkedin"
-                  className="hover:opacity-70"
+                  className="inline-flex h-10 w-10 items-center justify-center rounded-md hover:opacity-70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600"
                 >
-                  <img
-                    src="/linkedin.png"
-                    alt="linkedin"
-                    className="w-[25px] h-[25px]"
-                  />
+                  <img src="/linkedin.png" alt="" className="h-[25px] w-[25px]" />
                 </Link>
 
                 <Link
@@ -218,11 +198,16 @@ export default function Home() {
                   rel="noopener noreferrer"
                   aria-label="x.com"
                   title="x.com"
-                  className="hover:opacity-70"
+                  className="inline-flex h-10 w-10 items-center justify-center rounded-md hover:opacity-70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600"
                 >
-                  <img src="/x.png" alt="x.com" className="w-6 h-6" />
+                  <img src="/x.png" alt="" className="h-6 w-6" />
                 </Link>
-              </div>
+              </nav>
+            </section>
+
+            <section className="space-y-5">
+              <h2 className="text-base text-gray-500">work</h2>
+              <ExperienceTimeline />
             </section>
 
             <GithubContributions />
