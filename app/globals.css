@@ -32,16 +32,28 @@ body {
 }
 
 .availability-dot {
-  box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.35);
-  animation: availability-dot-glow 2.4s ease-in-out infinite;
+  position: relative;
+  background-color: #2563eb;
+  box-shadow: 0 0 3px 1px rgba(37, 99, 235, 0.2);
 }
 
-@keyframes availability-dot-glow {
-  50% { box-shadow: 0 0 12px 4px rgba(0, 0, 0, 0.45); }
+.availability-dot::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border: 1px solid rgba(37, 99, 235, 0.5);
+  border-radius: 50%;
+  animation: availability-dot-ripple 2.4s ease-out infinite;
+}
+
+@keyframes availability-dot-ripple {
+  0% { transform: scale(0.8); opacity: 0; }
+  15% { opacity: 0.75; }
+  100% { transform: scale(1.5); opacity: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .availability-dot { animation: none; }
+  .availability-dot::after { animation: none; opacity: 0.5; }
 }
 
 @layer base {

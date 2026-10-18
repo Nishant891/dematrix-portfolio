@@ -95,12 +95,7 @@ export default function GithubContributions() {
 
   return (
     <section className="!mt-12 space-y-4" aria-labelledby="contributions-heading">
-      <div className="flex items-baseline justify-between gap-4">
-        <h2 id="contributions-heading" className="text-base text-gray-500">contributions</h2>
-        <span className="shrink-0 text-base text-gray-500 tabular-nums" aria-live="polite">
-          {calendar ? `${calendar.total} in ${year}` : year}
-        </span>
-      </div>
+      <h2 id="contributions-heading" className="text-base text-gray-500">contributions</h2>
       <div className="grid min-w-0 grid-cols-[8rem_minmax(0,1fr)] items-start gap-4 sm:grid-cols-[10rem_minmax(0,1fr)] lg:grid-cols-[7.5rem_minmax(0,1fr)_3.5rem] lg:gap-3">
         <aside className="min-w-0">
           {contributedProjects[year]?.length ? (
@@ -164,11 +159,6 @@ export default function GithubContributions() {
               {error ? "contributions are temporarily unavailable" : "loading contributions..."}
             </p>
           )}
-          <div className="mt-2 flex items-center justify-end gap-1 text-sm text-gray-600" aria-hidden="true">
-            <span className="mr-1">less</span>
-            {shades.map((shade) => <span key={shade} className="h-3.5 w-3.5 rounded-[2px]" style={{ backgroundColor: shade }} />)}
-            <span className="ml-1">more</span>
-          </div>
         </div>
 
         <nav className="col-span-2 flex flex-wrap gap-1 lg:col-span-1 lg:flex-col" aria-label="contribution year">

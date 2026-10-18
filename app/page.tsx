@@ -130,7 +130,7 @@ export default function Home() {
                   <h1 className="text-2xl font-semibold sm:text-3xl">hi there, i am nishant</h1>
                 </div>
                 <span className="availability-badge ml-auto inline-flex shrink-0 items-center gap-2 rounded-full border border-gray-200 bg-white/60 px-3 py-1.5 text-sm font-medium text-gray-700 backdrop-blur-md">
-                  <span className="availability-dot block h-2 w-2 shrink-0 rounded-full bg-black" aria-hidden="true" />
+                  <span className="availability-dot block h-2 w-2 shrink-0 rounded-full" aria-hidden="true" />
                   open to work
                 </span>
               </div>
