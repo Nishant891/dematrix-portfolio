@@ -130,7 +130,7 @@ export default function Home() {
                   <h1 className="text-2xl font-semibold sm:text-3xl">hi there, i am nishant</h1>
                 </div>
                 <span className="availability-badge ml-auto inline-flex shrink-0 items-center gap-2 rounded-full border border-gray-200 bg-white/60 px-3 py-1.5 text-sm font-medium text-gray-700 backdrop-blur-md">
-                  <span className="availability-dot h-2 w-2 rounded-full bg-black" aria-hidden="true" />
+                  <span className="availability-dot block h-2 w-2 shrink-0 rounded-full bg-black" aria-hidden="true" />
                   open to work
                 </span>
               </div>
@@ -181,36 +181,15 @@ export default function Home() {
                   </Link>
                 </li>
               </ul>
-              <nav className="!mt-4 ml-8 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-gray-500" aria-label="contact links">
-                <span className="inline-flex items-center gap-1">
-                  <Link
-                    href="mailto:nishantsharma.hello@gmail.com"
-                    className="hover:text-gray-900 focus-visible:rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-gray-900"
-                  >
-                    nishantsharma.hello@gmail.com
-                  </Link>
-                  <button
-                    type="button"
-                    onClick={copyEmail}
-                    aria-label={emailCopied ? "email copied" : "copy email address"}
-                    title={emailCopied ? "copied" : "copy email address"}
-                    className="inline-flex h-8 w-8 items-center justify-center rounded-md hover:bg-gray-200 hover:text-gray-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-gray-900"
-                  >
-                    {emailCopied ? <Check size={14} aria-hidden="true" /> : <Copy size={14} aria-hidden="true" />}
-                  </button>
-                  <span className="sr-only" role="status">{emailCopied ? "email copied to clipboard" : ""}</span>
-                </span>
-                <span className="inline-flex items-center gap-2">
-                  <span aria-hidden="true" className="text-gray-400">·</span>
-                  <Link
-                    href="https://www.linkedin.com/in/nishant-sharma-771653245/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-gray-900 focus-visible:rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-gray-900"
-                  >
-                    linkedin
-                  </Link>
-                </span>
+              <nav className="!mt-4 ml-[34px] flex flex-wrap items-center gap-x-2 gap-y-1 text-base text-gray-500" aria-label="contact links">
+                <Link
+                  href="https://www.linkedin.com/in/nishant-sharma-771653245/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-gray-900 focus-visible:rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-gray-900"
+                >
+                  linkedin
+                </Link>
                 <span className="inline-flex items-center gap-2">
                   <span aria-hidden="true" className="text-gray-400">·</span>
                   <Link
@@ -221,6 +200,27 @@ export default function Home() {
                   >
                     x
                   </Link>
+                </span>
+                <span className="inline-flex min-w-0 max-w-full items-center gap-2">
+                  <span aria-hidden="true" className="text-gray-400">·</span>
+                  <span className="inline-flex min-w-0 items-center gap-1">
+                    <Link
+                      href="mailto:nishantsharma.hello@gmail.com"
+                      className="min-w-0 break-all hover:text-gray-900 focus-visible:rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-gray-900"
+                    >
+                      nishantsharma.hello@gmail.com
+                    </Link>
+                    <button
+                      type="button"
+                      onClick={copyEmail}
+                      aria-label={emailCopied ? "email copied" : "copy email address"}
+                      title={emailCopied ? "copied" : "copy email address"}
+                      className="inline-flex h-8 w-8 items-center justify-center rounded-md hover:bg-gray-200 hover:text-gray-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-gray-900"
+                    >
+                      {emailCopied ? <Check size={14} aria-hidden="true" /> : <Copy size={14} aria-hidden="true" />}
+                    </button>
+                    <span className="sr-only" role="status">{emailCopied ? "email copied to clipboard" : ""}</span>
+                  </span>
                 </span>
               </nav>
             </section>
