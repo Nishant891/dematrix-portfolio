@@ -32,7 +32,7 @@ const shades = ["#e5e7eb", "#bfdbfe", "#60a5fa", "#2563eb", "#1d4ed8"];
 
 export default function GithubContributions() {
   const currentYear = new Date().getFullYear();
-  const years = Array.from({ length: currentYear - 2022 + 1 }, (_, index) => currentYear - index);
+  const years = Array.from({ length: currentYear - 2023 + 1 }, (_, index) => currentYear - index);
   const [year, setYear] = useState(currentYear);
   const [calendar, setCalendar] = useState<Calendar | null>(null);
   const [error, setError] = useState(false);
@@ -54,23 +54,11 @@ export default function GithubContributions() {
     return () => controller.abort();
   }, [year]);
 
-  const { cells, monthLabels } = useMemo(() => {
-    if (!calendar) return { cells: [] as (Day | null)[], monthLabels: [] as { name: string; left: number }[] };
+  const cells = useMemo<(Day | null)[]>(() => {
+    if (!calendar?.days.length) return [];
     const sorted = [...calendar.days].sort((a, b) => a.date.localeCompare(b.date));
     const leading = new Date(`${sorted[0].date}T00:00:00Z`).getUTCDay();
-    const cells: (Day | null)[] = [...Array(leading).fill(null), ...sorted];
-    const monthLabels: { name: string; left: number }[] = [];
-
-    sorted.forEach((day, index) => {
-      if (day.date.endsWith("-01")) {
-        const date = new Date(`${day.date}T00:00:00Z`);
-        monthLabels.push({
-          name: date.toLocaleString("en", { month: "short", timeZone: "UTC" }).toLowerCase(),
-          left: Math.floor((index + leading) / 7) * 13,
-        });
-      }
-    });
-    return { cells, monthLabels };
+    return [...Array.from({ length: leading }, () => null), ...sorted];
   }, [calendar]);
 
   useEffect(() => {
@@ -127,13 +115,6 @@ export default function GithubContributions() {
           {calendar ? (
             <div ref={graphScrollRef} className="overflow-x-auto pb-2" aria-label={`${year} contribution graph`}>
               <div className="w-max">
-                <div className="relative h-6 text-base text-gray-600" aria-hidden="true">
-                  {monthLabels.map((month) => (
-                    <span key={`${month.name}-${month.left}`} className="absolute" style={{ left: month.left }}>
-                      {month.name}
-                    </span>
-                  ))}
-                </div>
                 <div
                   className="grid w-max"
                   style={{ gridAutoFlow: "column", gridTemplateRows: "repeat(7, 16px)", gridAutoColumns: "12px", gap: "1px" }}

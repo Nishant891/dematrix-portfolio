@@ -12,7 +12,11 @@ export default function Sidebar({
   setActivePage: (page: string) => void;
 }) {
   return (
-    <aside className="sticky top-0 hidden h-dvh w-64 shrink-0 overflow-y-auto border-r border-gray-200 bg-white md:block">
+    <aside
+      className={`sticky hidden w-64 shrink-0 overflow-y-auto border-r border-gray-200 bg-white md:block ${
+        activePage === "home" ? "top-[6px] h-[calc(100dvh-12px)]" : "top-0 h-dvh"
+      }`}
+    >
       <div className="p-5">
         <nav className="space-y-1" aria-label="main navigation">
           {([

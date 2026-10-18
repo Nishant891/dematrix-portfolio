@@ -64,7 +64,11 @@ export default function Home() {
   };
 
   return (
-    <div className="flex min-h-dvh min-w-0 overflow-x-clip bg-gray-50 lowercase">
+    <div
+      className={`flex min-h-dvh min-w-0 overflow-x-clip bg-gray-50 lowercase ${
+        activePage === "home" ? "py-[6px]" : ""
+      }`}
+    >
       {/* Desktop Sidebar */}
       <Sidebar activePage={activePage} setActivePage={handleSetActivePage} />
 
@@ -97,8 +101,8 @@ export default function Home() {
 
       {/* Main Content */}
       <main
-        className={`min-w-0 flex-1 px-6 md:px-8 ${
-          activePage === "home" ? "flex flex-col py-[6px]" : "py-6 pt-20 md:py-8"
+        className={`min-w-0 flex-1 ${
+          activePage === "home" ? "flex flex-col px-6 md:px-8" : "p-6 pt-20 md:p-8 md:pt-8"
         } ${
           // For desktop: position content correctly based on active sidebars
           activePage === "writing" ? "md:ml-[36px]" : ""
@@ -118,7 +122,7 @@ export default function Home() {
         {/* Home content */}
         {(activePage === "home" ||
           (activePage === "home" && mobileView === "main")) && (
-          <div className="mx-auto flex w-full max-w-4xl flex-1 flex-col justify-between gap-y-8 pt-16 md:pt-0">
+          <div className="mx-auto flex w-full max-w-4xl flex-1 flex-col gap-y-[5dvh] pb-[5dvh] pt-16 md:pt-[5dvh]">
             <section className="space-y-6">
               <div className="flex flex-wrap items-center justify-between gap-3">
                 <div className="flex min-w-0 items-center gap-3">
@@ -137,7 +141,7 @@ export default function Home() {
                 </span>
               </div>
 
-              <ul className="ml-8 list-disc space-y-2 pl-5 text-lg text-gray-700 marker:text-gray-400">
+              <ul className="intro-bullets space-y-2 text-lg text-gray-700">
                 <li>
                   i build and maintain large-scale systems and the tools that
                   keep them healthy.
@@ -183,7 +187,7 @@ export default function Home() {
                   </Link>
                 </li>
               </ul>
-              <nav className="!mt-4 ml-[38px] flex flex-wrap items-center gap-x-2 gap-y-1 text-base text-gray-500" aria-label="contact links">
+              <nav className="!mt-4 flex flex-wrap items-center gap-x-2 gap-y-1 text-base text-gray-500" aria-label="contact links">
                 <Link
                   href="https://www.linkedin.com/in/nishant-sharma-771653245/"
                   target="_blank"
