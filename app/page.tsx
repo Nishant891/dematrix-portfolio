@@ -181,7 +181,7 @@ export default function Home() {
                   </Link>
                 </li>
               </ul>
-              <nav className="!mt-4 ml-[34px] flex flex-wrap items-center gap-x-2 gap-y-1 text-base text-gray-500" aria-label="contact links">
+              <nav className="!mt-4 ml-[38px] flex flex-wrap items-center gap-x-2 gap-y-1 text-base text-gray-500" aria-label="contact links">
                 <Link
                   href="https://www.linkedin.com/in/nishant-sharma-771653245/"
                   target="_blank"
