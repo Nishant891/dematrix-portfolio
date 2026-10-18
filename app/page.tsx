@@ -116,7 +116,7 @@ export default function Home() {
         {/* Home content */}
         {(activePage === "home" ||
           (activePage === "home" && mobileView === "main")) && (
-          <div className="mx-auto max-w-4xl space-y-8">
+          <div className="mx-auto max-w-4xl space-y-10">
             <section className="space-y-6">
               <div className="flex flex-wrap items-center justify-between gap-3">
                 <div className="flex min-w-0 items-center gap-3">
