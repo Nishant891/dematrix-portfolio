@@ -97,7 +97,9 @@ export default function Home() {
 
       {/* Main Content */}
       <main
-        className={`min-w-0 flex-1 p-6 pt-20 md:p-8 md:pt-8 ${
+        className={`min-w-0 flex-1 px-6 md:px-8 ${
+          activePage === "home" ? "flex flex-col py-[6px]" : "py-6 pt-20 md:py-8"
+        } ${
           // For desktop: position content correctly based on active sidebars
           activePage === "writing" ? "md:ml-[36px]" : ""
         }`}
@@ -116,7 +118,7 @@ export default function Home() {
         {/* Home content */}
         {(activePage === "home" ||
           (activePage === "home" && mobileView === "main")) && (
-          <div className="mx-auto max-w-4xl space-y-10">
+          <div className="mx-auto flex w-full max-w-4xl flex-1 flex-col justify-between gap-y-8 pt-16 md:pt-0">
             <section className="space-y-6">
               <div className="flex flex-wrap items-center justify-between gap-3">
                 <div className="flex min-w-0 items-center gap-3">

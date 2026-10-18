@@ -94,7 +94,7 @@ export default function GithubContributions() {
   }, [calendar]);
 
   return (
-    <section className="!mt-12 space-y-4" aria-labelledby="contributions-heading">
+    <section className="space-y-4" aria-labelledby="contributions-heading">
       <h2 id="contributions-heading" className="text-base text-gray-500">contributions</h2>
       <div className="grid min-w-0 grid-cols-[8rem_minmax(0,1fr)] items-start gap-4 sm:grid-cols-[10rem_minmax(0,1fr)] lg:grid-cols-[7.5rem_minmax(0,1fr)_3.5rem] lg:gap-3">
         <aside className="min-w-0">
