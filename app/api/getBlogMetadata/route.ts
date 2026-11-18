@@ -1,12 +1,14 @@
 import { NextResponse } from "next/server";
-import { getBlogMetadata } from "@/app/function"; // Import your function
+import { getArticles } from "@/lib/articles";
 
 export async function GET() {
-  try {
-    const metadata = await getBlogMetadata();
-    return NextResponse.json(metadata);
-  } catch (error) {
-    console.error("Error fetching blog metadata:", error);
-    return NextResponse.json({ error: "Failed to fetch metadata" }, { status: 500 });
+  const groups = new Map<string, ReturnType<typeof getArticles>>();
+  for (const article of getArticles()) {
+    const group = groups.get(article.category) ?? [];
+    group.push(article);
+    groups.set(article.category, group);
   }
+  return NextResponse.json([...groups.values()].map((group) =>
+    group.map((article) => ({ ...article, type: article.category }))
+  ));
 }

@@ -1,843 +1,109 @@
-"use client";
-
-import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Twitter, Github, Youtube, ArrowLeft, Linkedin } from "lucide-react";
-import Sidebar from "@/components/sidebar";
-import MobileSidebar from "@/components/mobile-sidebar";
-import WritingSidebar from "@/components/writing-sidebar";
-import StackSidebar from "@/components/stack-sidebar";
-import ArticleContent from "@/components/article-content";
-import MobileSecondSidebar from "@/components/mobile-second-sidebar";
-import Terminal from "@/components/terminal";
-import { MailIcon } from "lucide-react";
+import { ArrowUpRight, Github } from "lucide-react";
+import { SiteFooter } from "@/components/site-footer";
+import { VideoPreview } from "@/components/video-preview";
+import { getArticles } from "@/lib/articles";
+import { connections, profile, projects, selectedArticleSlugs } from "@/lib/portfolio";
 
 export default function Home() {
-  const [activePage, setActivePage] = useState("home");
-  const [activeArticle, setActiveArticle] = useState<string | null>(null);
-  const [activeStack, setActiveStack] = useState<string | null>(null);
-  const [mobileView, setMobileView] = useState<
-    "main" | "secondary" | "content"
-  >("main");
-  const [articleContent, setArticleContent] = useState<string>(
-    `<div class="text-gray-500 italic text-center mt-10">
-       No content available. Start writing your article...
-     </div>`
-  );
-
-  // Reset secondary content when primary navigation changes
-  const handleSetActivePage = (page: string) => {
-    setActivePage(page);
-    if (page !== "writing") setActiveArticle(null);
-    if (page !== "stack") setActiveStack(null);
-
-    // For mobile: when selecting Writing or Stack, go to secondary view
-    if (page === "writing" || page === "stack") {
-      setMobileView("secondary");
-    } else {
-      setMobileView("main");
-    }
-  };
-
-  // Handle article selection
-  const handleSetActiveArticle = (slug: string) => {
-    setActiveArticle(slug);
-    setMobileView("content"); // For mobile: when selecting an article, go to content view
-  };
-
-  // Handle stack selection
-  const handleSetActiveStack = (slug: string) => {
-    setActiveStack(slug);
-    setMobileView("content"); // For mobile: when selecting a stack item, go to content view
-  };
-
-  // Handle back button in mobile view
-  const handleMobileBack = () => {
-    if (mobileView === "content") {
-      setMobileView("secondary");
-      // Don't reset the active article/stack here so we can return to it if needed
-    } else if (mobileView === "secondary") {
-      setMobileView("main");
-    }
-  };
+  const articlesBySlug = new Map(getArticles().map((article) => [article.slug, article]));
+  const articles = selectedArticleSlugs.map((slug) => {
+    const article = articlesBySlug.get(slug);
+    if (!article) throw new Error("Selected article not found: " + slug);
+    return article;
+  });
 
   return (
-    <div className="flex min-h-screen bg-white">
-      {/* Desktop Sidebar */}
-      <Sidebar activePage={activePage} setActivePage={handleSetActivePage} />
-
-      {/* Mobile Sidebar */}
-      <MobileSidebar
-        activePage={activePage}
-        setActivePage={handleSetActivePage}
-      />
-
-      {/* Desktop Second Sidebar for Writing */}
-      {activePage === "writing" && (
-        <div className="hidden md:block">
-          <WritingSidebar
-            activeArticle={activeArticle}
-            setActiveArticle={handleSetActiveArticle}
-            setArticleContent={setArticleContent}
-          />
-        </div>
-      )}
-
-      {/* Desktop Second Sidebar for Stack */}
-      {activePage === "stack" && (
-        <div className="hidden md:block">
-          <StackSidebar
-            activeStack={activeStack}
-            setActiveStack={handleSetActiveStack}
-          />
-        </div>
-      )}
-
-      {/* Mobile Second Sidebar */}
-      <MobileSecondSidebar
-        activePage={activePage}
-        activeArticle={activeArticle}
-        activeStack={activeStack}
-        setActiveArticle={handleSetActiveArticle}
-        setActiveStack={handleSetActiveStack}
-        setArticleContent={setArticleContent}
-        isVisible={mobileView === "secondary"}
-        onBack={handleMobileBack}
-      />
-
-      {/* Main Content */}
-      <main
-        className={`flex-1 p-6 md:p-8 ${
-          // For desktop: position content correctly based on active sidebars
-          activePage === "writing" || activePage === "stack"
-            ? "md:ml-[36px]" // Width of both sidebars combined (52px + 64px)
-            : "md:ml-20px" // Width of main sidebar only
-        }`}
-      >
-        {/* Mobile Back Button for Content View */}
-        {mobileView === "content" && (
-          <button
-            onClick={handleMobileBack}
-            className="md:hidden flex items-center text-sm mb-4 text-gray-600"
-          >
-            <ArrowLeft size={16} className="mr-1" />
-            Back to {activePage === "writing" ? "articles" : "stack"}
-          </button>
-        )}
-
-        {/* Home content */}
-        {(activePage === "home" ||
-          (activePage === "home" && mobileView === "main")) && (
-          <div className="max-w-2xl mx-auto space-y-8">
-            <section className="space-y-4">
-              <h1 className="text-2xl font-semibold">
-                Hey, I'm Nishant. I'm a{" "}
-                <Link href="#" className="text-blue-600 hover:underline">
-                  Software Engineer
-                </Link>{" "}
-                and a{" "}
-                <Link href="#" className="text-blue-600 hover:underline">
-                  Writer
-                </Link>
-                .
-              </h1>
-
-              <p className="text-gray-700">
-                I am an Engineer. I build{" "}
-                {
-                  <Link href="#" className="text-red-600 hover:underline">
-                    products
-                  </Link>
-                }
-                , solve{" "}
-                {
-                  <Link href="#" className="text-green-600 hover:underline">
-                    problems
-                  </Link>
-                }{" "}
-                and think{" "}
-                <Link href="#" className="text-blue-600 hover:underline">
-                  creative
-                </Link>
-                .
-              </p>
-            </section>
-            <section className="text-sm space-y-4">
-              <Terminal />
-            </section>
-
-            <section className="space-y-4">
-              <div className="text-gray-500 text-md">Socials</div>
-
-              <div className="grid gap-2">
-                <div className="flex items-center justify-between py-2">
-                  <Link
-                    href="mailto:nishant19072003@gmail.com"
-                    className="flex items-center gap-2 hover:text-blue-600"
-                  >
-                    <MailIcon size={22} />
-                    <span>Mail</span>
-                  </Link>
-                  <Link
-                    href="mailto:nishant19072003@gmail.com"
-                    className="text-gray-500 text-sm hover:text-blue-600"
-                  >
-                    Send Email
-                  </Link>
-                </div>
-
-                <div className="flex items-center justify-between py-2">
-                  <Link
-                    href="https://www.linkedin.com/in/nishant-sharma-771653245/"
-                    className="flex items-center gap-2 hover:text-blue-600"
-                  >
-                    <img
-                      src="/linkedin.png"
-                      alt="LinkedIn"
-                      className="w-6 h-6"
-                    />
-                    <span>LinkedIn</span>
-                  </Link>
-                  <Link
-                    href="https://www.linkedin.com/in/nishant-sharma-771653245/"
-                    className="text-gray-500 text-sm hover:text-blue-600"
-                  >
-                    Connect
-                  </Link>
-                </div>
-
-                <div className="flex items-center justify-between py-2">
-                  <Link
-                    href="https://x.com/Nishant48945102"
-                    className="flex items-center gap-2 hover:text-blue-600"
-                  >
-                    <img src="/x.png" alt="X.com" className="w-6 h-6" />
-                    <span>X.com</span>
-                  </Link>
-                  <Link
-                    href="https://x.com/Nishant48945102"
-                    className="text-gray-500 text-sm hover:text-blue-600"
-                  >
-                    Follow
-                  </Link>
-                </div>
-              </div>
-            </section>
-
-            <section className="space-y-4">
-              <div className="text-gray-500 text-md">Experience</div>
-
-              <div className="grid gap-2">
-                <div className="flex flex-wrap items-center justify-between py-2 gap-2">
-                  <a
-                    href="https://www.cohesity.com"
-                    className="text-gray-500 text-md hover:text-blue-600 flex flex-wrap items-center gap-1"
-                  >
-                    <span>SRE I | Full-time</span>
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/company/cohesity/"
-                    className="flex items-center gap-2"
-                  >
-                    <img
-                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNq8Fruh4eJVVae1srl3cLjGvT3bsHFIOr0Q&s"
-                      alt="Cohesity"
-                      className="w-6 h-6"
-                    />
-                    <span className="text-gray-400 hover:text-blue-600">
-                      Cohesity
-                    </span>
-                    <span className="text-gray-400">(Jan 2026 – Present)</span>
-                  </a>
-                </div>
-
-                <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
-                  <h3 className="text-sm font-semibold mb-2">
-                    Professional Experience:
-                  </h3>
-                  <p className="text-sm text-gray-600">
-                    Working as a{" "}
-                    <span className="font-semibold text-blue-600">
-                      Technical Support Engineer
-                    </span>{" "}
-                    at Cohesity, providing timely and effective customer support
-                    by troubleshooting complex issues across{" "}
-                    <span className="font-semibold text-cyan-600">
-                      storage, networking, and virtualization
-                    </span>{" "}
-                    environments. Leveraging{" "}
-                    <span className="font-semibold text-gray-800">
-                      Linux system administration
-                    </span>{" "}
-                    and debugging tools to analyze problems, document
-                    investigations and resolutions, and collaborate closely with{" "}
-                    <span className="font-semibold text-purple-600">
-                      engineering and account management teams
-                    </span>
-                    . Focused on delivering an excellent customer experience
-                    while managing multiple cases efficiently and contributing
-                    to internal and customer-facing knowledge bases.
-                  </p>
-
-                  <h3 className="text-sm font-semibold mt-3 mb-2">
-                    Key Contributions:
-                  </h3>
-                  <ul className="list-disc list-inside text-sm text-gray-600 space-y-3">
-                    <li>
-                      Diagnosed and resolved customer issues across{" "}
-                      <span className="font-semibold text-cyan-600">
-                        storage systems, networking stacks, and virtualized
-                        environments
-                      </span>
-                      , ensuring minimal downtime and high customer
-                      satisfaction.
-                    </li>
-
-                    <li>
-                      Utilized{" "}
-                      <span className="font-semibold text-gray-800">
-                        Linux debugging and system administration tools
-                      </span>{" "}
-                      to perform deep root-cause analysis, document findings,
-                      and deliver accurate, actionable resolutions.
-                    </li>
-
-                    <li>
-                      Collaborated with{" "}
-                      <span className="font-semibold text-purple-600">
-                        engineering, SRE, and account teams
-                      </span>{" "}
-                      to escalate product issues, provide feedback, and improve
-                      product stability and support workflows.
-                    </li>
-
-                    <li>
-                      Managed multiple support cases simultaneously while
-                      contributing to{" "}
-                      <span className="font-semibold text-green-600">
-                        knowledge base articles
-                      </span>{" "}
-                      to improve support efficiency and long-term customer
-                      self-service.
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-              <div className="grid gap-2">
-                <div className="flex flex-wrap items-center justify-between py-2 gap-2">
-                  <a
-                    href="#"
-                    className="text-gray-500 text-md hover:text-blue-600 flex flex-wrap items-center gap-1"
-                  >
-                    <span>
-                      Fullstack Web Developer & Platform Engineer | Internship
-                    </span>
-                  </a>
-                  <a href="#" className="flex items-center gap-2">
-                    <img
-                      src="https://media.licdn.com/dms/image/v2/D560BAQHPao0B8uCJMA/company-logo_200_200/company-logo_200_200/0/1693216489946?e=2147483647&v=beta&t=IUjtLqa-v_sMxRobka-kLi7GZRtzjIakQ3velItsy4g"
-                      alt="Stealth Startup"
-                      className="w-6 h-6"
-                    />
-                    <span className="text-gray-400 hover:text-blue-600">
-                      Stealth Startup
-                    </span>
-                    <span className="text-gray-400">(Jul 2025 – Dec 2025)</span>
-                  </a>
-                </div>
-
-                <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
-                  <h3 className="text-sm font-semibold mb-2">
-                    Internship Experience:
-                  </h3>
-                  <p className="text-sm text-gray-600">
-                    Improved{" "}
-                    <span className="font-semibold text-blue-600">
-                      deckit.ai
-                    </span>{" "}
-                    (AI-powered presentation tool) by engineering{" "}
-                    <span className="font-semibold text-cyan-600">
-                      real-time streaming functionality
-                    </span>{" "}
-                    with{" "}
-                    <span className="font-semibold text-gray-800">Next.js</span>
-                    , integrating{" "}
-                    <span className="font-semibold text-purple-600">
-                      external APIs
-                    </span>
-                    , dynamically injecting{" "}
-                    <span className="font-semibold text-pink-600">CSS</span>,
-                    and refactoring the codebase for efficiency. Built a{" "}
-                    <span className="font-semibold text-green-600">
-                      WYSIWYG editor
-                    </span>{" "}
-                    allowing users to visually edit components with an
-                    interactive toolbar, supporting rich text formatting and
-                    live customization. Implemented{" "}
-                    <span className="font-semibold text-green-600">
-                      intelligent caching
-                    </span>{" "}
-                    for near-zero latency data transfers and optimized API
-                    usage, reducing{" "}
-                    <span className="font-semibold text-orange-600">
-                      Claude API
-                    </span>{" "}
-                    calls by{" "}
-                    <span className="font-semibold text-blue-600">40%</span> and
-                    cutting operational costs.
-                  </p>
-
-                  <h3 className="text-sm font-semibold mt-3 mb-2">
-                    Key Contributions:
-                  </h3>
-                  <ul className="list-disc list-inside text-sm text-gray-600 space-y-3">
-                    <li>
-                      Engineered{" "}
-                      <span className="font-semibold text-cyan-600">
-                        real-time streaming
-                      </span>{" "}
-                      infrastructure using{" "}
-                      <span className="font-semibold text-gray-800">
-                        Next.js
-                      </span>
-                      , enabling low-latency AI-driven content generation and
-                      updates.
-                    </li>
-
-                    <li>
-                      Developed a{" "}
-                      <span className="font-semibold text-green-600">
-                        WYSIWYG editor
-                      </span>{" "}
-                      with an interactive toolbar supporting rich text
-                      formatting, live component customization, and dynamic CSS
-                      injection.
-                    </li>
-
-                    <li>
-                      Designed and implemented{" "}
-                      <span className="font-semibold text-purple-600">
-                        intelligent caching
-                      </span>{" "}
-                      and optimized backend/API interactions, reducing{" "}
-                      <span className="font-semibold text-orange-600">
-                        Claude API
-                      </span>{" "}
-                      usage by{" "}
-                      <span className="font-semibold text-blue-600">40%</span>,
-                      significantly lowering infrastructure and operational
-                      costs.
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-              <div className="grid gap-2">
-                <div className="flex flex-wrap items-center justify-between py-2 gap-2">
-                  <a
-                    href="https://www.linkedin.com/posts/nishant-sharma-771653245_cryptoformars-activity-7277700315490000896-aHYD?utm_source=share&utm_medium=member_desktop&rcm=ACoAADzJRYUBSjOtk00cJH1rfFOc_T83M736tuI"
-                    className="text-gray-500 text-md hover:text-blue-600 flex flex-wrap items-center gap-1"
-                  >
-                    <span>System Reliability Engineer | Intern</span>
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/company/nutanix/posts/?feedView=all"
-                    className="flex items-center gap-2"
-                  >
-                    <img src="/nutanix.png" alt="Nutanix" className="w-6 h-6" />
-                    <span className="text-gray-400 hover:text-blue-600">
-                      Nutanix
-                    </span>
-                    <span className="text-gray-400">
-                      (Jan 2025 - June 2025)
-                    </span>
-                  </a>
-                </div>
-
-                <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
-                  <h3 className="text-sm font-semibold mb-2">
-                    Internship Experience:
-                  </h3>
-                  <p className="text-sm text-gray-600">
-                    Executed{" "}
-                    <span className="font-semibold text-blue-600">
-                      infrastructure
-                    </span>{" "}
-                    and{" "}
-                    <span className="font-semibold text-purple-600">
-                      full-stack development
-                    </span>{" "}
-                    tasks across{" "}
-                    <span className="font-semibold text-blue-600">
-                      Linux systems
-                    </span>
-                    ,{" "}
-                    <span className="font-semibold text-green-600">
-                      networking
-                    </span>
-                    ,{" "}
-                    <span className="font-semibold text-cyan-600">
-                      containerization
-                    </span>
-                    , and{" "}
-                    <span className="font-semibold text-orange-600">
-                      virtualization
-                    </span>
-                    , driving platform reliability and scalability. Delivered{" "}
-                    <span className="font-semibold text-green-500">
-                      production-ready environments
-                    </span>
-                    ,{" "}
-                    <span className="font-semibold text-purple-500">
-                      automated provisioning
-                    </span>
-                    , and{" "}
-                    <span className="font-semibold text-pink-600">
-                      backend integrations
-                    </span>{" "}
-                    that improved system efficiency by{" "}
-                    <span className="font-semibold text-blue-600">30%</span>.
-                  </p>
-
-                  <h3 className="text-sm font-semibold mt-3 mb-2">
-                    Key Contributions:
-                  </h3>
-                  <ul className="list-disc list-inside text-sm text-gray-600 space-y-3">
-                    <li>
-                      Built and managed{" "}
-                      <span className="font-semibold text-blue-600">
-                        Linux-based environments
-                      </span>
-                      , including installing and configuring distros, managing
-                      users and permissions, and handling system-level tasks
-                      like mounting storage, setting up{" "}
-                      <span className="font-semibold">SSH</span>, configured
-                      critical services.
-                    </li>
-
-                    <li>
-                      Configured enterprise networks{" "}
-                      <span className="font-semibold text-purple-600">
-                        (CCNA standards)
-                      </span>
-                      : set up <span className="font-semibold">VLANs</span>,
-                      routing, IP addressing, and switches, resolving
-                      connectivity issues across physical and virtual interfaces
-                      with{" "}
-                      <span className="font-semibold text-green-600">
-                        99% uptime
-                      </span>
-                      .
-                    </li>
-
-                    <li>
-                      Automated container workflows: created user-specific{" "}
-                      <span className="font-semibold text-blue-500">
-                        Docker containers
-                      </span>
-                      , wrote{" "}
-                      <span className="font-semibold">Bash scripts</span>, and
-                      deployed multi-container environments with{" "}
-                      <span className="font-semibold">docker-compose</span>,
-                      cutting deployment time from hours to minutes.
-                    </li>
-
-                    <li>
-                      Developed scalable apps: migrated frontends from{" "}
-                      <span className="font-semibold text-yellow-600">
-                        JavaScript
-                      </span>{" "}
-                      to{" "}
-                      <span className="font-semibold text-cyan-600">React</span>
-                      , and built{" "}
-                      <span className="font-semibold text-green-500">
-                        Django REST APIs
-                      </span>{" "}
-                      to support{" "}
-                      <span className="font-semibold text-gray-800">
-                        Next.js
-                      </span>{" "}
-                      dashboards, enabling real-time data flow and reducing page
-                      load times by{" "}
-                      <span className="font-semibold text-blue-600">40%</span>.
-                    </li>
-
-                    <li>
-                      Managed{" "}
-                      <span className="font-semibold text-green-600">
-                        Nutanix HCI clusters
-                      </span>
-                      : added nodes, configured high availability settings, and
-                      ensured cluster health and resource balance with{" "}
-                      <span className="font-semibold text-green-600">
-                        Prism Central
-                      </span>
-                      .
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </section>
-          </div>
-        )}
-
-        {/* Writing content - desktop empty state */}
-        {activePage === "writing" &&
-          !activeArticle &&
-          mobileView !== "content" && (
-            <div className="max-w-2xl mx-auto  md:block">
-              <h1 className="text-2xl font-semibold mb-6">Writing</h1>
-              <p className="text-gray-700 text-sm mb-4">
-                Select an article from the sidebar to read it.
+    <div className="home-shell" id="top">
+      <a className="skip-link" href="#writings">Skip to writings</a>
+      <div className="home-column">
+        <main className="home-main" id="main-content">
+          <header className="home-intro">
+            <Image className="home-photo" src={profile.photo} alt={profile.name} width={80} height={80} priority />
+            <div className="home-intro-copy">
+              <h1 className="home-name">{profile.name}</h1>
+              <p className="home-role">
+                <span>{profile.role}</span>{" · "}<span className="home-location">{profile.location}</span>
               </p>
             </div>
-          )}
+          </header>
 
-        {/* Article content */}
-        {((activePage === "writing" && activeArticle) ||
-          (activePage === "writing" &&
-            mobileView === "content" &&
-            activeArticle)) && (
-          <div>
-            {articleContent ? (
-              <ArticleContent articleContent={articleContent} />
-            ) : (
-              <div className="text-gray-500 text-center p-4">
-                📄 The article is currently empty. Start writing to see the
-                content here.
-              </div>
-            )}
-          </div>
-        )}
+          <section aria-labelledby="about-heading">
+            <h2 className="section-title" id="about-heading">About</h2>
+            <p className="home-body">I build reliable systems, solve problems, and write about what I learn along the way.</p>
+            <p className="home-body">
+              My work spans Linux, networking, cloud infrastructure, AI applications, and software development.
+            </p>
+            <p className="home-body">
+              Currently keeping systems reliable at{" "}
+              <a href="https://www.cohesity.com" target="_blank" rel="noopener noreferrer">Cohesity</a>. Previously at{" "}
+              <a href="https://www.nutanix.com" target="_blank" rel="noopener noreferrer">Nutanix</a> and{" "}
+              <a href="https://deckit.ai" target="_blank" rel="noopener noreferrer">Deckit.ai</a>.
+            </p>
+          </section>
 
-        {/* Stack content - desktop empty state */}
-        {activePage === "stack" && !activeStack && mobileView !== "content" && (
-          <div className="max-w-2xl mx-auto space-y-8">
-            <section className="space-y-4">
-              <h1 className="text-2xl font-semibold">Tech Stack & Journey</h1>
+          <section id="writings" aria-labelledby="writings-heading">
+            <h2 className="section-title" id="writings-heading">Writings</h2>
+            <ul className="writing-list">
+              {articles.map((article) => (
+                <li key={article.slug}>
+                  <Link className="writing-row" href={"/writing/" + encodeURIComponent(article.slug)}>
+                    <span className="writing-title">{article.title}</span>
+                    <span className="writing-meta">{article.readingMinutes} min read</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <a className="section-more" href="https://medium.com/@nishant19072003" target="_blank" rel="noopener noreferrer">
+              Read more on Medium <ArrowUpRight size={12} aria-hidden="true" />
+            </a>
+          </section>
 
-              <p className="text-gray-700 text-sm">
-                My programming journey began{" "}
-                <span className="font-semibold">six years ago</span> during high
-                school, where I first experimented with{" "}
-                <span className="font-semibold">Python</span>, building small
-                projects to understand the core concepts of programming. Eager
-                to broaden my skills, I explored{" "}
-                <span className="font-semibold">SQL</span>, diving into database
-                design and management, which laid a strong foundation for
-                backend operations.
-              </p>
+          <section id="projects" aria-labelledby="projects-heading">
+            <h2 className="section-title" id="projects-heading">Projects</h2>
+            <ul className="project-list">
+              {projects.map((project) => (
+                <li key={project.href}>
+                  <a className="project-row" href={project.href} target="_blank" rel="noopener noreferrer">
+                    <span className="project-name">{project.name}</span>
+                    <span className="project-description">{project.description}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <a className="section-more" href="https://github.com/Nishant891" target="_blank" rel="noopener noreferrer">
+              View more on GitHub <ArrowUpRight size={12} aria-hidden="true" />
+            </a>
+          </section>
 
-              <h2 className="text-sm font-semibold mt-4">
-                🌐 Web Development Mastery:
-              </h2>
-              <p className="text-gray-700 text-sm">
-                In college, I transitioned to{" "}
-                <span className="font-semibold">JavaScript</span> and immersed
-                myself in modern web development. I mastered{" "}
-                <span className="font-semibold">
-                  React, Next.js, Express, and TailwindCSS
-                </span>
-                , building scalable web applications. My projects focused on{" "}
-                <span className="font-semibold">performance optimization</span>,{" "}
-                <span className="font-semibold">accessibility</span>, and{" "}
-                <span className="font-semibold">responsive design</span>,
-                consistently exceeding client expectations in freelance
-                projects.
-              </p>
+          <section aria-labelledby="building-heading">
+            <h2 className="section-title" id="building-heading">Currently building</h2>
+            <a className="building-card" href="https://github.com/Nishant891/hyprglass" target="_blank" rel="noopener noreferrer" aria-label="View Hyperglass on GitHub">
+              <span className="building-icon" aria-hidden="true">
+                <Github size={28} aria-hidden="true" />
+              </span>
+              <h3>Hyperglass</h3>
+              <span className="building-status">In progress</span>
+            </a>
+            <VideoPreview
+              videoId="9mchvfJQieU"
+              title="Arch btw :) — Hyprglass, My Hyprland Rice"
+              thumbnail="https://i.ytimg.com/vi/9mchvfJQieU/hqdefault.jpg"
+            />
+          </section>
 
-              <h2 className="text-sm font-semibold mt-4">
-                🏆 Competitive Programming & Hackathons:
-              </h2>
-              <ul className="list-disc list-inside text-sm text-gray-600 space-y-1">
-                <li>
-                  Participated in numerous hackathons, winning several for
-                  innovative solutions and optimized code.
-                </li>
-                <li>
-                  Solved <span className="font-semibold">360+ problems</span> on
-                  LeetCode, mastering{" "}
-                  <span className="font-semibold">
-                    Data Structures and Algorithms
-                  </span>
-                  .
-                </li>
-                <li>
-                  Acquired deep algorithmic thinking through C++, with expertise
-                  in <span className="font-semibold">Trees</span>,{" "}
-                  <span className="font-semibold">Backtracking</span> and{" "}
-                  <span className="font-semibold">Graph Theory</span>.
-                </li>
-                <li>
-                  Developed the{" "}
-                  <span className="font-semibold">Game of Life</span> in C++,
-                  optimized it with{" "}
-                  <span className="font-semibold">WebAssembly</span>, and hosted
-                  it online for interactive play.
-                </li>
-              </ul>
-
-              <h2 className="text-sm font-semibold mt-4">
-                ☁️ Cloud Computing & DevOps Exposure:
-              </h2>
-              <p className="text-gray-700 text-sm mb-4">
-                During my internship at{" "}
-                <span className="font-semibold">Nutanix</span>, I executed{" "}
-                <span className="font-semibold">
-                  infrastructure and full-stack development tasks
-                </span>{" "}
-                across <span className="font-semibold">Linux systems</span>,{" "}
-                <span className="font-semibold">networking</span>,{" "}
-                <span className="font-semibold">containerization</span>, and{" "}
-                <span className="font-semibold">virtualization</span>. Built and
-                deployed real environments, wrote production-ready scripts, and
-                actively contributed to{" "}
-                <span className="font-semibold">backend integration</span>,{" "}
-                <span className="font-semibold">system provisioning</span>, and{" "}
-                <span className="font-semibold">
-                  internal platform improvements
-                </span>
-                .
-              </p>
-
-              <h3 className="font-semibold text-gray-800 text-sm mb-2">
-                Key Contributions:
-              </h3>
-
-              <ul className="list-disc list-inside text-sm text-gray-600 space-y-2">
-                <li>
-                  Built and managed{" "}
-                  <span className="font-semibold text-blue-600">
-                    Linux-based environments
-                  </span>
-                  , including installing and configuring distros, managing users
-                  and permissions, and handling system-level tasks like mounting
-                  storage, setting up <span className="font-semibold">SSH</span>
-                  , and configuring services.
-                </li>
-
-                <li>
-                  Provisioned and managed virtual machines using{" "}
-                  <span className="font-semibold text-orange-600">
-                    VMware vSphere
-                  </span>
-                  , <span className="font-semibold text-orange-600">ESXi</span>,
-                  and{" "}
-                  <span className="font-semibold text-green-600">
-                    Nutanix AHV
-                  </span>
-                  , uploaded ISOs, created custom VMs, and handled resource
-                  allocation and performance tuning.
-                </li>
-
-                <li>
-                  Configured enterprise networks based on{" "}
-                  <span className="font-semibold text-purple-600">
-                    CCNA standards
-                  </span>
-                  , including <span className="font-semibold">VLANs</span>,
-                  routing, IP addressing, and switch configuration and resolved
-                  connectivity issues across virtual and physical interfaces.
-                </li>
-
-                <li>
-                  Developed automated container workflows by creating
-                  user-specific{" "}
-                  <span className="font-semibold text-blue-500">
-                    Docker containers
-                  </span>
-                  , writing <span className="font-semibold">Bash scripts</span>{" "}
-                  for setup and deployment, and using{" "}
-                  <span className="font-semibold">docker-compose</span> to
-                  manage multi-container environments.
-                </li>
-
-                <li>
-                  Migrated frontend apps from{" "}
-                  <span className="font-semibold text-yellow-600">
-                    JavaScript
-                  </span>{" "}
-                  to <span className="font-semibold text-cyan-600">React</span>{" "}
-                  and designed and developed{" "}
-                  <span className="font-semibold text-green-500">
-                    Django REST APIs
-                  </span>{" "}
-                  to support dashboards built with{" "}
-                  <span className="font-semibold text-gray-800">Next.js</span>,
-                  enabling smoother data flow and real-time updates.
-                </li>
-
-                <li>
-                  Managed and monitored{" "}
-                  <span className="font-semibold text-green-600">
-                    HCI clusters
-                  </span>{" "}
-                  with{" "}
-                  <span className="font-semibold text-green-600">
-                    Nutanix AOS
-                  </span>{" "}
-                  and{" "}
-                  <span className="font-semibold text-green-600">
-                    Prism Central
-                  </span>
-                  , added nodes, configured high availability settings, and
-                  ensured cluster health and resource balance.
-                </li>
-              </ul>
-
-              <h2 className="text-sm font-semibold mt-4">
-                🐧 Linux Enthusiast:
-              </h2>
-              <p className="text-gray-700 text-sm">
-                My love for Linux is unmatched. I am a{" "}
-                <span className="font-semibold">Linux</span> user, embracing its
-                simplicity, control, and customizability. From configuring
-                system-level operations to writing shell scripts for automation,
-                Linux remains my go-to environment for development and
-                experimentation. Oh, and yes...{" "}
-                <span className="italic">I am an Arch user, by the way.</span>{" "}
-                😎
-              </p>
-
-              <h2 className="text-sm font-semibold mt-4">
-                🛠️ Technical Proficiencies:
-              </h2>
-              <ul className="list-disc list-inside text-sm text-gray-600 space-y-1">
-                <li>
-                  <span className="font-semibold">Programming Languages:</span>{" "}
-                  C++, TypeScript, Python
-                </li>
-                <li>
-                  <span className="font-semibold">
-                    Frameworks & Runtime Systems:
-                  </span>{" "}
-                  Next.js, Express.js, NumPy, Pandas, Raylib, WebAssembly
-                </li>
-                <li>
-                  <span className="font-semibold">
-                    Systems & Infrastructure:
-                  </span>{" "}
-                  Arch Linux, Docker, Tmux, Hyperconverged Infrastructure (HCI)
-                </li>
-                <li>
-                  <span className="font-semibold">Networking & Cloud:</span>{" "}
-                  CCNA, Nutanix Cloud Platform, VMware, Vultr
-                </li>
-                <li>
-                  <span className="font-semibold">Development Tools:</span> Git,
-                  Postman, Socket.io
-                </li>
-                <li>
-                  <span className="font-semibold">Databases:</span> MongoDB,
-                  PostgreSQL, Redis
-                </li>
-              </ul>
-            </section>
-          </div>
-        )}
-      </main>
+          <section id="connect" aria-labelledby="connect-heading">
+            <h2 className="section-title" id="connect-heading">Connect</h2>
+            <ul className="connect-list">
+              {connections.map((connection) => (
+                <li key={connection.name}><a href={connection.href} target="_blank" rel="noopener noreferrer">{connection.name}</a></li>
+              ))}
+            </ul>
+          </section>
+        </main>
+        <SiteFooter />
+      </div>
     </div>
   );
 }
